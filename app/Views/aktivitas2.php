@@ -266,7 +266,7 @@
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-    <a href="/">Beranda</a> <span> / Aktivitas</span>    </div>
+    <a href="/">Beranda</a> <span> / Aktivitas </span>    </div>
 
 <!-- Article Header -->
 <div class="article-header">Aktivitas dari TechSmart Electronics</div>
