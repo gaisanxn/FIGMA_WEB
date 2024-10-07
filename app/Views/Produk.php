@@ -217,14 +217,14 @@
 
 
 <!-- Page Title -->
-<div class="page-title">Aktivitas Kami</div>
+<div class="page-title">Produk Kami</div>
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-    <a href="/">Beranda</a> <span> / Aktivitas</span>    </div>
+    <a href="/">Beranda</a> <span> / Produk</span>    </div>
 
 <!-- Article Header -->
-<div class="article-header">Aktivitas dari TechSmart Electronics</div>
+<div class="article-header">Produk dari TechSmart Electronics</div>
 
 
 <div class="container">
@@ -232,10 +232,10 @@
    <div class="product">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk1.png" width="200"/>
    <div class="product-title">
-     Laptop Apple MacBook Air
+   Webcam Logitech C920
     </div>
     <div class="product-description">
-     Apple MacBook Air M2 adalah laptop ultraportabel yang ditenagai oleh ...
+    Logitech C920 HD Pro adalah webcam berperforma tinggi yang menawar ...
     </div>
    </div>
 
@@ -252,41 +252,37 @@
    <div class="product">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk3.png" width="200"/>
     <div class="product-title">
-     Webcam Logitech C920
+    Mouse Logitech MX Master 3
     </div>
     <div class="product-description">
-     Logitech C920 HD Pro adalah webcam berperforma tinggi yang menawar ...
-    </div>
+    Logitech MX Master 3 adalah mouse nirkabel premium yang dirancang ...    </div>
    </div>
 
    <div class="product">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk4.png" width="200"/>
     <div class="product-title">
-     Headset HyperX Cloud II
+    Smartphone Apple iPhone 14 Pro
     </div>
     <div class="product-description">
-     HyperX Cloud II adalah headset gaming profesional yang dirancang untuk ...
-    </div>
+    Apple iPhone 14 Pro adalah smartphone canggih yang dirancang dengan tekn...    </div>
    </div>
 
    <div class="product">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk5.png" width="200"/>
     <div class="product-title">
-     Smartphone Apple iPhone 14 Pro
+    Laptop Apple MacBook Air  
     </div>
     <div class="product-description">
-     Apple iPhone 14 Pro adalah smartphone canggih yang dirancang dengan tekn ...
-    </div>
+    Apple MacBook Air M2 adalah laptop ultraportabel yang ditenagai oleh ...    </div>
    </div>
 
    <div class="product">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk6.png" width="200"/>
     <div class="product-title">
-     Mouse Logitech MX Master 3
+    Headset HyperX Cloud II
     </div>
     <div class="product-description">
-     Logitech MX Master 3 adalah mouse nirkabel premium yang dirancang ...
-    </div>
+    HyperX Cloud II adalah headset gaming profesional yang dirancang untuk ...    </div>
    </div>
   </div>
 
