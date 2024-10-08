@@ -86,31 +86,66 @@
         }
 
         
+        
         .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .product {
-            border: 2px solid #3f72af;
-            border-radius: 10px;
-            text-align: center;
-            padding: 20px;
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .product-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .product-description {
-            font-size: 14px;
-        }        
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 40px; /* Jarak antara kontainer dan footer */
+}
+
+.product-link {
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: inherit; /* Memastikan warna teks di dalam link tetap mengikuti gaya div */
+    display: block; /* Mengubah link menjadi block level */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    height: 100%; /* Agar semua produk memiliki tinggi yang sama */
+    background-color: #021526; /* Warna latar belakang produk putih untuk kontras */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animasi untuk efek hover */
+}
+
+.product:hover {
+    transform: translateY(-5px); /* Efek angkat saat di-hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat di-hover */
+}
+
+.product img {
+    width: 100%; /* Mengatur gambar agar memenuhi lebar produk */
+    height: auto; /* Menjaga proporsi gambar */
+    max-height: 150px; /* Membatasi tinggi maksimum gambar */
+    object-fit: contain; /* Mengisi gambar tanpa memotong */
+    border-radius: 10px; /* Sudut membulat untuk kesan modern */
+    margin-bottom: 15px; /* Jarak antara gambar dan judul */
+}
+
+.product-title {
+    font-size: 18px; /* Ukuran font judul yang cukup besar */
+    font-weight: 700; /* Font-weight bold untuk judul */
+    margin: 10px 0;
+    color: #E2E2B6; /* Warna teks judul yang kontras */
+}
+
+.product-description {
+    font-size: 14px; /* Ukuran font deskripsi */
+    margin-top: auto; /* Agar deskripsi selalu berada di bagian bawah */
+    color: #E2E2B6; /* Mengubah warna teks deskripsi untuk kontras */
+    line-height: 1.6; /* Jarak antar baris yang lebih baik */
+    text-align: center; /* Memastikan teks terpusat */
+}
+
+
+
 
         .footer {
             display: flex;
@@ -229,18 +264,22 @@
 
 <div class="container">
     
-   <div class="product">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk1.png" width="200"/>
+<div class="product">
+   <a href="/webcam">
+       <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk1.png" width="200"/>
+   </a>
    <div class="product-title">
-   Webcam Logitech C920
-    </div>
-    <div class="product-description">
-    Logitech C920 HD Pro adalah webcam berperforma tinggi yang menawar ...
-    </div>
+       Webcam Logitech C920
    </div>
+   <div class="product-description">
+       Logitech C920 HD Pro adalah webcam berperforma tinggi yang menawar ...
+   </div>
+</div>
 
    <div class="product">
+   <a href="/drone">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk2.png" width="200"/>
+    </a>
     <div class="product-title">
      Drone DJI Mini 3 Pro
     </div>
@@ -250,7 +289,9 @@
    </div>
 
    <div class="product">
+   <a href="/mouse">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk3.png" width="200"/>
+    </a>
     <div class="product-title">
     Mouse Logitech MX Master 3
     </div>
@@ -259,7 +300,9 @@
    </div>
 
    <div class="product">
+   <a href="/smartphone">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk4.png" width="200"/>
+   </a>
     <div class="product-title">
     Smartphone Apple iPhone 14 Pro
     </div>
@@ -268,7 +311,9 @@
    </div>
 
    <div class="product">
+   <a href="/laptop">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk5.png" width="200"/>
+   </a>
     <div class="product-title">
     Laptop Apple MacBook Air  
     </div>
@@ -277,7 +322,9 @@
    </div>
 
    <div class="product">
+   <a href="/headset">
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk6.png" width="200"/>
+   </a>
     <div class="product-title">
     Headset HyperX Cloud II
     </div>
