@@ -239,13 +239,7 @@
                 <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
                 <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
                 <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">BAHASA</a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                        <li><a class="dropdown-item" href="#">English</a></li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
     </div>

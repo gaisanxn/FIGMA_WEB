@@ -154,24 +154,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Mengubah tinggi menjadi otomatis */
+    height: auto;
     padding: 20px;
-    margin-top: -30px; /* Menghapus jarak atas dari article-header */
-    margin-bottom: 20px; /* Menambahkan margin bawah untuk memberi jarak dari footer */
-    position: relative; /* Memberikan konteks posisi */
-    z-index: 1; /* Menentukan lapisan lebih rendah */
+    margin-top: -30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 1600px; /* Mengatur lebar maksimal */
+    width: 100%; /* Mengatur agar lebar penuh */
+    margin-left: auto; /* Agar center secara horizontal */
+    margin-right: auto; /* Agar center secara horizontal */
 }
 
+.contenttentang {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px;
+    max-width: 100%; /* Ubah menjadi 100% agar mengikuti lebar containertentang */
+    width: 100%; /* Mengatur lebar penuh */
+}
 
-        .contenttentang {
-            background-color: #0d1b2a;
-            color: #ffffff;
-            border-radius: 20px;
-            display: flex;
-            padding: 20px;
-            max-width: 1000px;
-            width: 100%;
-        }
         .image-section {
             flex: 1;
             padding-right: 20px;
@@ -197,22 +201,31 @@
             margin-bottom: 20px;
         }
         .text-section a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    color: #E2E2B6;
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Menjadikan link berada di bawah tulisan */
+    margin-top: 10px; /* Menambahkan jarak dari paragraf sebelumnya */
+}
 
 
-        .read-more-link {
-            color: #0F4872;
-            font-family: 'League Spartan', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            border-left: 3px solid #0F4872;
-            padding-left: 10px;
-            background-color: rgba(110, 172, 218, 0.20);
-        }
+
+.read-more-link {
+    color: #0F4872;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px; /* Mengubah ukuran font menjadi lebih kecil */
+    font-weight: 500; /* Mengubah font-weight menjadi medium */
+    text-decoration: none;
+    border-left: 3px solid #0F4872;
+    padding-left: 10px;
+    background-color: rgba(110, 172, 218, 0.20);
+    width: fit-content; /* Background mengikuti panjang teks */
+    padding: 3px 5px; /* Mengatur padding agar teks berada di tengah background */
+    border-radius: 5px; /* Membuat sudut background lebih halus */
+}
+
+
+
 
         .footer {
     display: flex;
@@ -261,13 +274,7 @@
                 <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
                 <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
                 <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">BAHASA</a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                        <li><a class="dropdown-item" href="#">English</a></li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -311,7 +318,7 @@
      </p>
      <p>
       TechSmart Electronics didirikan pada tahun 2012 oleh sekelompok profesional yang memiliki pengalaman bertahun-tahun di industri teknologi dan elektronik. Perusahaan ini hadir dari keinginan untuk menciptakan tempat di mana pelanggan dapat menemukan semua kebutuhan elektronik mereka dengan mudah dan dengan jaminan kualitas terbaik. Dalam satu dekade, TechSmart Electronics telah berkembang pesat dan memiliki beberapa cabang di berbagai kota besar di Indonesia, serta platform e-commerce yang memudahkan pelanggan dari seluruh negeri untuk berbelanja ...
-      <a href="/artikel2" class="read-more-link">Baca Selengkapnya</a>
+      <a href="/tentang" class="read-more-link">Baca Selengkapnya</a>
      </p>
     </div>
    </div>
