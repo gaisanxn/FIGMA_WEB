@@ -220,7 +220,7 @@
     padding-left: 10px;
     background-color: rgba(110, 172, 218, 0.20);
     width: fit-content; /* Background mengikuti panjang teks */
-    padding: 3px 5px; /* Mengatur padding agar teks berada di tengah background */
+    padding: 3px 5 px; /* Mengatur padding agar teks berada di tengah background */
     border-radius: 5px; /* Membuat sudut background lebih halus */
 }
 
