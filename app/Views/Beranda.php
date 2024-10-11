@@ -217,11 +217,109 @@
     font-weight: 500; /* Mengubah font-weight menjadi medium */
     text-decoration: none;
     border-left: 3px solid #0F4872;
-    padding-left: 10px;
     background-color: rgba(110, 172, 218, 0.20);
     width: fit-content; /* Background mengikuti panjang teks */
-    padding: 3px 5 px; /* Mengatur padding agar teks berada di tengah background */
+    padding: 3px 10px; /* Mengatur padding agar lebih rapi */
     border-radius: 5px; /* Membuat sudut background lebih halus */
+    
+    display: inline-flex; /* Menggunakan inline-flex untuk menyejajarkan konten */
+    align-items: center; /* Menyejajarkan konten secara vertikal */
+    justify-content: center; /* Menyejajarkan konten secara horizontal */
+}
+
+
+
+
+.article-header2 {
+    width: 250px;
+    height: 25px;
+    background-color: #021526;
+    border-radius: 4px;
+    border: 1px solid #E2E2B6;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 0 auto;
+    margin-top: 30px; /* Jarak atas tetap ada */
+    margin-bottom: 0; /* Menghapus jarak bawah */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* Flexbox properties */
+    display: flex; /* Mengaktifkan flexbox */
+    align-items: center; /* Memusatkan secara vertikal */
+    justify-content: center; /* Memusatkan secara horizontal */
+    position: relative; /* Menambahkan konteks posisi */
+    z-index: 10; /* Menentukan lapisan lebih tinggi */
+}
+
+
+.product-card {
+    display: flex; /* Menyusun gambar dan informasi produk secara horizontal */
+    align-items: center; /* Memusatkan elemen secara vertikal */
+    padding: 15px;
+    background-color: #041C32; /* Warna latar belakang serupa dengan gambar */
+    position: relative; /* Menyediakan konteks untuk pseudo-element */
+    border-radius: 10px; /* Membuat sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih tebal */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+    width: 80%; /* Lebar 80% dari kontainer */
+    max-width: 330px; /* Maksimum lebar card */
+    margin: 20px auto; /* Center card dan berikan margin */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: inherit; /* Mengambil warna teks dari elemen parent */
+}
+
+
+.product-card::before {
+    content: ''; /* Membuat konten kosong untuk pseudo-element */
+    position: absolute; /* Memposisikan secara absolut */
+    top: 5px; /* Jarak dari atas */
+    left: 5px; /* Jarak dari kiri */
+    right: 5px; /* Jarak dari kanan */
+    bottom: 5px; /* Jarak dari bawah */
+    border: 2px solid #FFFFFF; /* Border berwarna putih */
+    border-radius: 8px; /* Sudut border melengkung */
+    pointer-events: none; /* Agar tidak mengganggu interaksi dengan card */
+}
+
+.product-card:hover {
+    background-color: #02161D; /* Warna gelap saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bayangan lebih dalam */
+}
+
+
+.product-card img {
+    border-radius: 5px; /* Sudut gambar sedikit melengkung */
+    max-width: 150px; /* Mengatur lebar maksimum gambar */
+    max-height: 120px; /* Mengatur tinggi maksimum gambar */
+    object-fit: contain; /* Menjaga proporsi gambar dan tidak memotong */
+    margin-right: 15px; /* Memberikan jarak antara gambar dan teks */
+}
+
+
+
+.product-info {
+    flex: 1; /* Memastikan informasi produk mengambil ruang yang tersisa */
+    color: #E2E2B6; /* Warna teks produk */
+}
+
+.product-info h2 {
+    font-family: 'League Spartan', sans-serif; /* Gaya font untuk nama produk */
+    font-size: 22px; /* Ukuran font serupa dengan gambar */
+    color: #E2E2B6; /* Warna teks sesuai */
+    margin: 0;
+}
+
+.price {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #E50914; /* Warna merah untuk harga sesuai dengan gambar */
+    margin-top: 10px;
+    display: inline-block; /* Agar harga hanya sebesar konten */
 }
 
 
@@ -307,7 +405,7 @@
 <div class="containertentang">
    <div class="contenttentang">
     <div class="image-section">
-     <img alt="Three people examining a dishwasher in a modern electronics store" height="500" src="https://storage.googleapis.com/a1aa/image/BYhvkSRB7No9P12Ac0KGTfV3rWVALokV33QrQtdKpkeUe1JnA.jpg" width="500"/>
+    <img alt="Deskripsi gambar" height="500" width="500" src="<?= base_url('upload/beranda.jpg'); ?>" />
     </div>
     <div class="text-section">
      <h2>
@@ -323,6 +421,25 @@
     </div>
    </div>
   </div>
+    </br>
+<!-- Article Header 2 -->
+<div class="article-header2">Jelajahi Produk Kami</div>
+
+
+<!-- produk laptop-->
+<a href="/laptop" class="product-card"> <!-- Membungkus dengan tag <a> -->
+  <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk5.png'); ?>" />
+  <div class="product-info">
+    <h2>
+     Laptop Apple
+     MacBook Air
+    </h2>
+    <div class="price">
+     $104.00
+    </div>
+   </div>
+</a>
+
 
 
 <!-- Footer -->
