@@ -106,34 +106,40 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 20px; /* Meningkatkan kelengkungan untuk bentuk lebih modern */
     padding: 20px;
     text-align: center;
     height: 100%; /* Agar semua produk memiliki tinggi yang sama */
-    background-color: #021526; /* Warna latar belakang produk putih untuk kontras */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk kedalaman */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animasi untuk efek hover */
+    background-color: #021526; /* Warna latar belakang produk */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk kedalaman */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Animasi untuk efek hover */
+    border: 2px solid transparent; /* Border transparan untuk transisi saat hover */
+    overflow: hidden; /* Menyembunyikan konten yang melampaui batas */
+    position: relative; /* Untuk efek pseudo-element */
 }
 
 .product:hover {
-    transform: translateY(-5px); /* Efek angkat saat di-hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat di-hover */
+    transform: translateY(-10px); /* Efek angkat lebih signifikan saat di-hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat di-hover */
+    background-color: #0A2938; /* Warna lebih terang saat di-hover untuk kontras */
+    border: 2px solid #E2E2B6; /* Border berwarna cerah saat di-hover */
 }
 
 .product img {
     width: 100%; /* Mengatur gambar agar memenuhi lebar produk */
     height: auto; /* Menjaga proporsi gambar */
     max-height: 150px; /* Membatasi tinggi maksimum gambar */
-    object-fit: contain; /* Mengisi gambar tanpa memotong */
-    border-radius: 10px; /* Sudut membulat untuk kesan modern */
+    object-fit: cover; /* Mengisi gambar tanpa memotong, menyesuaikan dengan kontainer */
+    border-radius: 20px; /* Sudut membulat untuk kesan modern */
     margin-bottom: 15px; /* Jarak antara gambar dan judul */
 }
 
 .product-title {
-    font-size: 18px; /* Ukuran font judul yang cukup besar */
+    font-size: 20px; /* Ukuran font judul yang lebih besar */
     font-weight: 700; /* Font-weight bold untuk judul */
     margin: 10px 0;
     color: #E2E2B6; /* Warna teks judul yang kontras */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Efek bayangan untuk judul */
 }
 
 .product-description {
@@ -142,6 +148,30 @@
     color: #E2E2B6; /* Mengubah warna teks deskripsi untuk kontras */
     line-height: 1.6; /* Jarak antar baris yang lebih baik */
     text-align: center; /* Memastikan teks terpusat */
+}
+
+/* Efek untuk hover pada deskripsi */
+.product:hover .product-description {
+    color: #A8C8D6; /* Ubah warna deskripsi saat hover */
+    transition: color 0.3s; /* Animasi transisi warna deskripsi */
+}
+
+/* Pseudo-element untuk efek tambahan */
+.product::after {
+    content: ''; /* Konten kosong untuk pseudo-element */
+    position: absolute; /* Memposisikan secara absolut */
+    top: 0; /* Jarak dari atas */
+    left: 0; /* Jarak dari kiri */
+    right: 0; /* Jarak dari kanan */
+    bottom: 0; /* Jarak dari bawah */
+    border-radius: 20px; /* Menyesuaikan sudut dengan produk */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); /* Efek gradient */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transition: opacity 0.3s; /* Animasi transisi opacity */
+}
+
+.product:hover::after {
+    opacity: 1; /* Tampilkan efek saat hover */
 }
 
 
@@ -298,7 +328,7 @@
    <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk4.png" width="200"/>
    </a>
     <div class="product-title">
-    Smartphone Apple iPhone 14 Pro
+    Smartphone Apple iPhone 14
     </div>
     <div class="product-description">
     Apple iPhone 14 Pro adalah smartphone canggih yang dirancang dengan tekn...    </div>

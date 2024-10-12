@@ -256,6 +256,14 @@
 }
 
 
+.product-container {
+    display: flex;
+    justify-content: center; /* Mengatur produk agar berada di tengah */
+    flex-wrap: wrap; /* Membungkus produk ke baris berikutnya jika tidak muat */
+    margin: 20px 0; /* Memberikan jarak di atas dan bawah */
+    gap: 20px; /* Mengatur jarak antar produk */
+}
+
 .product-card {
     display: flex; /* Menyusun gambar dan informasi produk secara horizontal */
     align-items: center; /* Memusatkan elemen secara vertikal */
@@ -264,14 +272,13 @@
     position: relative; /* Menyediakan konteks untuk pseudo-element */
     border-radius: 10px; /* Membuat sudut melengkung */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih tebal */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
-    width: 80%; /* Lebar 80% dari kontainer */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Animasi saat hover */
+    width: 30%; /* Lebar 30% dari kontainer untuk memberikan ruang antar produk */
     max-width: 330px; /* Maksimum lebar card */
-    margin: 20px auto; /* Center card dan berikan margin */
+    margin: 10px; /* Margin di sekitar card */
     text-decoration: none; /* Menghilangkan garis bawah pada link */
     color: inherit; /* Mengambil warna teks dari elemen parent */
 }
-
 
 .product-card::before {
     content: ''; /* Membuat konten kosong untuk pseudo-element */
@@ -288,8 +295,8 @@
 .product-card:hover {
     background-color: #02161D; /* Warna gelap saat hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bayangan lebih dalam */
+    transform: translateY(-5px); /* Mengangkat kartu sedikit saat hover */
 }
-
 
 .product-card img {
     border-radius: 5px; /* Sudut gambar sedikit melengkung */
@@ -299,11 +306,12 @@
     margin-right: 15px; /* Memberikan jarak antara gambar dan teks */
 }
 
-
-
 .product-info {
     flex: 1; /* Memastikan informasi produk mengambil ruang yang tersisa */
     color: #E2E2B6; /* Warna teks produk */
+    display: flex; /* Menjadikan .product-info sebagai flex container */
+    flex-direction: column; /* Mengatur arah elemen di dalamnya menjadi kolom */
+    align-items: flex-end; /* Mengatur elemen agar rata kanan */
 }
 
 .product-info h2 {
@@ -311,6 +319,7 @@
     font-size: 22px; /* Ukuran font serupa dengan gambar */
     color: #E2E2B6; /* Warna teks sesuai */
     margin: 0;
+    text-align: right; /* Mengatur teks agar rata kanan */
 }
 
 .price {
@@ -320,7 +329,11 @@
     color: #E50914; /* Warna merah untuk harga sesuai dengan gambar */
     margin-top: 10px;
     display: inline-block; /* Agar harga hanya sebesar konten */
+    text-align: right; /* Mengatur teks agar rata kanan */
+    width: 100%; /* Agar lebar harga mengisi ruang yang ada */
 }
+
+
 
 
 
@@ -426,19 +439,48 @@
 <div class="article-header2">Jelajahi Produk Kami</div>
 
 
-<!-- produk laptop-->
-<a href="/laptop" class="product-card"> <!-- Membungkus dengan tag <a> -->
-  <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk5.png'); ?>" />
-  <div class="product-info">
-    <h2>
-     Laptop Apple
-     MacBook Air
-    </h2>
-    <div class="price">
-     $104.00
+<div class="product-container"> 
+  <!-- produk laptop -->
+  <a href="/laptop" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk5.png'); ?>" />
+    <div class="product-info">
+      <h2>
+        Laptop Apple
+        MacBook Air
+      </h2>
+      <div class="price">
+        $789.00
+      </div>
     </div>
-   </div>
-</a>
+  </a>
+
+  <!-- produk drone -->
+  <a href="/drone" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk2.png'); ?>" />
+    <div class="product-info">
+      <h2>
+        Drone DJI Mini 3 Pro
+      </h2>
+      <div class="price">
+        $654.00
+      </div>
+    </div>
+  </a>
+
+  <!-- produk smartphone -->
+  <a href="/smartphone" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk4.png'); ?>" />
+    <div class="product-info">
+      <h2>
+        Smartphone Apple iPhone
+      </h2>
+      <div class="price">
+        $369.00
+      </div>
+    </div>
+  </a>  
+</div>
+
 
 
 

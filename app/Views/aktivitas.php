@@ -458,7 +458,7 @@
 <!-- konten 2 -->
 <div class="wrapper2">
     <div class="image-section2">
-        <img src="upload/aktivitas2.jpeg" alt="Peluncuran Produk Baru" class="image">
+        <img src="upload/aktivitas2.jpeg" alt="Peluncuran Produk Baru" class="image2">
     </div>
     <div class="text-section2">
         <div class="content-box2">
