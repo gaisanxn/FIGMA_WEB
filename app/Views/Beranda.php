@@ -242,7 +242,7 @@
     font-size: 13px;
     margin: 0 auto;
     margin-top: 30px; /* Jarak atas tetap ada */
-    margin-bottom: 0; /* Menghapus jarak bawah */
+    margin-bottom: -28px; /* Menghapus jarak bawah */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -262,6 +262,9 @@
     flex-wrap: wrap; /* Membungkus produk ke baris berikutnya jika tidak muat */
     margin: 20px 0; /* Memberikan jarak di atas dan bawah */
     gap: 20px; /* Mengatur jarak antar produk */
+    background-color: #021526;
+    padding: 10px 0; /* Menambahkan padding atas dan bawah */
+
 }
 
 .product-card {
@@ -479,8 +482,46 @@
       </div>
     </div>
   </a>  
-</div>
+  
+  <!-- produk headset -->
+  <a href="/headset" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk6.png'); ?>" />
+    <div class="product-info">
+      <h2>
+      Headset Hyper X Cloud II 
+      </h2>
+      <div class="price">
+        $299.00
+      </div>
+    </div>
+  </a>
 
+  <!-- produk mouse -->
+  <a href="/mouse" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk3.png'); ?>" />
+    <div class="product-info">
+      <h2>
+      Mouse Logitech MX
+      </h2>
+      <div class="price">
+        $156.00
+      </div>
+    </div>
+  </a>
+
+  <!-- produk webcam -->
+  <a href="/webcam" class="product-card"> <!-- Membungkus dengan tag <a> -->
+    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk1.png'); ?>" />
+    <div class="product-info">
+      <h2>
+      Webcam Logitech C920
+      </h2>
+      <div class="price">
+        $444.00
+      </div>
+    </div>
+  </a>
+</div>
 
 
 
