@@ -303,6 +303,7 @@
 /* Wrapper untuk menampung seluruh konten 2 */
 .wrapper2 {
     display: flex;
+    flex-direction: row-reverse; /* Membalikkan urutan konten (gambar di kanan, teks di kiri) */
     justify-content: space-between;
     align-items: center;
     background-color: #e6e4b3; /* Background berwarna kuning lembut */
@@ -311,7 +312,6 @@
     margin: 50px auto;
 }
 
-/* Bagian gambar */
 /* Bagian gambar dengan rasio 16:9 */
 .image-section2 {
     flex: 1;
@@ -332,27 +332,20 @@
     object-fit: cover; /* Memastikan gambar terisi penuh tanpa merusak proporsi */
 }
 
-
 /* Bagian teks */
 .text-section2 {
     flex: 1;
-    padding-left: 20px;
+    padding-right: 20px; /* Ubah dari padding-left ke padding-right */
 }
 
 .content-box2 {
     background-color: #f6f4d0; /* Background warna kotak teks */
     padding: 20px;
-    height: 210px;
+    height: 205px;
     position: relative;
     font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
 }
-.content-box3 {
-    background-color: #f6f4d0; /* Background warna kotak teks */
-    padding: 20px;
-    height: 230px;
-    position: relative;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
-}
+
 .title2 {
     font-size: 22px;
     color: #3e5942; /* Warna judul sesuai dengan garis */
@@ -382,14 +375,21 @@
     position: relative;
     top: -20px; /* Angka negatif untuk menggeser ke atas */
     opacity: 75%; /* ketebalan warna baca selengkapnya */
-
 }
 
-.read-more:hover2 {
+.read-more2:hover {
     color: #008CBA; /* Warna saat di-hover */
     border-bottom-color: #008CBA;
 }
 
+
+.content-box3 {
+    background-color: #f6f4d0; /* Background warna kotak teks */
+    padding: 20px;
+    height: 225px;
+    position: relative;
+    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
+}
     </style>
 </head>
 <body>
