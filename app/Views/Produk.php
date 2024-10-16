@@ -90,15 +90,15 @@
         .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 45px; /* Mengurangi jarak antar elemen */
     padding: 20px;
-    margin-bottom: 40px; /* Jarak antara kontainer dan footer */
+    margin-bottom: 30px; /* Jarak antara kontainer dan footer dikurangi */
 }
 
 .product-link {
-    text-decoration: none; /* Menghilangkan garis bawah pada link */
-    color: inherit; /* Memastikan warna teks di dalam link tetap mengikuti gaya div */
-    display: block; /* Mengubah link menjadi block level */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .product {
@@ -106,73 +106,78 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px; /* Meningkatkan kelengkungan untuk bentuk lebih modern */
-    padding: 20px;
+    border-radius: 15px; /* Mengurangi kelengkungan */
+    padding: 15px; /* Mengurangi padding */
     text-align: center;
-    height: 100%; /* Agar semua produk memiliki tinggi yang sama */
-    background-color: #021526; /* Warna latar belakang produk */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk kedalaman */
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Animasi untuk efek hover */
-    border: 2px solid transparent; /* Border transparan untuk transisi saat hover */
-    overflow: hidden; /* Menyembunyikan konten yang melampaui batas */
-    position: relative; /* Untuk efek pseudo-element */
+    height: 100%;
+    background-color: #021526;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Mengurangi intensitas bayangan */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
+    border: 2px solid transparent;
+    overflow: hidden;
+    position: relative;
 }
 
 .product:hover {
-    transform: translateY(-10px); /* Efek angkat lebih signifikan saat di-hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat di-hover */
-    background-color: #0A2938; /* Warna lebih terang saat di-hover untuk kontras */
-    border: 2px solid #E2E2B6; /* Border berwarna cerah saat di-hover */
+    transform: scale(1.03); /* Efek zoom lebih kecil */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih kecil */
+    background-color: #0A2938;
+    border: 2px solid #E2E2B6;
 }
 
 .product img {
-    width: 100%; /* Mengatur gambar agar memenuhi lebar produk */
-    height: auto; /* Menjaga proporsi gambar */
-    max-height: 150px; /* Membatasi tinggi maksimum gambar */
-    object-fit: cover; /* Mengisi gambar tanpa memotong, menyesuaikan dengan kontainer */
-    border-radius: 20px; /* Sudut membulat untuk kesan modern */
-    margin-bottom: 15px; /* Jarak antara gambar dan judul */
+    width: 100%;
+    height: auto;
+    max-height: 120px; /* Mengurangi tinggi maksimum gambar */
+    object-fit: cover;
+    border-radius: 15px; /* Kelengkungan gambar dikurangi */
+    margin-bottom: 10px; /* Jarak antara gambar dan judul dikurangi */
 }
 
 .product-title {
-    font-size: 20px; /* Ukuran font judul yang lebih besar */
-    font-weight: 700; /* Font-weight bold untuk judul */
-    margin: 10px 0;
-    color: #E2E2B6; /* Warna teks judul yang kontras */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Efek bayangan untuk judul */
+    font-size: 18px; /* Ukuran font judul lebih kecil */
+    font-weight: 700;
+    margin: 8px 0;
+    color: #E2E2B6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Mengurangi bayangan teks */
+    transition: color 0.3s ease;
+}
+
+.product:hover .product-title {
+    color: #FFD700;
 }
 
 .product-description {
-    font-size: 14px; /* Ukuran font deskripsi */
-    margin-top: auto; /* Agar deskripsi selalu berada di bagian bawah */
-    color: #E2E2B6; /* Mengubah warna teks deskripsi untuk kontras */
-    line-height: 1.6; /* Jarak antar baris yang lebih baik */
-    text-align: center; /* Memastikan teks terpusat */
+    font-size: 12px; /* Ukuran font deskripsi lebih kecil */
+    margin-top: auto;
+    color: #E2E2B6;
+    line-height: 1.5; /* Mengurangi jarak antar baris */
+    text-align: center;
+    transition: color 0.3s ease;
 }
 
-/* Efek untuk hover pada deskripsi */
 .product:hover .product-description {
-    color: #A8C8D6; /* Ubah warna deskripsi saat hover */
-    transition: color 0.3s; /* Animasi transisi warna deskripsi */
+    color: #A8C8D6;
 }
 
-/* Pseudo-element untuk efek tambahan */
-.product::after {
-    content: ''; /* Konten kosong untuk pseudo-element */
-    position: absolute; /* Memposisikan secara absolut */
-    top: 0; /* Jarak dari atas */
-    left: 0; /* Jarak dari kiri */
-    right: 0; /* Jarak dari kanan */
-    bottom: 0; /* Jarak dari bawah */
-    border-radius: 20px; /* Menyesuaikan sudut dengan produk */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); /* Efek gradient */
-    opacity: 0; /* Awalnya tidak terlihat */
-    transition: opacity 0.3s; /* Animasi transisi opacity */
+.product::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #E2E2B6 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 15px; /* Mengurangi kelengkungan pseudo-element */
+    z-index: -1;
 }
 
-.product:hover::after {
-    opacity: 1; /* Tampilkan efek saat hover */
+.product:hover::before {
+    opacity: 1;
 }
+
 
 
 
