@@ -336,11 +336,6 @@
     width: 100%; /* Agar lebar harga mengisi ruang yang ada */
 }
 
-
-
-
-
-
         .footer {
     display: flex;
     align-items: center; /* Untuk memastikan elemen sejajar vertikal */
@@ -368,6 +363,7 @@
             margin: 0 5px; /* Jarak antara logo dan teks copyright */
             color: #E2E2B6; /* Warna separator yang sama dengan warna teks */
         }
+        
     </style>
 </head>
 <body>
@@ -524,6 +520,52 @@
 </div>
 
 
+<!-- Article Header 2 -->
+<div class="article-header2">Beberapa Aktivitas Kami</div>
+
+
+  <!--Aktivitas-->
+<div class="container">
+   <div class="event-card">
+   <img alt="People attending a technology conference" height="300" src="upload/aktivitas4.jpg" width="400"/>
+   <div class="overlay">
+     <div>
+      <h2>
+       Pameran Konferensi Teknologi
+      </h2>
+      <p>
+       Baca Selengkapnya
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="event-card">
+   <img alt="People attending a technology conference" height="300" src="upload/aktivitas1.jpg" width="400"/>
+    <div class="overlay">
+     <div>
+      <h2>
+       Peluncuran Produk Baru
+      </h2>
+      <p>
+      Baca Selengkapnya
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="event-card">
+   <img alt="People attending a technology conference" height="300" src="upload/aktivitas2.jpeg" width="400"/>
+    <div class="overlay">
+     <div>
+      <h2>
+       Pelatihan Teknologi & Workshop
+      </h2>
+      <p>
+      Baca Selengkapnya
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
 
 <!-- Footer -->
 <div class="footer">
