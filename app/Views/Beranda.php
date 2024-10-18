@@ -534,7 +534,7 @@
        Pameran Konferensi Teknologi
       </h2>
       <p>
-       Baca Selengkapnya
+      <a href="/aktivitas4">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
@@ -547,7 +547,7 @@
        Peluncuran Produk Baru
       </h2>
       <p>
-      Baca Selengkapnya
+      <a href="/aktivitas1">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
@@ -560,7 +560,7 @@
        Pelatihan Teknologi & Workshop
       </h2>
       <p>
-      Baca Selengkapnya
+      <a href="/aktivitas2">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
