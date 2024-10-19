@@ -364,6 +364,134 @@
             color: #E2E2B6; /* Warna separator yang sama dengan warna teks */
         }
         
+
+
+        .article-header3 {
+    width: 250px;
+    height: 25px;
+    background-color: #021526;
+    border-radius: 4px;
+    border: 1px solid #E2E2B6;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 0 auto;
+    margin-top: 95px; /* Menambahkan jarak atas */
+    margin-bottom: -110px; /* Menghapus jarak bawah */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* Flexbox properties */
+    display: flex; /* Mengaktifkan flexbox */
+    align-items: center; /* Memusatkan secara vertikal */
+    justify-content: center; /* Memusatkan secara horizontal */
+    position: relative; /* Menambahkan konteks posisi */
+    z-index: 10; /* Menentukan lapisan lebih tinggi */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 10000px;
+    margin: 100px auto 20px;
+    background-color: #0a1a2a;
+    padding: 20px;
+}
+
+
+.card {
+    position: relative;
+    width: 80%; /* Kartu akan mengambil 80% dari lebar kontainer */
+height: 250px; /* Tinggi tetap */
+
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 20px; /* Menambahkan jarak 20px di atas dan bawah, 25px di kiri dan kanan */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transisi halus untuk rotasi dan filter */
+}
+
+.card img {
+    width: 100%; /* Mengatur lebar gambar menjadi 100% dari lebar kartu */
+    height: 100%; /* Mengatur tinggi gambar menjadi 100% dari tinggi kartu */
+    object-fit: cover; /* Memastikan gambar memenuhi area kartu tanpa distorsi */
+    border-radius: 15px;
+    transition: transform 0.3s ease; /* Transisi halus untuk gambar */
+}
+
+
+.card.shift-down {
+    margin-top: 50px; /* Memberi jarak atas untuk kartu yang digeser ke bawah */
+}
+
+.card:hover {
+    transform: rotate(2deg); /* Rotasi sedikit saat dihover */
+    filter: brightness(1.1); /* Mencerahkan kartu saat dihover */
+}
+
+
+.card:hover img {
+    transform: scale(1.05); /* Membesar gambar saat dihover */
+}
+
+.card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px; /* Padding tambahan di overlay */
+    transition: background 0.3s ease; /* Transisi halus untuk latar belakang overlay */
+}
+
+.card:hover .overlay {
+    background: rgba(0, 0, 0, 0.9); /* Mengubah warna overlay menjadi hitam dengan transparansi 0.7 */
+}
+
+
+
+.card .overlay h2 {
+    color: #E2E2B6;
+    font-family: 'Lexend Exa', sans-serif; /* Mengubah font seluruh halaman */
+    font-size: 1.0em; /* Ukuran font judul yang lebih kecil */
+    text-align: center;
+    margin: 0; /* Menghapus margin judul */
+}
+
+.card .overlay p {
+    font-family: 'Lexend Exa', sans-serif; /* Mengubah font seluruh halaman */
+    color: #E2E2B6;
+    font-size: 0.5em; /* Ukuran font deskripsi yang lebih kecil */
+    text-align: center;
+    margin: 0; /* Menghapus margin deskripsi */
+}
+
+.separator {
+    border: none; /* Menghilangkan border default */
+    height: 3px; /* Tinggi pemisah */
+    background-color: #FFFFFF; /* Warna pemisah */
+    margin: 5px auto; /* Jarak atas dan bawah pemisah, auto di kiri dan kanan untuk memusatkan */
+    width: 40%; /* Mengatur panjang pemisah (50% dari lebar kontainer) */
+}
+
+a {
+            text-decoration: none; /* Menghilangkan garis bawah */
+            color: #E2E2B6; /* Mengubah warna tautan */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Menambahkan garis bawah saat hover */
+            color: rgba(255, 165, 0, 0.7); /* Mengubah warna saat hover */
+        }
     </style>
 </head>
 <body>
@@ -520,53 +648,55 @@
 </div>
 
 
-<!-- Article Header 2 -->
-<div class="article-header2">Beberapa Aktivitas Kami</div>
+<!-- Article Header 3 -->
+<div class="article-header3">Beberapa Aktivitas Kami</div>
 
 
   <!--Aktivitas-->
-<div class="container">
-   <div class="event-card">
-   <img alt="People attending a technology conference" height="300" src="upload/aktivitas4.jpg" width="400"/>
-   <div class="overlay">
+  <div class="container">
+  <div class="card shift-down">
+  <img alt="People at a technology conference" height="300" src="upload/aktivitas4.jpg" width="400"/>
+  <div class="overlay">
      <div>
       <h2>
        Pameran Konferensi Teknologi
       </h2>
+      <hr class="separator">
       <p>
-      <a href="/aktivitas4">Baca Selengkapnya</a>
+      <a href="aktivitas4">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
    </div>
-   <div class="event-card">
-   <img alt="People attending a technology conference" height="300" src="upload/aktivitas1.jpg" width="400"/>
-    <div class="overlay">
+   <div class="card">
+   <img alt="People at a technology conference" height="300" src="upload/aktivitas1.jpg" width="400"/>
+   <div class="overlay">
      <div>
       <h2>
        Peluncuran Produk Baru
       </h2>
+      <hr class="separator">
       <p>
-      <a href="/aktivitas1">Baca Selengkapnya</a>
+      <a href="aktivitas1">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
    </div>
-   <div class="event-card">
-   <img alt="People attending a technology conference" height="300" src="upload/aktivitas2.jpeg" width="400"/>
-    <div class="overlay">
+   <div class="card shift-down">
+   <img alt="People at a technology conference" height="300" src="upload/aktivitas2.jpeg" width="400"/>
+   <div class="overlay">
      <div>
       <h2>
        Pelatihan Teknologi & Workshop
       </h2>
+      <hr class="separator">
       <p>
-      <a href="/aktivitas2">Baca Selengkapnya</a>
+      <a href="aktivitas2">Baca Selengkapnya</a>
       </p>
      </div>
     </div>
    </div>
   </div>
-
 <!-- Footer -->
 <div class="footer">
     <img src="upload/logo.png" alt="Logo" class="footer-logo">
