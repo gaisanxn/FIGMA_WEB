@@ -30,10 +30,14 @@
             color: #E2E2B6 !important; /* Warna teks */
             padding: 10px; /* Jarak di dalam link */
             transition: color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+            text-decoration: none; /* Menghilangkan garis bawah secara default */
+
         }
         .navbar-nav .nav-link:hover {
             color: #FFD700 !important; /* Warna kuning saat hover */
             transform: scale(1.1) !important; /* Efek perbesaran */
+            text-decoration: none !important; /* Menghilangkan garis bawah saat hover */
+
         }
 
         .carousel-inner {
@@ -281,6 +285,8 @@
     margin: 10px; /* Margin di sekitar card */
     text-decoration: none; /* Menghilangkan garis bawah pada link */
     color: inherit; /* Mengambil warna teks dari elemen parent */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+
 }
 
 .product-card::before {
@@ -299,6 +305,8 @@
     background-color: #02161D; /* Warna gelap saat hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bayangan lebih dalam */
     transform: translateY(-5px); /* Mengangkat kartu sedikit saat hover */
+    text-decoration: none;
+
 }
 
 .product-card img {
@@ -315,6 +323,8 @@
     display: flex; /* Menjadikan .product-info sebagai flex container */
     flex-direction: column; /* Mengatur arah elemen di dalamnya menjadi kolom */
     align-items: flex-end; /* Mengatur elemen agar rata kanan */
+    text-decoration: none; /* Menghilangkan garis bawah secara default */
+
 }
 
 .product-info h2 {
@@ -323,6 +333,9 @@
     color: #E2E2B6; /* Warna teks sesuai */
     margin: 0;
     text-align: right; /* Mengatur teks agar rata kanan */
+    text-decoration: none; /* Menghilangkan garis bawah secara default */
+
+    
 }
 
 .price {
@@ -334,6 +347,8 @@
     display: inline-block; /* Agar harga hanya sebesar konten */
     text-align: right; /* Mengatur teks agar rata kanan */
     width: 100%; /* Agar lebar harga mengisi ruang yang ada */
+    text-decoration: none; /* Menghilangkan garis bawah secara default */
+
 }
 
         .footer {

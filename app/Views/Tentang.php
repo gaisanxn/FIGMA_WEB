@@ -16,30 +16,79 @@
             font-family: 'Lato', sans-serif;
             background-color: #E2E2B6; /* Background warna luar */
         }
-        .navbar-custom {
-            background-color: #021526;
-            height: 60px;
-        }
-        .navbar-nav .nav-item {
-            margin: 0 10px;
-        }
-        .navbar-nav .nav-link {
-            font-family: 'Lato', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            color: #E2E2B6 !important;
-            padding: 10px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #FFD700 !important; /* Warna kuning saat hover */
-            transform: scale(1.1) !important; /* Efek perbesaran */
-        }
+/* Navbar Customization */
+.navbar-custom {
+    background-color: #021526;
+    padding: 0; /* Menghilangkan padding untuk mengurangi tinggi background */
+    border-bottom: 1px solid transparent; /* Tambahkan batas bawah jika diperlukan */
+}
 
-        /* Carousel Styles */
-        .carousel-item img {
+/* Navbar Brand (Logo) */
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    width: 110px; /* Ukuran default gambar lebih kecil */
+    margin-left: 30px; /* Geser logo ke kanan dengan menambah margin kiri */
+
+}
+
+/* Navbar Links */
+.navbar-nav .nav-item {
+    margin: 10px; /* Menghilangkan margin antar item navbar */
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; /* Ukuran font dapat disesuaikan lebih kecil */
+    font-weight: 700;
+    color: #E2E2B6 !important;
+    padding: 5px 8px; /* Mengurangi padding lebih lanjut untuk mengurangi tinggi */
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700 !important; /* Warna kuning saat hover */
+    transform: scale(1.1) !important; /* Efek perbesaran */
+}
+
+/* Responsivitas dengan Media Queries */
+@media (max-width: 992px) { /* Untuk layar medium (tablet) */
+    .navbar-brand img {
+        width: 100px; /* Perkecil ukuran gambar pada layar tablet */
+    }
+    .navbar-nav .nav-link {
+        font-size: 9px; /* Perkecil ukuran font */
+    }
+}
+
+@media (max-width: 768px) { /* Untuk layar kecil (smartphone) */
+    .navbar-brand img {
+        width: 80px; /* Ukuran gambar lebih kecil */
+    }
+    .navbar-nav .nav-link {
+        font-size: 8px; /* Sesuaikan ukuran font */
+        padding: 4px;   /* Sesuaikan padding lebih kecil */
+    }
+}
+
+@media (max-width: 576px) { /* Untuk layar extra kecil (smartphone kecil) */
+    .navbar-brand img {
+        width: 70px; /* Ukuran gambar lebih kecil untuk smartphone */
+    }
+    .navbar-nav .nav-link {
+        font-size: 7px;  /* Lebih kecil untuk layar kecil */
+        padding: 2px;    /* Sesuaikan padding lebih kecil */
+    }
+}
+
+
+
+       /* Carousel Styles */
+       .carousel-item img {
             width: 100%; /* Tetap mempertahankan lebar penuh gambar */
-            height: 31vh; /* Mengatur tinggi gambar slider */
+            height: 200px; /* Mengatur tinggi gambar slider */
             object-fit: cover; /* Membuat gambar tetap proporsional dan terpusat */
         }
 
@@ -83,96 +132,158 @@
 
         .breadcrumb span {
             color: #E2E2B6;
-        }
+        }  
 
-        .content {
+/* Layout utama */
+.content {
+    display: flex;
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    align-items: center; /* Pusatkan konten secara vertikal */
     padding: 10px 50px;
     width: 100%; /* Mengisi 100% lebar halaman */
     margin: 50px auto;
     overflow: hidden; /* Menghindari float yang berantakan */
 }
 
-
-        .content-flex {
+/* Flex untuk gambar dan teks agar sejajar horizontal */
+.content-flex {
     display: flex;
-    align-items: flex-start; /* Atur gambar dan teks agar mulai dari bagian atas */
+    align-items: center; /* Pusatkan konten vertikal di dalam flex */
+    justify-content: center; /* Pusatkan konten horizontal */
+    flex-wrap: wrap; /* Agar tetap responsif */
 }
 
 .content img {
     margin-right: 35px; /* Jarak antara gambar dan teks */
     border-radius: 25px;
-    width: 600px; /* Atur lebar gambar sesuai kebutuhan */
-    height: 640px; /* Atur tinggi gambar sesuai kebutuhan */
-    object-fit: cover; /* Mengisi area gambar sesuai ukuran yang diatur tanpa distorsi */
+    width: 600px; /* Atur lebar gambar */
+    height: 640px; /* Atur tinggi gambar */
+    object-fit: cover; /* Isi gambar sesuai proporsi */
 }
 
-
+/* Mengatur tulisan di samping gambar */
 .content h2 {
     color: #6EACDA;
     font-size: 12px; /* Ukuran font judul */
-    margin-top: 10px; /* Menghapus margin atas */
+    margin-top: 10px; 
     font-family: 'Inter', sans-serif;
 }
 
 .content p {
-    flex: 1; /* Membuat paragraf mengambil sisa ruang yang tersedia */
+    flex: 1;
     text-align: left;
     line-height: 1.6;
     font-family: 'League Spartan', sans-serif;
-    font-size: 20px; /* Ukuran font paragraf */
-    font-weight: 600; /* Menambahkan efek Bold (700 = Bold) atau 500 untuk Medium */
-    max-width: 600px; /* Batas maksimum lebar paragraf */
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 600px; /* Batasi lebar maksimal paragraf */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .content-flex {
+        flex-direction: column; /* Ubah menjadi kolom untuk layar kecil */
+        text-align: center;
+    }
+
+    .content img {
+        margin: 0 auto 20px;
+        width: 100%; /* Buat gambar memenuhi lebar container */
+        height: auto; /* Otomatis sesuaikan tinggi */
+    }
+
+    .content h2, .content p {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content img {
+        width: 100%; /* Gambar 100% lebar untuk tablet */
+        height: auto;
+    }
+
+    .content h2 {
+        font-size: 16px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content img {
+        width: 80%; /* Kecilkan gambar lebih banyak untuk layar sangat kecil */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .content h2, .content p {
+        font-size: 14px;
+        text-align: center; /* Pusatkan teks untuk layar kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    .content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content h2 {
+        font-size: 14px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+}
+
+/* Tambahan untuk perangkat dengan resolusi lebih kecil seperti Nest Hub */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .content img {
+        width: 70%; /* Kecilkan gambar untuk menyesuaikan layar */
+        height: auto;
+        margin-bottom: 15px; /* Jarak antara gambar dan teks */
+    }
+
+    .content h2, .content p {
+        font-size: 14px; /* Ukuran font lebih kecil */
+        text-align: center;
+    }
+}
+
+/* Footer responsif */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #021526;
+    color: white;
+    font-size: 8px;
+}
+
+.footer-logo {
+    max-width: 60px;
+    margin-right: 5px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 8px;
+    font-family: 'League Spartan', sans-serif;
+    color: #E2E2B6;
+}
+
+.footer-separator {
+    margin: 0 5px;
+    color: #E2E2B6;
 }
 
 
-       
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .content img {
-                width: 100%;
-                float: none;
-                margin: 0 0 20px 0;
-            }
-
-            .page-title {
-                font-size: 32px;
-                top: 100px;
-            }
-
-            .breadcrumb {
-                font-size: 14px;
-                top: 180px;
-            }
-
-            .content h2 {
-                font-size: 36px; /* Ukuran font diperbesar untuk mobile */
-            }
-
-            .content p {
-                font-size: 18px; /* Ukuran font paragraf diperbesar untuk mobile */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .page-title {
-                font-size: 24px;
-                top: 80px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-                top: 150px;
-            }
-
-            .content h2 {
-                font-size: 24px;
-            }
-        }
-        .content > div {
-    max-width: 4000px; /* Mengatur batas maksimum lebar teks */
-    flex: 1; /* Membuat paragraf mengambil sisa ruang yang tersedia */
-}
 
 
         .footer {
@@ -206,7 +317,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
             <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
