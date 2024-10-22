@@ -85,22 +85,127 @@
 
 
 
-       /* Carousel Styles */
-       .carousel-item img {
-            width: 100%; /* Tetap mempertahankan lebar penuh gambar */
-            height: 200px; /* Mengatur tinggi gambar slider */
-            object-fit: cover; /* Membuat gambar tetap proporsional dan terpusat */
-        }
+/* Carousel Styles */
+/* CSS untuk carousel agar lebih responsif dan lebih kecil */
+.carousel-item img {
+    width: 100%; /* Memastikan lebar gambar mengikuti elemen carousel */
+    height: 25vh; /* Mengatur tinggi gambar menjadi 25% dari viewport */
+    object-fit: cover; /* Gambar tetap proporsional dan terpusat */
+}
 
-        .carousel-overlay {
-            position: absolute; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Hitam dengan opasitas 0.5 */
-            z-index: 1; /* Pastikan overlay berada di bawah teks */
-        }
+/* Overlay untuk menampilkan efek hitam transparan di atas gambar */
+.carousel-overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan opasitas 0.5 */
+    z-index: 1; /* Pastikan overlay berada di bawah teks */
+}
+
+/* Media Queries untuk ukuran layar besar (desktop) */
+@media (min-width: 1440px) {
+    .carousel-item img {
+        height: 40vh; /* Lebih besar untuk layar sangat besar */
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.5rem; /* Ukuran font lebih besar */
+    }
+
+    .carousel-caption p {
+        font-size: 1.5rem; /* Deskripsi lebih besar */
+    }
+}
+
+/* Media Queries untuk layar laptop besar */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .carousel-item img {
+        height: 30vh; /* Sedikit lebih besar di layar laptop besar */
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem; /* Sesuaikan ukuran font */
+    }
+
+    .carousel-caption p {
+        font-size: 1.2rem; /* Deskripsi lebih besar */
+    }
+}
+
+/* Media Queries untuk perangkat tablet besar */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .carousel-item img {
+        height: 25vh; /* Tinggi medium untuk tablet besar */
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.8rem; /* Ukuran font medium */
+    }
+
+    .carousel-caption p {
+        font-size: 1.1rem; /* Sesuaikan deskripsi */
+    }
+}
+
+/* Media Queries untuk tablet */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 20vh; /* Lebih kecil lagi untuk tablet */
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.3rem; /* Sesuaikan ukuran teks di layar tablet */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; /* Sesuaikan teks deskripsi */
+    }
+
+    .carousel-caption {
+        padding: 10px; /* Tambah padding untuk memastikan elemen tidak terpotong */
+    }
+}
+
+/* Media Queries untuk perangkat sangat kecil (mobile) */
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 15vh; /* Lebih kecil untuk perangkat mobile */
+    }
+
+    .carousel-caption h1 {
+        font-size: 1rem; /* Perkecil lagi untuk layar mobile */
+    }
+
+    .carousel-caption p {
+        font-size: 0.8rem; /* Sesuaikan teks deskripsi di layar kecil */
+    }
+
+    .carousel-caption {
+        padding: 5px; /* Tambahkan sedikit padding di layar kecil */
+    }
+}
+
+/* Tambahan untuk layar sangat kecil (ponsel di bawah 400px) */
+@media (max-width: 400px) {
+    .carousel-item img {
+        height: 12vh; /* Lebih kecil untuk perangkat ponsel sangat kecil */
+    }
+
+    .carousel-caption h1 {
+        font-size: 0.9rem; /* Font lebih kecil */
+    }
+
+    .carousel-caption p {
+        font-size: 0.7rem; /* Deskripsi lebih kecil */
+    }
+
+    .carousel-caption {
+        padding: 3px; /* Padding yang lebih kecil lagi */
+    }
+}
+
 
         .page-title {
             position: absolute;
