@@ -85,160 +85,157 @@
 
 
 
-/* Carousel Styles */
-/* CSS untuk carousel agar lebih responsif dan lebih kecil */
-.carousel-item img {
-    width: 100%; /* Memastikan lebar gambar mengikuti elemen carousel */
-    height: 25vh; /* Mengatur tinggi gambar menjadi 25% dari viewport */
-    object-fit: cover; /* Gambar tetap proporsional dan terpusat */
+
+/* Reset basic styles */
+.carousel-inner img {
+    width: 100%; /* Mengatur gambar agar lebar sesuai dengan container */
+    height: auto; /* Mengatur tinggi gambar secara otomatis */
+    object-fit: cover; /* Memastikan gambar menyesuaikan tanpa terdistorsi */
+    max-height: 30vh; /* Membatasi tinggi gambar agar lebih pendek */
 }
 
-/* Overlay untuk menampilkan efek hitam transparan di atas gambar */
 .carousel-overlay {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan opasitas 0.5 */
-    z-index: 1; /* Pastikan overlay berada di bawah teks */
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay transparan */
+    z-index: 1;
 }
 
-/* Media Queries untuk ukuran layar besar (desktop) */
+/* Wrapper untuk page title dan breadcrumb */
+.carousel-caption-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Gunakan flexbox */
+    align-items: center; /* Vertikal center */
+    justify-content: center; /* Horizontal center */
+    z-index: 2;
+}
+
+.text-center {
+    text-align: center;
+    color: #E2E2B6;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 36px; /* Ukuran lebih kecil */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 14px; /* Ukuran lebih kecil */
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 400;
+    margin-top: 10px; /* Memberi jarak ke bawah */
+    text-align: center; /* Membuat breadcrumb berada di tengah */
+    display: block; /* Pastikan block untuk text-align bekerja */
+
+}
+
+.breadcrumb a {
+    color: #FFD000;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #E2E2B6;
+}
+
+/* Media Queries untuk responsivitas */
+/* Desktop (besar) */
 @media (min-width: 1440px) {
-    .carousel-item img {
-        height: 40vh; /* Lebih besar untuk layar sangat besar */
+    .page-title {
+        font-size: 36px; /* Lebih kecil dari sebelumnya */
     }
 
-    .carousel-caption h1 {
-        font-size: 2.5rem; /* Ukuran font lebih besar */
+    .breadcrumb {
+        font-size: 14px; /* Lebih kecil dari sebelumnya */
     }
 
-    .carousel-caption p {
-        font-size: 1.5rem; /* Deskripsi lebih besar */
+    .carousel-inner img {
+        max-height: 35vh; /* Membatasi tinggi gambar di layar besar */
     }
 }
 
-/* Media Queries untuk layar laptop besar */
+/* Laptop */
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .carousel-item img {
-        height: 30vh; /* Sedikit lebih besar di layar laptop besar */
+    .page-title {
+        font-size: 32px; /* Ukuran lebih kecil untuk laptop */
+        margin-top: 15px; /* Jarak lebih besar untuk desktop */
+
     }
 
-    .carousel-caption h1 {
-        font-size: 2rem; /* Sesuaikan ukuran font */
+    .breadcrumb {
+        font-size: 12px; /* Ukuran lebih kecil */
     }
 
-    .carousel-caption p {
-        font-size: 1.2rem; /* Deskripsi lebih besar */
+    .carousel-inner img {
+        max-height: 30vh; /* Membatasi tinggi gambar di laptop */
     }
 }
 
-/* Media Queries untuk perangkat tablet besar */
+/* Tablet */
 @media (min-width: 769px) and (max-width: 1023px) {
-    .carousel-item img {
-        height: 25vh; /* Tinggi medium untuk tablet besar */
+    .page-title {
+        font-size: 28px; /* Ukuran lebih kecil untuk tablet */
     }
 
-    .carousel-caption h1 {
-        font-size: 1.8rem; /* Ukuran font medium */
+    .breadcrumb {
+        font-size: 12px; /* Lebih kecil */
+        margin-top: 8px; /* Jarak medium untuk tablet */
+
     }
 
-    .carousel-caption p {
-        font-size: 1.1rem; /* Sesuaikan deskripsi */
+    .carousel-inner img {
+        max-height: 25vh; /* Membatasi tinggi gambar di tablet */
     }
 }
 
-/* Media Queries untuk tablet */
+/* Mobile */
 @media (max-width: 768px) {
-    .carousel-item img {
-        height: 20vh; /* Lebih kecil lagi untuk tablet */
+    .page-title {
+        font-size: 24px; /* Ukuran lebih kecil untuk mobile */
+        margin-top: 5px; /* Jarak lebih kecil untuk perangkat mobile */
+
     }
 
-    .carousel-caption h1 {
-        font-size: 1.3rem; /* Sesuaikan ukuran teks di layar tablet */
+    .breadcrumb {
+        font-size: 10px; /* Lebih kecil */
     }
 
-    .carousel-caption p {
-        font-size: 1rem; /* Sesuaikan teks deskripsi */
+    .carousel-inner img {
+        max-height: 20vh; /* Membatasi tinggi gambar di mobile */
     }
 
-    .carousel-caption {
-        padding: 10px; /* Tambah padding untuk memastikan elemen tidak terpotong */
+    .carousel-caption-wrapper {
+        top: 0;
     }
 }
 
-/* Media Queries untuk perangkat sangat kecil (mobile) */
+/* Small Mobile */
 @media (max-width: 480px) {
-    .carousel-item img {
-        height: 15vh; /* Lebih kecil untuk perangkat mobile */
+    .page-title {
+        font-size: 20px; /* Ukuran lebih kecil untuk layar kecil */
     }
 
-    .carousel-caption h1 {
-        font-size: 1rem; /* Perkecil lagi untuk layar mobile */
+    .breadcrumb {
+        font-size: 8px; /* Lebih kecil */
     }
 
-    .carousel-caption p {
-        font-size: 0.8rem; /* Sesuaikan teks deskripsi di layar kecil */
-    }
-
-    .carousel-caption {
-        padding: 5px; /* Tambahkan sedikit padding di layar kecil */
+    .carousel-inner img {
+        max-height: 18vh; /* Membatasi tinggi gambar di layar kecil */
     }
 }
-
-/* Tambahan untuk layar sangat kecil (ponsel di bawah 400px) */
-@media (max-width: 400px) {
-    .carousel-item img {
-        height: 12vh; /* Lebih kecil untuk perangkat ponsel sangat kecil */
-    }
-
-    .carousel-caption h1 {
-        font-size: 0.9rem; /* Font lebih kecil */
-    }
-
-    .carousel-caption p {
-        font-size: 0.7rem; /* Deskripsi lebih kecil */
-    }
-
-    .carousel-caption {
-        padding: 3px; /* Padding yang lebih kecil lagi */
-    }
-}
-
-
-        .page-title {
-            position: absolute;
-            left: 50%;
-            top: 150px;
-            transform: translateX(-50%);
-            color: #E2E2B6;
-            font-size: 48px;
-            font-family: 'League Spartan', sans-serif;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .breadcrumb {
-            position: absolute;
-            left: 50%;
-            top: 220px;
-            transform: translateX(-50%);
-            font-size: 16px;
-            font-family: 'League Spartan', sans-serif;
-            font-weight: 400;
-            z-index: 2;
-        }
-
-        .breadcrumb a {
-            color: #FFD000;
-            text-decoration: none;
-        }
-
-        .breadcrumb span {
-            color: #E2E2B6;
-        }  
-
+        
 /* Layout utama */
 .content {
     display: flex;
@@ -443,22 +440,26 @@
 </nav>
 
 
-    <!-- Carousel -->
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/upload/TENTANG1.jpg" alt="Slide 1">
-                <div class="carousel-overlay"></div>
-            </div>
+<!-- Carousel, Page Title, and Breadcrumb Wrapper -->
+<div id="carouselExample" class="carousel slide position-relative">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/upload/TENTANG1.jpg" alt="Slide 1" class="d-block w-100" style="height:auto;">
+            <div class="carousel-overlay"></div>
         </div>
     </div>
 
-    <!-- Page Title -->
-    <div class="page-title">Tentang Kami</div>
+    <!-- Page Title and Breadcrumb -->
+    <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <div class="page-title">Tentang Kami</div>
+            <div class="breadcrumb">
+                <a href="/">Beranda</a> <span> / Tentang</span>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-    <a href="/">Beranda</a> <span> / Tentang</span>    </div>
 
     <div class="content">
         <div class="content-flex">
