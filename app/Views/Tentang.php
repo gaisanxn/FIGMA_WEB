@@ -83,6 +83,58 @@
     }
 }
 
+/* Navbar Toggle Customization */
+.navbar-toggler {
+    z-index: 1050; /* Tetap di depan elemen lain */
+    position: relative;
+    transition: all 0.3s ease; /* Transisi smooth */
+}
+
+.navbar-collapse {
+    background-color: transparent; /* Tidak ada background pada collapse */
+    position: relative;
+    z-index: 1049;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Menu background saat toggle aktif */
+.navbar-collapse.show {
+    background-color: #021526; /* Background hanya pada menu */
+    width: 30%; /* Kurangi lebar saat efek, lebih kecil dari sebelumnya */
+    border-radius: 0 0px 15px 0; /* Tambahkan sedikit efek rounded di ujung */
+}
+
+/* Navbar item pada layar kecil */
+.navbar-nav .nav-item {
+    width: 100%; /* Menu menyesuaikan ukuran */
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Responsivitas */
+@media (max-width: 992px) { /* Tablet */
+    .navbar-collapse {
+        width: 45%; /* Lebar lebih kecil pada layar medium */
+        position: absolute;
+        top: 56px; /* Posisi navbar collapse di bawah navbar */
+        left: 0;
+        padding: 1rem;
+        border-radius: 0 10px 10px 0; /* Efek rounded pada ujung kanan */
+    }
+}
+
+@media (max-width: 768px) { /* Smartphone */
+    .navbar-collapse {
+        width: 40%; /* Kurangi lagi lebar pada layar kecil */
+    }
+}
+
+@media (max-width: 576px) { /* Smartphone kecil */
+    .navbar-collapse {
+        width: 35%; /* Lebar lebih kecil lagi pada layar ekstra kecil */
+    }
+}
 
 
 
