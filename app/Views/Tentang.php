@@ -472,7 +472,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <a class="navbar-brand">
-            <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+            <img src="/upload/<?=$tentang->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -496,7 +496,7 @@
 <div id="carouselExample" class="carousel slide position-relative">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/upload/TENTANG1.jpg" alt="Slide 1" class="d-block w-100" style="height:auto;">
+            <img src="/upload/<?=$tentang->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
             <div class="carousel-overlay"></div>
         </div>
     </div>
@@ -515,14 +515,11 @@
 
     <div class="content">
         <div class="content-flex">
-            <img src="/upload/beranda.jpg" alt="TechSmart Image" class="article-image">
+            <img src="/upload/<?=$tentang->img_tentang ?>" alt="TechSmart Image" class="article-image">
             <div>
                 <h2>TENTANG KAMI</h2>
                 <p>
-                    TechSmart Electronics adalah sebuah perusahaan yang bergerak di bidang penjualan alat elektronik dan teknologi, didirikan dengan misi untuk menyediakan produk-produk elektronik berkualitas tinggi dari merek-merek ternama. Kami melayani kebutuhan elektronik rumah tangga, pribadi, serta kebutuhan bisnis dengan menyediakan berbagai macam produk dari smartphone hingga perangkat rumah tangga pintar. Sejak didirikan, kami telah berkomitmen untuk memberikan layanan terbaik kepada pelanggan kami, dengan mengedepankan inovasi, kualitas, dan keunggulan dalam segala hal yang kami lakukan.
-                </p>
-                <p>
-                TechSmart Electronics didirikan pada tahun 2012 oleh sekelompok profesional yang memiliki pengalaman bertahun-tahun di industri teknologi dan elektronik. Perusahaan ini lahir dari keinginan untuk menciptakan tempat di mana pelanggan dapat menemukan semua kebutuhan elektronik mereka dengan mudah dan dengan jaminan kualitas terbaik. Dalam satu dekade, TechSmart Electronics telah berkembang pesat dan memiliki beberapa cabang di berbagai kota besar di Indonesia, serta platform e-commerce yang memudahkan pelanggan dari seluruh negeri untuk berbelanja.
+                <?=$tentang->deskripsi_tentang ?>
                 </p>
 
             </div>
@@ -530,7 +527,7 @@
     </div>
 
     <div class="footer">
-    <img src="upload/logo.png" alt="Logo" class="footer-logo">
+    <img src="upload/<?=$tentang->img_footer ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>

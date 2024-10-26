@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\TentangModel;
 
 class Home extends BaseController
 {
@@ -8,10 +9,22 @@ class Home extends BaseController
     {
         return view('Beranda');
     }
+
+
     public function tentang(): string
     {
-        return view('Tentang');
+       
+        $tentangModel = new TentangModel();
+        
+        // Ambil semua data, data akan dikembalikan sebagai object
+        
+        $data['tentang'] = $tentangModel->first();
+
+        // Kirim data ke view
+        return view('Tentang', $data);
     }
+
+    
     public function produk(): string
     {
         return view('Produk');
