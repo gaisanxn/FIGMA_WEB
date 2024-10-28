@@ -285,19 +285,13 @@
 
         
         
-        .container {
+/* Layout utama untuk desktop (ukuran layar lebar) */
+.container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px; /* Mengurangi jarak antar elemen */
+    grid-template-columns: repeat(3, 1fr); /* Tiga kolom di desktop */
+    gap: 30px;
     padding: 20px;
-    margin-bottom: 20px; /* Jarak antara kontainer dan footer dikurangi */
-    margin-top: 30px;
-}
-
-.product-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    margin: 20px auto;
 }
 
 .product {
@@ -305,88 +299,107 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 15px; /* Mengurangi kelengkungan */
-    padding: 15px; /* Mengurangi padding */
+    border-radius: 15px;
+    padding: 15px;
     text-align: center;
-    height: 100%;
     background-color: #021526;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Mengurangi intensitas bayangan */
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
-    border: 2px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     overflow: hidden;
     position: relative;
+    color: #E2E2B6; /* Warna teks untuk semua konten di dalam .product */
 }
 
-.product:hover {
-    transform: scale(1.03); /* Efek zoom lebih kecil */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih kecil */
-    background-color: #0A2938;
-    border: 2px solid #E2E2B6;
-}
-
+/* Mengatur gambar agar responsif */
 .product img {
     width: 100%;
     height: auto;
-    max-height: 120px; /* Mengurangi tinggi maksimum gambar */
+    max-height: 180px;
     object-fit: cover;
-    border-radius: 15px; /* Kelengkungan gambar dikurangi */
-    margin-bottom: 10px; /* Jarak antara gambar dan judul dikurangi */
+    border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .product-title {
-    font-size: 18px; /* Ukuran font judul lebih kecil */
+    font-size: 18px;
     font-weight: 700;
-    margin: 8px 0;
-    color: #E2E2B6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Mengurangi bayangan teks */
-    transition: color 0.3s ease;
-}
-
-.product:hover .product-title {
-    color: #FFD700;
+    color: #E2E2B6; /* Warna teks judul */
 }
 
 .product-description {
-    font-size: 12px; /* Ukuran font deskripsi lebih kecil */
-    margin-top: auto;
-    color: #E2E2B6;
-    line-height: 1.5; /* Mengurangi jarak antar baris */
-    text-align: center;
-    transition: color 0.3s ease;
+    font-size: 12px;
+    color: #E2E2B6; /* Warna teks deskripsi */
+    line-height: 1.5;
 }
 
-.product:hover .product-description {
-    color: #A8C8D6;
+/* Efek hover untuk produk */
+.product:hover {
+    transform: translateY(-10px) rotate(1deg); /* Efek mengangkat dan memutar sedikit */
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5); /* Bayangan lebih kuat */
+    background-color: #1C2D3F; /* Warna latar belakang saat hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transisi halus */
 }
 
-.product::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #E2E2B6 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    border-radius: 15px; /* Mengurangi kelengkungan pseudo-element */
-    z-index: -1;
+/* Pengaturan untuk tablet dan layar sedang (900px ke bawah) */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk layar tablet */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .product {
+        padding: 12px;
+    }
+
+    .product img {
+        max-height: 150px;
+    }
+
+    .product-title {
+        font-size: 16px;
+    }
+
+    .product-description {
+        font-size: 11px;
+    }
 }
 
-.product:hover::before {
-    opacity: 1;
+/* Pengaturan untuk ponsel dan layar kecil (600px ke bawah) */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* Satu kolom untuk layar ponsel */
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .product {
+        padding: 8px;
+        margin: 0 auto;
+        max-width: 90%;
+        border-radius: 10px;
+    }
+
+    .product img {
+        max-height: 100px;
+    }
+
+    .product-title {
+        font-size: 14px;
+    }
+
+    .product-description {
+        font-size: 10px;
+        line-height: 1.3;
+    }
 }
+
+
+
 
 
         
 
-        .techsmart-header-container {
-            display: flex;
-            justify-content: center; /* Horizontal center */
-            align-items: center; /* Vertical center */
-            height: 100px; /* Sesuaikan tinggi kontainer sesuai kebutuhan */
-            margin: 0 auto;
-        }
 
 
         /* Footer responsif */
@@ -487,7 +500,7 @@
         <div class="text-center">
             <div class="page-title">Produk Kami</div>
             <div class="breadcrumb">
-                <a href="/">Beranda</a> <span> / Tentang</span>
+                <a href="/">Beranda</a> <span> / Produk</span>
             </div>
         </div>
     </div>
