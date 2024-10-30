@@ -467,7 +467,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <a class="navbar-brand">
-            <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+            <img src="/upload/<?=$produk->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -490,7 +490,7 @@
 <div id="carouselExample" class="carousel slide position-relative">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/upload/TENTANG1.jpg" alt="Slide 1" class="d-block w-100" style="height:auto;">
+            <img src="/upload/<?=$produk->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
             <div class="carousel-overlay"></div>
         </div>
     </div>
@@ -513,75 +513,79 @@
     
 <div class="product">
    <a href="/webcam">
-       <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk1.png" width="200"/>
+       <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk1 ?>" width="200"/>
    </a>
    <div class="product-title">
-       Webcam Logitech C920
+       <?=$produk->title_img1?>
    </div>
    <div class="product-description">
-       Logitech C920 HD Pro adalah webcam berperforma tinggi yang menawar ...
+   <?=$produk->deskripsi_img1?>
    </div>
 </div>
 
    <div class="product">
    <a href="/drone">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk2.png" width="200"/>
+   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk2 ?>" width="200"/>
     </a>
     <div class="product-title">
-     Drone DJI Mini 3 Pro
+    <?=$produk->title_img2?>
     </div>
     <div class="product-description">
-     DJI Mini 3 Pro adalah drone kompak dan ringan yang menawarkan kualitas ...
+    <?=$produk->deskripsi_img2?>
     </div>
    </div>
 
    <div class="product">
    <a href="/mouse">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk3.png" width="200"/>
+   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk3 ?>" width="200"/>
     </a>
     <div class="product-title">
-    Mouse Logitech MX Master 3
+    <?=$produk->title_img3?>
     </div>
     <div class="product-description">
-    Logitech MX Master 3 adalah mouse nirkabel premium yang dirancang ...    </div>
+    <?=$produk->deskripsi_img3?>
+    </div>
    </div>
 
    <div class="product">
    <a href="/smartphone">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk4.png" width="200"/>
+   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk4 ?>" width="200"/>
    </a>
     <div class="product-title">
-    Smartphone Apple iPhone 14
+    <?=$produk->title_img4?>
     </div>
     <div class="product-description">
-    Apple iPhone 14 Pro adalah smartphone canggih yang dirancang dengan tekn...    </div>
+    <?=$produk->deskripsi_img4?>
+    </div>
    </div>
 
    <div class="product">
    <a href="/laptop">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk5.png" width="200"/>
+   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk5 ?>" width="200"/>
    </a>
     <div class="product-title">
-    Laptop Apple MacBook Air  
+    <?=$produk->title_img5?>
     </div>
     <div class="product-description">
-    Apple MacBook Air M2 adalah laptop ultraportabel yang ditenagai oleh ...    </div>
+    <?=$produk->deskripsi_img5?>
+    </div>
    </div>
 
    <div class="product">
    <a href="/headset">
-   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/produk6.png" width="200"/>
+   <img alt="Laptop Apple MacBook Air" height="150" src="/upload/<?=$produk->img_produk6 ?>" width="200"/>
    </a>
     <div class="product-title">
-    Headset HyperX Cloud II
+    <?=$produk->title_img6?>
     </div>
     <div class="product-description">
-    HyperX Cloud II adalah headset gaming profesional yang dirancang untuk ...    </div>
+    <?=$produk->deskripsi_img6?>
+    </div>
    </div>
   </div>
 
   <div class="footer">
-    <img src="upload/logo.png" alt="Logo" class="footer-logo">
+    <img src="upload/<?=$produk->img_footer ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>

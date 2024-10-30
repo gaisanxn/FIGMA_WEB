@@ -17,6 +17,6 @@ class TentangController extends BaseController
         $data['tentang'] = $tentangModel->first();
         
         // Kirim data ke view
-        return view('Beranda', $data);
+        return view('Tentang', $data);
     }
 }

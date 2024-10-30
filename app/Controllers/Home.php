@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\TentangModel;
+use App\Models\ProdukModel;
+
 
 class Home extends BaseController
 {
@@ -27,8 +29,18 @@ class Home extends BaseController
     
     public function produk(): string
     {
-        return view('Produk');
+       
+        $produkModel = new ProdukModel();
+        
+        // Ambil semua data, data akan dikembalikan sebagai object
+        
+        $data['produk'] = $produkModel->first();
+
+        // Kirim data ke view
+        return view('Produk', $data);
     }
+
+
     public function drone(): string
     {
         return view('Drone');
