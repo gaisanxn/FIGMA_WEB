@@ -133,76 +133,6 @@
     }
 }
 
-        
-
-
-       
-
-.article-image {
-    width: 100%; /* Gambar mengisi lebar container sepenuhnya */
-    height: 500px; /* Mengatur tinggi gambar secara eksplisit */
-    object-fit: cover; /* Agar gambar tetap proporsional tanpa distorsi */
-    display: block;
-    margin: 0;
-    border-top-right-radius: 70px; /* Radius untuk gambar kanan atas */
-}
-
-.article-title {
-    font-family: 'Lexend exa', sans-serif;
-    font-size: 14px;
-    color: #021526;
-    font-weight: 600;
-    max-width: 800px; /* Lebar maksimal */
-    background-color: #E2E2B6;
-    border-radius: 4px;
-    border: 1px solid #021526;
-    text-align: center;
-    padding: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    /* Flexbox untuk sentralisasi horizontal dan vertikal */
-    display: flex;
-    justify-content: center; /* Sentralisasi horizontal */
-    align-items: center;     /* Sentralisasi vertikal */
-    
-    /* Penyesuaian posisi */
-    position: relative;
-    top: -15px;
-    z-index: 1;
-    
-    /* Agar background menyesuaikan panjang teks */
-    width: fit-content; /* Lebar sesuai teks */
-    margin: 0 auto; /* Menempatkan di tengah secara horizontal */
-
-
-    /* Mengatur tinggi background */
-    height: 25px; /* Atur tinggi sesuai kebutuhan */
-}
-
-
-
-
-.article-text {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 18px;
-    color: #E2E2B6;
-    line-height: 1.8; /* Jarak antar baris */
-    letter-spacing: 0.5px; /* Spasi antar huruf */
-    word-spacing: 1px; /* Spasi antar kata */
-    margin: 8px;
-    padding: 0 10px; /* Memberi jarak di kiri dan kanan */
-    margin-bottom: 20px;
-
-    /* Atur teks rata tengah */
-    text-align: center;
-
-    /* Mengatur posisi lebih ke atas */
-    margin-top: -10px; /* Sesuaikan nilai sesuai kebutuhan */
-    padding-bottom: 10px;
-}
-
 
 
 
@@ -360,75 +290,73 @@
 
 
 
-       /* Wrapper untuk menampung seluruh konten 1 */
-.wrapper {
+/* Wrapper Responsif */
+.wrapper, .wrapper2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e6e4b3; /* Background berwarna kuning lembut */
-    border-radius: 8px; /* Sudut melengkung untuk tampilan modern */
+    background-color: #e6e4b3;
+    border-radius: 8px;
     max-width: 1000px;
     margin: 50px auto;
+    padding: 15px;
+    flex-wrap: wrap;
 }
 
-/* Bagian gambar */
-/* Bagian gambar dengan rasio 16:9 */
-.image-section {
+/* Bagian Gambar Responsif */
+.image-section, .image-section2 {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-    padding-bottom: 25.56%; /* 16:9 aspect ratio (9 / 16 = 0.5625 or 56.25%) */
+    padding-bottom: 75%; /* Default untuk layar besar */
+    max-width: 500px;
 }
 
-.image {
+.image, .image2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Memastikan gambar terisi penuh tanpa merusak proporsi */
-    filter: brightness(0.8); /* Menerapkan efek gelap dengan mengurangi kecerahan */
-
+    object-fit: cover;
+    filter: brightness(0.8);
 }
 
-
-/* Bagian teks */
-.text-section {
+/* Bagian Teks Responsif */
+.text-section, .text-section2 {
     flex: 1;
-    padding-left: 20px;
-}
-
-.content-box {
-    background-color: #f6f4d0; /* Background warna kotak teks */
     padding: 20px;
-    height: 200px;
-    position: relative;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
 }
 
-.title {
+/* Kotak Konten */
+.content-box, .content-box2, .content-box3 {
+    background-color: #f6f4d0;
+    padding: 20px;
+    position: relative;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Judul dan Deskripsi */
+.title, .title2 {
     font-size: 22px;
-    color: #3e5942; /* Warna judul sesuai dengan garis */
+    color: #3e5942;
     margin-bottom: 10px;
     font-weight: bold;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan pada judul */
 }
 
-.description {
+.description, .description2 {
     font-size: 16px;
-    font-style: bold;
     color: #444;
     line-height: 1.6;
     margin-bottom: 20px;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan pada deskripsi */
 }
 
-/* Tautan baca selengkapnya */
-.read-more {
-  color: #0F4872;
+/* Tautan Baca Selengkapnya */
+.read-more, .read-more2 {
+    color: #0F4872;
     font-size: 12px;
     font-weight: 600;
     text-decoration: none;
@@ -436,107 +364,200 @@
     padding-left: 5px;
     background-color: rgba(110, 172, 218, 0.20);
     position: relative;
-    top: -20px; /* Angka negatif untuk menggeser ke atas */
-    opacity: 75%; /* ketebalan warna baca selengkapnya */
-
+    top: -20px;
+    opacity: 75%;
 }
 
-.read-more:hover {
-    color: #008CBA; /* Warna saat di-hover */
+.read-more:hover, .read-more2:hover {
+    color: #008CBA;
     border-bottom-color: #008CBA;
 }
 
+/* Media Queries untuk Layar Lebar hingga 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .wrapper, .wrapper2 {
+        max-width: 1200px;
+        padding: 20px;
+    }
 
-/* Wrapper untuk menampung seluruh konten 2 */
-.wrapper2 {
-    display: flex;
-    flex-direction: row-reverse; /* Membalikkan urutan konten (gambar di kanan, teks di kiri) */
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e6e4b3; /* Background berwarna kuning lembut */
-    border-radius: 8px; /* Sudut melengkung untuk tampilan modern */
-    max-width: 1000px;
-    margin: 50px auto;
-}
+    .image-section, .image-section2 {
+        padding-bottom: 56.25%; /* Rasio 16:9 untuk tampilan lebih datar */
+        max-width: 450px; /* Sesuaikan batas lebar pada layar besar */
+    }
 
-/* Bagian gambar dengan rasio 16:9 */
-.image-section2 {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    padding-bottom: 25.56%; /* 16:9 aspect ratio (9 / 16 = 0.5625 or 56.25%) */
-}
+    .title, .title2 {
+        font-size: 24px;
+    }
+    
+    .description, .description2 {
+        font-size: 18px;
+    }
 
-.image2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Memastikan gambar terisi penuh tanpa merusak proporsi */
-}
-
-/* Bagian teks */
-.text-section2 {
-    flex: 1;
-    padding-right: 20px; /* Ubah dari padding-left ke padding-right */
-}
-
-.content-box2 {
-    background-color: #f6f4d0; /* Background warna kotak teks */
-    padding: 20px;
-    height: 205px;
-    position: relative;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
-}
-
-.title2 {
-    font-size: 22px;
-    color: #3e5942; /* Warna judul sesuai dengan garis */
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan pada judul */
-}
-
-.description2 {
-    font-size: 16px;
-    font-style: bold;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan pada deskripsi */
-}
-
-/* Tautan baca selengkapnya */
-.read-more2 {
-  color: #0F4872;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    border-left: 3px solid #0F4872;
-    padding-left: 5px;
-    background-color: rgba(110, 172, 218, 0.20);
-    position: relative;
-    top: -20px; /* Angka negatif untuk menggeser ke atas */
-    opacity: 75%; /* ketebalan warna baca selengkapnya */
-}
-
-.read-more2:hover {
-    color: #008CBA; /* Warna saat di-hover */
-    border-bottom-color: #008CBA;
+    .read-more, .read-more2 {
+        font-size: 14px;
+        top: -15px;
+    }
 }
 
 
-.content-box3 {
-    background-color: #f6f4d0; /* Background warna kotak teks */
-    padding: 20px;
-    height: 225px;
-    position: relative;
-    font-family: 'League Spartan', sans-serif; /* Terapkan font League Spartan ke seluruh box */
+/* Media Queries untuk Responsivitas */
+
+@media (max-width: 2560px) {
+    .title, .title2 {
+        font-size: 28px; /* Menambah ukuran font judul agar terlihat proporsional */
+    }
+    
+    .description, .description2 {
+        font-size: 20px; /* Menambah ukuran font deskripsi */
+    }
+    
+    .image-section, .image-section2 {
+        padding-bottom: 20%; /* Menyesuaikan rasio tinggi gambar */
+        max-width: 800px; /* Menambah lebar gambar untuk layar yang lebih besar */
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        max-width: 900px; /* Menambah lebar konten agar sesuai layar besar */
+        max-height: 800px; /* Menambah tinggi maksimal */
+        padding: 25px; /* Menambah padding agar tetap rapi */
+        overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
+    }
 }
+
+
+@media (max-width: 1440px) {
+    .title, .title2 {
+        font-size: 24px; /* Membuat font judul sedikit lebih besar */
+    }
+    
+    .description, .description2 {
+        font-size: 18px; /* Menambah ukuran font deskripsi */
+    }
+    
+    .image-section, .image-section2 {
+        padding-bottom: 25%; /* Mengurangi rasio tinggi gambar sedikit */
+        max-width: 600px; /* Menambah lebar gambar untuk layar yang lebih besar */
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        max-width: 700px; /* Menambah lebar konten */
+        max-height: 600px; /* Menambah tinggi maksimal */
+        padding: 20px; /* Menambah padding untuk menjaga tampilan tetap rapi */
+        overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .wrapper2 {
+        display: flex; /* Menggunakan Flexbox */
+        flex-direction: row; /* Mengatur susunan elemen secara horizontal */
+        align-items: center; /* Pusatkan elemen secara vertikal */
+        justify-content: space-between; /* Beri jarak antara gambar dan konten */
+    }
+
+    .title, .title2 {
+        font-size: 20px;
+    }
+    
+    .description, .description2 {
+        font-size: 15px;
+    }
+    
+    .image-section, .image-section2 {
+        padding-bottom: 30%; /* Mengurangi rasio tinggi gambar */
+        max-width: 400px; /* Mempersempit lebar gambar */
+        margin-left: 20px; /* Memberi jarak antara gambar dan konten */
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        max-width: 500px; /* Mengurangi lebar konten */
+        max-height: 400px; /* Membatasi tinggi maksimal */
+        padding: 15px; /* Menambahkan sedikit padding untuk menjaga tampilan tetap rapi */
+        overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .wrapper, .wrapper2 {
+        flex-direction: column;
+    }
+    
+    .image-section, .image-section2 {
+        padding-bottom: 40%;
+        max-width: 400px;
+        
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        padding: 15px;
+        max-width: 450px; /* Lebar yang lebih kecil untuk tablet */
+        height: auto;
+    }
+    
+    .title, .title2 {
+        font-size: 18px;
+    }
+    
+    .description, .description2 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-section, .image-section2 {
+        padding-bottom: 60%;
+        max-width: 250px;
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        padding: 10px;
+    }
+    
+    .title, .title2 {
+        font-size: 16px;
+    }
+    
+    .description, .description2 {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .read-more, .read-more2 {
+        font-size: 10px;
+        top: -10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .image-section, .image-section2 {
+        padding-bottom: 70%; /* Rasio lebih kecil untuk ukuran layar 320px */
+        max-width: 200px;
+    }
+    
+    .content-box, .content-box2, .content-box3 {
+        padding: 8px;
+        max-width: 300px; /* Lebar lebih kecil untuk layar yang lebih sempit */
+    }
+    
+    .title, .title2 {
+        font-size: 14px;
+    }
+    
+    .description, .description2 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .read-more, .read-more2 {
+        font-size: 9px;
+        top: -8px;
+    }
+}
+
+
 
  /* Footer responsif */
  .footer {
