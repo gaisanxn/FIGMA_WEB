@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\TentangModel;
 use App\Models\ProdukModel;
+use App\Models\AktivitasModel;
+
 
 
 class Home extends BaseController
@@ -81,10 +83,22 @@ class Home extends BaseController
     {
         return view('artikel3');
     }
+
+
     public function aktivitas(): string
     {
-        return view('aktivitas');
+       
+        $aktivitasModel = new AktivitasModel();
+        
+        // Ambil semua data, data akan dikembalikan sebagai object
+        
+        $data['aktivitas'] = $aktivitasModel->first();
+
+        // Kirim data ke view
+        return view('Aktivitas', $data);
     }
+
+
     public function aktivitas1(): string
     {
         return view('aktivitas1');
