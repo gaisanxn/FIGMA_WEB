@@ -12,7 +12,7 @@ class AktivitasModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['img_navbar', 'img_slider', 'img_footer',];
+    protected $allowedFields    = ['img_navbar', 'img_slider', 'img_footer', 'img_1', 'title_img1', 'deskripsi_img1', 'img_2', 'title_img2', 'deskripsi_img2', 'img_3', 'title_img3', 'deskripsi_img3', 'img_4', 'title_img4', 'deskripsi_img4',  ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -668,14 +668,13 @@
 <!-- konten 1 -->
 <div class="wrapper">
     <div class="image-section">
-        <img src="upload/aktivitas1.jpg" alt="Peluncuran Produk Baru" class="image">
+        <img src="upload/<?=$aktivitas->img_1 ?>" alt="Peluncuran Produk Baru" class="image">
     </div>
     <div class="text-section">
         <div class="content-box">
-            <h2 class="title">Peluncuran Produk Baru</h2>
+            <h2 class="title"><?=$aktivitas->title_img1 ?></h2>
             <p class="description">
-                Setiap tahun, TechSmart Electronics secara rutin mengadakan acara peluncuran produk baru untuk memperkenalkan inovasi terbaru di dunia elektronik kepada pelanggan kami. Peluncuran produk ini tidak hanya sekadar ...
-            </p>
+            <?=$aktivitas->deskripsi_img1 ?>            </p>
             <a href="/aktivitas1" class="read-more">Baca Selengkapnya</a>
         </div>
     </div>
@@ -684,15 +683,14 @@
 <!-- konten 2 -->
 <div class="wrapper2">
     <div class="image-section2">
-        <img src="upload/aktivitas2.jpeg" alt="Peluncuran Produk Baru" class="image2">
+        <img src="upload/<?=$aktivitas->img_2 ?>" alt="Peluncuran Produk Baru" class="image2">
     </div>
     <div class="text-section2">
         <div class="content-box2">
-            <h2 class="title2">Program Pelatihan Teknologi
-            dan Workshop</h2>
+            <h2 class="title2"><?=$aktivitas->title_img2 ?></h2>
             <p class="description2">
-            Setiap tahun, TechSmart Electronics berkomitmen untuk memberdayakan komunitas dengan pengetahuan teknologi yang praktis dan aplikatif melalui program pelatihan dan workshop rutin yang kami selenggarakan. Program ini ...
-          </p>
+            <?=$aktivitas->deskripsi_img2 ?> 
+            </p>
           <a href="/aktivitas2"class="read-more2">Baca Selengkapnya</a>
         </div>
     </div>
@@ -701,13 +699,14 @@
 <!-- konten 3 = 1 -->
 <div class="wrapper">
     <div class="image-section">
-        <img src="upload/aktivitas3.jpg" alt="Peluncuran Produk Baru" class="image">
+        <img src="upload/<?=$aktivitas->img_3 ?>" alt="Peluncuran Produk Baru" class="image">
     </div>
     <div class="text-section">
         <div class="content-box">
-            <h2 class="title">Kegiatan CSR</h2>
+            <h2 class="title"><?=$aktivitas->title_img3?></h2>
             <p class="description">
-            Sebagai perusahaan yang peduli terhadap masyarakat dan lingkungan, TechSmart Electronics berkomitmen untuk menjalankan berbagai program Corporate Social Responsibility (CSR) yang bermanfaat. Kami percaya bahwa ...            </p>
+            <?=$aktivitas->deskripsi_img3 ?>        
+           </p>
             <a href="/aktivitas3" class="read-more">Baca Selengkapnya</a>
         </div>
     </div>
@@ -716,14 +715,14 @@
 <!-- konten 4 = 2 -->
 <div class="wrapper2">
     <div class="image-section2">
-        <img src="upload/aktivitas4.jpg" alt="Peluncuran Produk Baru" class="image">
+        <img src="upload/<?=$aktivitas->img_4 ?>" alt="Peluncuran Produk Baru" class="image">
     </div>
     <div class="text-section2">
         <div class="content-box3">
-            <h2 class="title2">Partisipasi dalam Pameran
-            dan Konferensi Teknologi</h2>
+            <h2 class="title2"><?=$aktivitas->title_img4?></h2>
             <p class="description2">
-            Untuk tetap relevan dan kompetitif di industri teknologi yang selalu berkembang, TechSmart Electronics secara aktif berpartisipasi dalam berbagai pameran dan konferensi teknologi baik di dalam maupun luar negeri. Pameran ini ...          </p>
+            <?=$aktivitas->deskripsi_img4?>            
+            </p>
             <a href="/aktivitas4" class="read-more2">Baca Selengkapnya</a>
         </div>
     </div>
