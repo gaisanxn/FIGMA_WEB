@@ -17,6 +17,6 @@ class ProdukController extends BaseController
         $data['produk'] = $produkModel->first();
         
         // Kirim data ke view
-        return view('Artikel', $data);
+        return view('Produk', $data);
     }
 }

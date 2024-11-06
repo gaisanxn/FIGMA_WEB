@@ -4,6 +4,10 @@ namespace App\Controllers;
 use App\Models\TentangModel;
 use App\Models\ProdukModel;
 use App\Models\AktivitasModel;
+use App\Models\ArtikelModel;
+use App\Models\KontakModel;
+
+
 
 
 
@@ -17,29 +21,13 @@ class Home extends BaseController
 
     public function tentang(): string
     {
-       
-        $tentangModel = new TentangModel();
-        
-        // Ambil semua data, data akan dikembalikan sebagai object
-        
-        $data['tentang'] = $tentangModel->first();
-
-        // Kirim data ke view
-        return view('Tentang', $data);
+        return view('tentang');
     }
 
     
     public function produk(): string
     {
-       
-        $produkModel = new ProdukModel();
-        
-        // Ambil semua data, data akan dikembalikan sebagai object
-        
-        $data['produk'] = $produkModel->first();
-
-        // Kirim data ke view
-        return view('Produk', $data);
+        return view('Produk');
     }
 
 
@@ -67,10 +55,15 @@ class Home extends BaseController
     {
         return view('headset');
     }
+
+
     public function artikel(): string
     {
         return view('artikel');
     }
+   
+
+
     public function artikel1(): string
     {
         return view('artikel1');
@@ -84,20 +77,10 @@ class Home extends BaseController
         return view('artikel3');
     }
 
-
     public function aktivitas(): string
     {
-       
-        $aktivitasModel = new AktivitasModel();
-        
-        // Ambil semua data, data akan dikembalikan sebagai object
-        
-        $data['aktivitas'] = $aktivitasModel->first();
-
-        // Kirim data ke view
-        return view('Aktivitas', $data);
+        return view('aktivitas');
     }
-
 
     public function aktivitas1(): string
     {
