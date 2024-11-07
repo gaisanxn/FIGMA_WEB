@@ -410,23 +410,21 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch; /* Pastikan semua card sejajar pada posisi yang sama */
     width: 100%;
     max-width: 10000px;
     margin: 100px auto 20px;
     background-color: #0a1a2a;
     padding: 20px;
+    gap: 20px; /* Menambahkan jarak antar kartu agar lebih rapi */
 }
-
 
 .card {
     position: relative;
     width: 80%; /* Kartu akan mengambil 80% dari lebar kontainer */
-height: 250px; /* Tinggi tetap */
-
+    height: 300px; /* Sesuaikan tinggi tetap untuk semua kartu */
     border-radius: 15px;
     overflow: hidden;
-    margin: 20px 20px; /* Menambahkan jarak 20px di atas dan bawah, 25px di kiri dan kanan */
     transition: transform 0.3s ease, filter 0.3s ease; /* Transisi halus untuk rotasi dan filter */
 }
 
@@ -438,16 +436,10 @@ height: 250px; /* Tinggi tetap */
     transition: transform 0.3s ease; /* Transisi halus untuk gambar */
 }
 
-
-.card.shift-down {
-    margin-top: 50px; /* Memberi jarak atas untuk kartu yang digeser ke bawah */
-}
-
 .card:hover {
     transform: rotate(2deg); /* Rotasi sedikit saat dihover */
     filter: brightness(1.1); /* Mencerahkan kartu saat dihover */
 }
-
 
 .card:hover img {
     transform: scale(1.05); /* Membesar gambar saat dihover */
@@ -464,49 +456,48 @@ height: 250px; /* Tinggi tetap */
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    padding: 10px; /* Padding tambahan di overlay */
-    transition: background 0.3s ease; /* Transisi halus untuk latar belakang overlay */
+    padding: 10px;
+    transition: background 0.3s ease;
 }
 
 .card:hover .overlay {
-    background: rgba(0, 0, 0, 0.9); /* Mengubah warna overlay menjadi hitam dengan transparansi 0.7 */
+    background: rgba(0, 0, 0, 0.9);
 }
-
-
 
 .card .overlay h2 {
     color: #E2E2B6;
-    font-family: 'Lexend Exa', sans-serif; /* Mengubah font seluruh halaman */
-    font-size: 1.0em; /* Ukuran font judul yang lebih kecil */
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 1.0em;
     text-align: center;
-    margin: 0; /* Menghapus margin judul */
+    margin: 0;
 }
 
 .card .overlay p {
-    font-family: 'Lexend Exa', sans-serif; /* Mengubah font seluruh halaman */
+    font-family: 'Lexend Exa', sans-serif;
     color: #E2E2B6;
-    font-size: 0.5em; /* Ukuran font deskripsi yang lebih kecil */
+    font-size: 0.5em;
     text-align: center;
-    margin: 0; /* Menghapus margin deskripsi */
+    margin: 0;
 }
 
 .separator {
-    border: none; /* Menghilangkan border default */
-    height: 3px; /* Tinggi pemisah */
-    background-color: #FFFFFF; /* Warna pemisah */
-    margin: 5px auto; /* Jarak atas dan bawah pemisah, auto di kiri dan kanan untuk memusatkan */
-    width: 40%; /* Mengatur panjang pemisah (50% dari lebar kontainer) */
+    border: none;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px auto;
+    width: 40%;
 }
 
 a {
-            text-decoration: none; /* Menghilangkan garis bawah */
-            color: #E2E2B6; /* Mengubah warna tautan */
-        }
+    text-decoration: none;
+    color: #E2E2B6;
+}
 
-        a:hover {
-            text-decoration: underline; /* Menambahkan garis bawah saat hover */
-            color: rgba(255, 165, 0, 0.7); /* Mengubah warna saat hover */
-        }
+a:hover {
+    text-decoration: underline;
+    color: rgba(255, 165, 0, 0.7);
+}
+
     </style>
 </head>
 <body>
@@ -559,9 +550,10 @@ a {
 <!-- TENTANG KAMI-->
 <div class="containertentang">
    <div class="contenttentang">
-    <div class="image-section">
-    <img alt="Deskripsi gambar" height="500" width="500" src="<?= base_url('upload/beranda.jpg'); ?>" />
+    <div class="image-section"> 
+    <img alt="Deskripsi gambar" height="500" width="500" src="<?= base_url('upload/' . $tentang->img_tentang); ?>" />
     </div>
+    
     <div class="text-section">
      <h2>
       TENTANG KAMI
@@ -581,86 +573,20 @@ a {
 <div class="article-header2">Jelajahi Produk Kami</div>
 
 
-<div class="product-container"> 
-  <!-- produk laptop -->
-  <a href="/laptop" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk5.png'); ?>" />
-    <div class="product-info">
-      <h2>
-        Laptop Apple
-        MacBook Air
-      </h2>
-      <div class="price">
-        $789.00
+<div class="product-container">
+  <?php foreach ($produk as $item): ?>
+    <a href="<?= base_url('/produk/'); ?>" class="product-card">
+      <img alt="produk" height="500" width="600" src="<?= base_url('upload/' . $item->img_produk); ?>" />
+      <div class="product-info">
+        <h2><?= esc($item->nama_produk); ?></h2>
+        <div class="price">
+          <?= esc($item->harga_produk); ?>
+        </div>
       </div>
-    </div>
-  </a>
-
-  <!-- produk drone -->
-  <a href="/drone" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk2.png'); ?>" />
-    <div class="product-info">
-      <h2>
-        Drone DJI Mini 3 Pro
-      </h2>
-      <div class="price">
-        $654.00
-      </div>
-    </div>
-  </a>
-
-  <!-- produk smartphone -->
-  <a href="/smartphone" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk4.png'); ?>" />
-    <div class="product-info">
-      <h2>
-        Smartphone Apple iPhone
-      </h2>
-      <div class="price">
-        $369.00
-      </div>
-    </div>
-  </a>  
-  
-  <!-- produk headset -->
-  <a href="/headset" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk6.png'); ?>" />
-    <div class="product-info">
-      <h2>
-      Headset Hyper X Cloud II 
-      </h2>
-      <div class="price">
-        $299.00
-      </div>
-    </div>
-  </a>
-
-  <!-- produk mouse -->
-  <a href="/mouse" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk3.png'); ?>" />
-    <div class="product-info">
-      <h2>
-      Mouse Logitech MX
-      </h2>
-      <div class="price">
-        $156.00
-      </div>
-    </div>
-  </a>
-
-  <!-- produk webcam -->
-  <a href="/webcam" class="product-card"> <!-- Membungkus dengan tag <a> -->
-    <img alt="produk" height="500" width="600" src="<?= base_url('upload/produk1.png'); ?>" />
-    <div class="product-info">
-      <h2>
-      Webcam Logitech C920
-      </h2>
-      <div class="price">
-        $444.00
-      </div>
-    </div>
-  </a>
+    </a>
+  <?php endforeach; ?>
 </div>
+
 
 
 <!-- Article Header 3 -->
@@ -669,49 +595,20 @@ a {
 
   <!--Aktivitas-->
   <div class="container">
-  <div class="card shift-down">
-  <img alt="People at a technology conference" height="300" src="upload/aktivitas4.jpg" width="400"/>
-  <div class="overlay">
-     <div>
-      <h2>
-       Pameran Konferensi Teknologi
-      </h2>
-      <hr class="separator">
-      <p>
-      <a href="aktivitas4">Baca Selengkapnya</a>
-      </p>
-     </div>
+    <?php foreach ($aktivitas as $item): ?>
+    <div class="card">
+        <img alt="People at a technology conference" height="300" src="<?= base_url('upload/' . $item->img); ?>" width="400"/>
+        <div class="overlay">
+            <div>
+                <h2><?= esc($item->judul_img); ?></h2>
+                <hr class="separator">
+                <p><a href="">Baca Selengkapnya</a></p>
+            </div>
+        </div>
     </div>
-   </div>
-   <div class="card">
-   <img alt="People at a technology conference" height="300" src="upload/aktivitas1.jpg" width="400"/>
-   <div class="overlay">
-     <div>
-      <h2>
-       Peluncuran Produk Baru
-      </h2>
-      <hr class="separator">
-      <p>
-      <a href="aktivitas1">Baca Selengkapnya</a>
-      </p>
-     </div>
-    </div>
-   </div>
-   <div class="card shift-down">
-   <img alt="People at a technology conference" height="300" src="upload/aktivitas2.jpeg" width="400"/>
-   <div class="overlay">
-     <div>
-      <h2>
-       Pelatihan Teknologi & Workshop
-      </h2>
-      <hr class="separator">
-      <p>
-      <a href="aktivitas2">Baca Selengkapnya</a>
-      </p>
-     </div>
-    </div>
-   </div>
-  </div>
+    <?php endforeach; ?>
+</div>
+
 <!-- Footer -->
 <div class="footer">
     <img src="upload/logo.png" alt="Logo" class="footer-logo">
