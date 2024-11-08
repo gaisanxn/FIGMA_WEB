@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>detail.mouse</title>
+    <title>detail.artikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap" rel="stylesheet">
@@ -67,7 +67,7 @@
         }
 
         .article-header {
-            width: 290px;
+            width: 305px;
             height: 22px;
             background-color: #021526;
             border-radius: 4px;
@@ -87,51 +87,77 @@
 
         .article-content {
     width: 648.78px;
-    background-color: #E2E2B6;
-    border: 1px solid #021526; /* Tebalkan border */
-    border-radius: 5px; /* Tambahkan border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan shadow */
-    padding: 0;
+    background-color: #021526;
+    padding: 0; /* Hilangkan padding agar gambar memenuhi container */
     margin: 40px auto;
     position: relative;
+    border-top-right-radius: 70px; /* Radius untuk kanan atas */
+    border-bottom-left-radius: 70px; /* Radius untuk kiri bawah */
 }
-
 
 .article-image {
-    width: 40%; /* Lebar gambar */
-    height: 50%; /* Tinggi gambar menyesuaikan */
-    object-fit: cover; /* Gambar tetap proporsional */
-    display: block; /* Menjadikan gambar sebagai elemen blok */
-    margin-left: auto; /* Margin kiri otomatis */
-    margin-right: auto; /* Margin kanan otomatis */
-    margin-top: 20px; /* Margin kanan otomatis */
-    margin-bottom: 30px;
+    width: 100%; /* Gambar mengisi lebar container sepenuhnya */
+    height: 500px; /* Mengatur tinggi gambar secara eksplisit */
+    object-fit: cover; /* Agar gambar tetap proporsional tanpa distorsi */
+    display: block;
+    margin: 0;
+    border-top-right-radius: 70px; /* Radius untuk gambar kanan atas */
 }
-
-
-
 
 .article-title {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 29px;
+    font-family: 'Lexend exa', sans-serif;
+    font-size: 14px;
     color: #021526;
     font-weight: 600;
-    margin: 8px;
-    padding: 0 10px; /* Memberi jarak di kiri dan kanan */
+    max-width: 800px; /* Lebar maksimal */
+    background-color: #E2E2B6;
+    border-radius: 4px;
+    border: 1px solid #021526;
+    text-align: center;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* Flexbox untuk sentralisasi horizontal dan vertikal */
+    display: flex;
+    justify-content: center; /* Sentralisasi horizontal */
+    align-items: center;     /* Sentralisasi vertikal */
+    
+    /* Penyesuaian posisi */
+    position: relative;
+    top: -15px;
+    z-index: 1;
+    
+    /* Agar background menyesuaikan panjang teks */
+    width: fit-content; /* Lebar sesuai teks */
+    margin: 0 auto; /* Menempatkan di tengah secara horizontal */
+
+
+    /* Mengatur tinggi background */
+    height: 25px; /* Atur tinggi sesuai kebutuhan */
 }
+
 
 
 
 .article-text {
     font-family: 'League Spartan', sans-serif;
-    font-size: 20px;
-    color: rgba(2, 21, 38, 0.70);
+    font-size: 18px;
+    color: #E2E2B6;
     line-height: 1.8; /* Jarak antar baris */
     letter-spacing: 0.5px; /* Spasi antar huruf */
     word-spacing: 1px; /* Spasi antar kata */
     margin: 8px;
     padding: 0 10px; /* Memberi jarak di kiri dan kanan */
     margin-bottom: 20px;
+
+    /* Atur teks rata tengah */
+    text-align: center;
+
+    /* Mengatur posisi lebih ke atas */
+    margin-top: -10px; /* Sesuaikan nilai sesuai kebutuhan */
+    padding-bottom: 10px;
 }
 
         .footer {
@@ -216,7 +242,6 @@
     </div>
 </nav>
 
-
 <!-- Carousel -->
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
@@ -231,27 +256,23 @@
 
 
 <!-- Page Title -->
-<div class="page-title">Produk Kami</div>
+<div class="page-title">Artikel Kami</div>
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-<a href="/">Beranda</a> <span> / Produk</span>
-</div>
+    <a href="/">Beranda</a> <span> / Artikel</span>    </div>
 
 <!-- Article Header -->
-<div class="article-header">Produk dari TechSmart Electronics</div>
+<div class="article-header">Artikel dari TechSmart Electronics</div>
 
 <!-- Article Content -->
 <div class="article-content">
-    <img src="/upload/produk3.png" alt="TechSmart Image" class="article-image">
+    <img src="/upload/<?= $artikel->img_1?>" alt="TechSmart Image" class="article-image">
+    <h2 class="article-title"><?= $artikel->title_1?></h2>
+    <p class="article-text"><?= $artikel->desk_1?>
 
-    <h2 class="article-title">Mouse Logitech MX Master 3</h2>
-    <p class="article-text">
-Logitech MX Master 3 adalah mouse nirkabel premium yang dirancang untuk produktivitas tinggi dan kenyamanan maksimal. Dilengkapi dengan
-scroll wheel elektromagnetik MagSpeed yang halus dan presisi, mouse ini memungkinkan navigasi yang lebih cepat dan akurat. Bentuknya yang
-ergonomis dirancang untuk mendukung tangan dan pergelangan tangan Anda, mengurangi ketegangan selama penggunaan jangka panjang.
-Dapat digunakan di berbagai permukaan, termasuk kaca, dan dilengkapi dengan baterai isi ulang yang tahan hingga 70 hari.
- </p>
+
+</p>
 </div>
 
 <!-- Footer -->

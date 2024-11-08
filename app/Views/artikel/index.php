@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produk</title>
+    <title>artikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
         body {
             background-color: #E2E2B6;
             /* Background warna luar */
+
         }
 
         /* Navbar Customization */
@@ -178,6 +179,8 @@
                 /* Lebar lebih kecil lagi pada layar ekstra kecil */
             }
         }
+
+
 
 
         /* Reset basic styles */
@@ -363,134 +366,395 @@
 
 
 
-        /* Layout utama untuk desktop (ukuran layar lebar) */
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* Tiga kolom di desktop */
-            gap: 30px;
-            padding: 20px;
-            margin: 20px auto;
-        }
 
-        .product {
+
+        /* Wrapper Responsif */
+        .wrapper,
+        .wrapper2 {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: space-between;
-            border-radius: 15px;
+            align-items: center;
+            background-color: #e6e4b3;
+            border-radius: 8px;
+            max-width: 1000px;
+            margin: 50px auto;
             padding: 15px;
-            text-align: center;
-            background-color: #021526;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        /* Bagian Gambar Responsif */
+        .image-section,
+        .image-section2 {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
-            color: #E2E2B6;
-            /* Warna teks untuk semua konten di dalam .product */
-        }
-
-        /* Mengatur gambar agar responsif */
-        .product img {
             width: 100%;
-            height: auto;
-            max-height: 180px;
+            padding-bottom: 75%;
+            /* Default untuk layar besar */
+            max-width: 500px;
+        }
+
+        .image,
+        .image2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 15px;
+            filter: brightness(0.8);
+        }
+
+        /* Bagian Teks Responsif */
+        .text-section,
+        .text-section2 {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Kotak Konten */
+        .content-box,
+        .content-box2,
+        .content-box3 {
+            background-color: #f6f4d0;
+            padding: 20px;
+            position: relative;
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        /* Judul dan Deskripsi */
+        .title,
+        .title2 {
+            font-size: 22px;
+            color: #3e5942;
             margin-bottom: 10px;
+            font-weight: bold;
         }
 
-        .product-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #E2E2B6;
-            /* Warna teks judul */
+        .description,
+        .description2 {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .product-description {
+        /* Tautan Baca Selengkapnya */
+        .read-more,
+        .read-more2 {
+            color: #0F4872;
             font-size: 12px;
-            color: #E2E2B6;
-            /* Warna teks deskripsi */
-            line-height: 1.5;
+            font-weight: 600;
+            text-decoration: none;
+            border-left: 3px solid #0F4872;
+            padding-left: 5px;
+            background-color: rgba(110, 172, 218, 0.20);
+            position: relative;
+            top: -20px;
+            opacity: 75%;
         }
 
-        /* Efek hover untuk produk */
-        .product:hover {
-            transform: translateY(-10px) rotate(1deg);
-            /* Efek mengangkat dan memutar sedikit */
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
-            /* Bayangan lebih kuat */
-            background-color: #1C2D3F;
-            /* Warna latar belakang saat hover */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            /* Transisi halus */
+        .read-more:hover,
+        .read-more2:hover {
+            color: #008CBA;
+            border-bottom-color: #008CBA;
         }
 
-        /* Pengaturan untuk tablet dan layar sedang (900px ke bawah) */
-        @media (max-width: 900px) {
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-                /* Dua kolom untuk layar tablet */
-                gap: 20px;
+        /* Media Queries untuk Layar Lebar hingga 1440px */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+
+            .wrapper,
+            .wrapper2 {
+                max-width: 1200px;
+                padding: 20px;
+            }
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 56.25%;
+                /* Rasio 16:9 untuk tampilan lebih datar */
+                max-width: 450px;
+                /* Sesuaikan batas lebar pada layar besar */
+            }
+
+            .title,
+            .title2 {
+                font-size: 24px;
+            }
+
+            .description,
+            .description2 {
+                font-size: 18px;
+            }
+
+            .read-more,
+            .read-more2 {
+                font-size: 14px;
+                top: -15px;
+            }
+        }
+
+
+        /* Media Queries untuk Responsivitas */
+
+        @media (max-width: 2560px) {
+
+            .title,
+            .title2 {
+                font-size: 28px;
+                /* Menambah ukuran font judul agar terlihat proporsional */
+            }
+
+            .description,
+            .description2 {
+                font-size: 20px;
+                /* Menambah ukuran font deskripsi */
+            }
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 20%;
+                /* Menyesuaikan rasio tinggi gambar */
+                max-width: 800px;
+                /* Menambah lebar gambar untuk layar yang lebih besar */
+            }
+
+            .content-box,
+            .content-box2,
+            .content-box3 {
+                max-width: 900px;
+                /* Menambah lebar konten agar sesuai layar besar */
+                max-height: 800px;
+                /* Menambah tinggi maksimal */
+                padding: 25px;
+                /* Menambah padding agar tetap rapi */
+                overflow-y: auto;
+                /* Menambahkan scroll jika konten terlalu panjang */
+            }
+        }
+
+
+        @media (max-width: 1440px) {
+
+            .title,
+            .title2 {
+                font-size: 24px;
+                /* Membuat font judul sedikit lebih besar */
+            }
+
+            .description,
+            .description2 {
+                font-size: 18px;
+                /* Menambah ukuran font deskripsi */
+            }
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 25%;
+                /* Mengurangi rasio tinggi gambar sedikit */
+                max-width: 600px;
+                /* Menambah lebar gambar untuk layar yang lebih besar */
+            }
+
+            .content-box,
+            .content-box2,
+            .content-box3 {
+                max-width: 700px;
+                /* Menambah lebar konten */
+                max-height: 600px;
+                /* Menambah tinggi maksimal */
+                padding: 20px;
+                /* Menambah padding untuk menjaga tampilan tetap rapi */
+                overflow-y: auto;
+                /* Menambahkan scroll jika konten terlalu panjang */
+            }
+        }
+
+
+        @media (max-width: 1024px) {
+            .wrapper2 {
+                display: flex;
+                /* Menggunakan Flexbox */
+                flex-direction: row;
+                /* Mengatur susunan elemen secara horizontal */
+                align-items: center;
+                /* Pusatkan elemen secara vertikal */
+                justify-content: space-between;
+                /* Beri jarak antara gambar dan konten */
+            }
+
+            .title,
+            .title2 {
+                font-size: 20px;
+            }
+
+            .description,
+            .description2 {
+                font-size: 15px;
+            }
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 30%;
+                /* Mengurangi rasio tinggi gambar */
+                max-width: 400px;
+                /* Mempersempit lebar gambar */
+                margin-left: 20px;
+                /* Memberi jarak antara gambar dan konten */
+            }
+
+            .content-box,
+            .content-box2,
+            .content-box3 {
+                max-width: 500px;
+                /* Mengurangi lebar konten */
+                max-height: 400px;
+                /* Membatasi tinggi maksimal */
                 padding: 15px;
+                /* Menambahkan sedikit padding untuk menjaga tampilan tetap rapi */
+                overflow-y: auto;
+                /* Menambahkan scroll jika konten terlalu panjang */
+            }
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .wrapper,
+            .wrapper2 {
+                flex-direction: column;
             }
 
-            .product {
-                padding: 12px;
+            .image-section,
+            .image-section2 {
+                padding-bottom: 40%;
+                max-width: 400px;
+
             }
 
-            .product img {
-                max-height: 150px;
+            .content-box,
+            .content-box2,
+            .content-box3 {
+                padding: 15px;
+                max-width: 450px;
+                /* Lebar yang lebih kecil untuk tablet */
+                height: auto;
             }
 
-            .product-title {
+            .title,
+            .title2 {
+                font-size: 18px;
+            }
+
+            .description,
+            .description2 {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 60%;
+                max-width: 250px;
+            }
+
+            .content-box,
+            .content-box2,
+            .content-box3 {
+                padding: 10px;
+            }
+
+            .title,
+            .title2 {
                 font-size: 16px;
             }
 
-            .product-description {
-                font-size: 11px;
+            .description,
+            .description2 {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .read-more,
+            .read-more2 {
+                font-size: 10px;
+                top: -10px;
             }
         }
 
-        /* Pengaturan untuk ponsel dan layar kecil (600px ke bawah) */
-        @media (max-width: 600px) {
-            .container {
-                grid-template-columns: 1fr;
-                /* Satu kolom untuk layar ponsel */
-                gap: 10px;
+        @media (max-width: 320px) {
+
+            .image-section,
+            .image-section2 {
+                padding-bottom: 70%;
+                /* Rasio lebih kecil untuk ukuran layar 320px */
+                max-width: 200px;
+            }
+
+            .content-box,
+            .content-box2,
+            .content-box3 {
                 padding: 8px;
+                max-width: 300px;
+                /* Lebar lebih kecil untuk layar yang lebih sempit */
             }
 
-            .product {
-                padding: 8px;
-                margin: 0 auto;
-                max-width: 90%;
-                border-radius: 10px;
-            }
-
-            .product img {
-                max-height: 100px;
-            }
-
-            .product-title {
+            .title,
+            .title2 {
                 font-size: 14px;
             }
 
-            .product-description {
-                font-size: 10px;
-                line-height: 1.3;
+            .description,
+            .description2 {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .read-more,
+            .read-more2 {
+                font-size: 9px;
+                top: -8px;
             }
         }
-
-
-
-
-
-
 
 
 
         /* Footer responsif */
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background-color: #021526;
+            color: white;
+            font-size: 8px;
+        }
+
+        .footer-logo {
+            max-width: 60px;
+            margin-right: 5px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 8px;
+            font-family: 'League Spartan', sans-serif;
+            color: #E2E2B6;
+        }
+
+        .footer-separator {
+            margin: 0 5px;
+            color: #E2E2B6;
+        }
+
+
+
+
         .footer {
             display: flex;
             align-items: center;
@@ -536,7 +800,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="/upload/<?= $produk->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+                <img src="/upload/<?= $aktivitas->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -559,7 +823,7 @@
     <div id="carouselExample" class="carousel slide position-relative">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/upload/<?= $produk->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
+                <img src="/upload/<?= $aktivitas->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
                 <div class="carousel-overlay"></div>
             </div>
         </div>
@@ -567,39 +831,37 @@
         <!-- Page Title and Breadcrumb -->
         <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
             <div class="text-center">
-                <div class="page-title">Produk Kami</div>
+                <div class="page-title">Artikel Kami</div>
                 <div class="breadcrumb">
-                    <a href="/">Beranda</a> <span> / Produk</span>
+                    <a href="/">Beranda</a> <span> / Artikel</span>
                 </div>
             </div>
         </div>
     </div>
 
+    <?php foreach ($dataartikel as $artikelItem): ?>
+        <!-- konten 1 -->
+        <div class="wrapper">
+            <div class="image-section">
+                <img src="upload/<?= esc($artikelItem->img_1) ?>" alt="Peluncuran Produk Baru" class="image">
+            </div>
+            <div class="text-section">
+                <div class="content-box">
+                    <h2 class="title"><?= esc($artikelItem->title_1) ?></h2>
+                    <p class="description">
+    <?= esc(substr($artikelItem->desk_1, 0, 300)) ?>...
+</p>
 
-
-
-    <div class="container">
-        <?php foreach ($dataproduk as $item): ?>
-            <div class="product">
-                <a href="<?= base_url('/produk/'); ?>">
-                    <img alt="<?= esc($item->nama_produk); ?>" height="150" src="<?= base_url('upload/' . $item->img_produk); ?>" width="200" />
-                </a>
-                <div class="product-title">
-                    <?= esc($item->nama_produk); ?>
-                </div>
-                <div class="product-description">
-                    <?= esc(strlen($item->deskripsi_produk) > 50 ? substr($item->deskripsi_produk, 0, 50) . '...' : $item->deskripsi_produk); ?>
+                    <a href="<?= base_url('artikel/' . $artikelItem->slug); ?>" class="read-more">Baca Selengkapnya</a>
                 </div>
             </div>
-        <?php endforeach; ?>
-    </div>
-
-   
+        </div>
+    <?php endforeach; ?>
 
 
 
     <div class="footer">
-        <img src="upload/<?= $produk->img_footer ?>" alt="Logo" class="footer-logo">
+        <img src="upload/<?= $aktivitas->img_footer ?>" alt="Logo" class="footer-logo">
         <span class="footer-separator">|</span>
         <p>Copyright ©2024. Design by Bayu Valent</p>
     </div>
