@@ -305,8 +305,8 @@
 
     <!-- Footer -->
     <div class="footer">
-        <img src="upload/logo.png" alt="Logo" class="footer-logo">
-        <span class="footer-separator">|</span> 
+    <img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
+    <span class="footer-separator">|</span> 
         <p>Copyright ©2024. Design by Bayu Valent</p>
     </div>
 
