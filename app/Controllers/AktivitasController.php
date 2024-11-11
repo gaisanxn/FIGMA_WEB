@@ -6,6 +6,9 @@ use App\Controllers\BaseController;
 use App\Models\AktivitasDataModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AktivitasModel;
+use App\Models\ArtikelDataModel;
+use App\Models\ArtikelModel;
+
 class AktivitasController extends BaseController
 {
     public function index()
@@ -13,6 +16,12 @@ class AktivitasController extends BaseController
         // Inisialisasi model
         $aktivitasModel = new AktivitasModel();
         
+        // Inisialisasi model
+        $artikelModel = new ArtikelModel();
+        
+        // Ambil semua data, data akan dikembalikan sebagai object
+        $data['artikel'] = $artikelModel->first();
+
         // Ambil semua data, data akan dikembalikan sebagai object
         $data['aktivitas'] = $aktivitasModel->first();
 
@@ -20,7 +29,11 @@ class AktivitasController extends BaseController
 
         $data['dataaktivitas'] = $aktivitasdatamodel->findAll();
         
+        $artikeldatamodel = new ArtikelDataModel();
+
+        $data['dataartikel'] = $artikeldatamodel->findAll();
+
         // Kirim data ke view
-        return view('Aktivitas', $data);
+        return view('aktivitas/index', $data);
     }
 }
