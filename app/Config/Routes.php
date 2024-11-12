@@ -11,7 +11,6 @@ $routes->get('tentang', 'TentangController::index');
 
 $routes->get('produk', 'ProdukController::index');
 $routes->get('produk/(:segment)', 'ProdukController::detail/$1');
-
 // $routes->get('drone', 'Home::drone');
 // $routes->get('mouse', 'Home::mouse');
 // $routes->get('webcam', 'Home::webcam');

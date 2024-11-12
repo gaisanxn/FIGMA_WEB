@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>artikel1</title>
+    <title>detail.aktivitas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap" rel="stylesheet">
@@ -230,37 +230,29 @@
 
 
 <!-- Page Title -->
-<div class="page-title">Artikel Kami</div>
+<div class="page-title">Aktivitas Kami</div>
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-    <a href="/">Beranda</a> <span> / Artikel</span>    </div>
+    <a href="/">Beranda</a> <span> / Aktivitas</span>    </div>
 
 <!-- Article Header -->
-<div class="article-header">Artikel dari TechSmart Electronics</div>
+<div class="article-header">Aktivitas dari TechSmart Electronics</div>
 
 <!-- Article Content -->
 <div class="article-content">
-    <img src="/upload/Artikel1.jpg" alt="TechSmart Image" class="article-image">
-    <p class="article-date">08 JUNE 2024</p>
-    <h2 class="article-title">Inovasi Teknologi: Bagaimana TechSmart
-    Electronics Memimpin Pasar Elektronik</h2>
-    <p class="article-text">Dalam era digital yang terus berkembang, TechSmart Electronics telah
-memantapkan posisinya sebagai pemimpin dalam industri elektronik.
-Dengan fokus yang kuat pada inovasi dan kualitas, perusahaan ini
-telah memperkenalkan berbagai produk canggih yang memenuhi
-kebutuhan konsumen modern. Dari smartphone yang dilengkapi dengan
-teknologi kamera mutakhir hingga laptop dengan performa tinggi dan
-desain ultra-tipis, TechSmart Electronics tidak hanya menyediakan produk,
-tetapi juga pengalaman yang mendefinisikan ulang cara kita berinteraksi
-dengan teknologi. Salah satu kunci keberhasilan TechSmart Electronics
-adalah investasi berkelanjutan dalam penelitian dan pengembangan.
- </p>
+    <img src="/upload/<?= $aktivitas->img?>" alt="TechSmart Image" class="article-image">
+    <h2 class="article-title"><?= $aktivitas->judul_img?></h2>
+    <p class="article-text"><?= $aktivitas->deskripsi_img?>
+
+
+</p>
 </div>
 
 <!-- Footer -->
 <div class="footer">
-    <img src="upload/logo.png" alt="Logo" class="footer-logo">
+<img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
+
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>

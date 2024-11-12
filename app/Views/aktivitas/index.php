@@ -833,7 +833,7 @@
             <div class="text-center">
                 <div class="page-title">Aktivitas Kami</div>
                 <div class="breadcrumb">
-                    <a href="/">Beranda</a> <span> / Artikel</span>
+                    <a href="/">Beranda</a> <span> / Aktivitas</span>
                 </div>
             </div>
         </div>
@@ -852,8 +852,7 @@
                         <?= esc(substr($aktivitasItem->deskripsi_img, 0, 300)) ?>...
                     </p>
 
-                    <a href="<?= base_url('aktivitas/' . $aktivitasItem->id); ?>" class="read-more">Baca Selengkapnya</a>
-                </div>
+                    <a href="<?= site_url('aktivitas/' . $aktivitasItem->slug) ?>" class="read-more">Baca Selengkapnya</a>                </div>
             </div>
         </div>
     <?php endforeach; ?>
