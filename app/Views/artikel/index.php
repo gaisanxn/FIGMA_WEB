@@ -593,7 +593,13 @@
             }
         }
 
-
+        .article-date {
+    font-size: 12px;
+    color: rgba(15, 72, 114, 0.70);
+    font-family: 'Ubuntu', sans-serif;
+    margin: 10px;
+    padding: 0 10px; /* Memberi jarak di kiri dan kanan */
+}
 
         /* Footer responsif */
         .footer {
@@ -718,16 +724,19 @@
             <img class="image" src="/upload/<?= esc($artikelItem->img_1) ?>" />
             <div class="content">
                 <div class="header">
-                    <div class="date"><?= esc($artikelItem->date_1) ?></div>
+                    <div class="article-date"><?= esc($artikelItem->date_1) ?></div>
                 </div>
                 <div class="title">
                     <?= esc($artikelItem->title_1) ?>
                 </div>
                 <div class="description">
-                    <?= esc($artikelItem->desk_1) ?>
-                </div>
+    <?= esc(strlen($artikelItem->desk_1) > 50 ? substr($artikelItem->desk_1, 0, 350) . '...' : $artikelItem->desk_1) ?>
+</div>
+
                 <div class="read-more">
-                    <a href="/artikel/<?= esc($artikelItem->id) ?>" class="read-more-link">Baca Selengkapnya</a>
+
+                <a href="<?= site_url('artikel/' . $artikelItem->slug) ?>" class="read-more-link">Baca Selengkapnya</a>                </div>
+                    
                 </div>
             </div>
         </div>

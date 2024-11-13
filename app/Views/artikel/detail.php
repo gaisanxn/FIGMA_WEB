@@ -268,26 +268,15 @@
 <!-- Article Content -->
 <!-- Article Content -->
 <div class="article-content">
-    <img src="/upload/Artikel1.jpg" alt="TechSmart Image" class="article-image">
-    <p class="article-date">08 JUNE 2024</p>
-    <h2 class="article-title">Inovasi Teknologi: Bagaimana TechSmart
-    Electronics Memimpin Pasar Elektronik</h2>
-    <p class="article-text">Dalam era digital yang terus berkembang, TechSmart Electronics telah
-memantapkan posisinya sebagai pemimpin dalam industri elektronik.
-Dengan fokus yang kuat pada inovasi dan kualitas, perusahaan ini
-telah memperkenalkan berbagai produk canggih yang memenuhi
-kebutuhan konsumen modern. Dari smartphone yang dilengkapi dengan
-teknologi kamera mutakhir hingga laptop dengan performa tinggi dan
-desain ultra-tipis, TechSmart Electronics tidak hanya menyediakan produk,
-tetapi juga pengalaman yang mendefinisikan ulang cara kita berinteraksi
-dengan teknologi. Salah satu kunci keberhasilan TechSmart Electronics
-adalah investasi berkelanjutan dalam penelitian dan pengembangan.
- </p>
+    <img src="/upload/<?= $artikel->img_1?>" alt="TechSmart Image" class="article-image">
+    <p class="article-date"><?= $artikel->date_1?></p>
+    <h2 class="article-title"><?= $artikel->title_1?></h2>
+    <p class="article-text"><?= $artikel->desk_1?></p>
 </div>
 
 <!-- Footer -->
 <div class="footer">
-    <img src="upload/logo.png" alt="Logo" class="footer-logo">
+<img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>
