@@ -602,35 +602,6 @@
 }
 
         /* Footer responsif */
-        .footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-            background-color: #021526;
-            color: white;
-            font-size: 8px;
-        }
-
-        .footer-logo {
-            max-width: 60px;
-            margin-right: 5px;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 8px;
-            font-family: 'League Spartan', sans-serif;
-            color: #E2E2B6;
-        }
-
-        .footer-separator {
-            margin: 0 5px;
-            color: #E2E2B6;
-        }
-
-
-
 
         .footer {
             display: flex;
