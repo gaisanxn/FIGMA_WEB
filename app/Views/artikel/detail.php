@@ -427,6 +427,67 @@
     padding-bottom: 10px;
 }
 
+
+/* Media Query untuk layar sangat besar (max-width: 2560px) */
+@media (max-width: 2560px) {
+    .article-content {
+        width: 80%;
+        margin: 30px auto;
+        border-top-right-radius: 60px;
+        border-bottom-left-radius: 60px;
+    }
+
+    .article-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-top-right-radius: 60px;
+    }
+
+    .article-title {
+        font-size: 12px;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .article-text {
+        font-size: 20px;
+        line-height: 1.8;
+        padding-bottom: 20px;
+    }
+}
+
+/* Media Query untuk layar besar (max-width: 1440px) */
+@media (max-width: 1440px) {
+    .article-content {
+        width: 85%;
+        margin: 25px auto;
+        border-top-right-radius: 55px;
+        border-bottom-left-radius: 55px;
+    }
+
+    .article-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-top-right-radius: 55px;
+    }
+
+    .article-title {
+        font-size: 12px;
+        padding: 8px;
+        width: 95%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .article-text {
+        font-size: 18px;
+        line-height: 1.7;
+        padding-bottom: 18px;
+    }
+}
+
 /* Media Query untuk layar besar (max-width: 1024px) */
 @media (max-width: 1024px) {
     .article-content {
@@ -439,12 +500,16 @@
     }
 
     .article-title {
-        font-size: 13px;
+        font-size: 11px;
         padding: 8px;
+        width: 90%;
+        text-align: center;
+        white-space: normal;
     }
 
     .article-text {
         font-size: 16px;
+        padding-bottom: 16px;
     }
 }
 
@@ -464,13 +529,15 @@
     }
 
     .article-title {
-        font-size: 12px;
+        font-size: 10px;
         padding: 8px;
     }
 
     .article-text {
         font-size: 15px;
         line-height: 1.6;
+        padding-bottom: 15px;
+
     }
 }
 
@@ -490,15 +557,17 @@
     }
 
     .article-title {
-        font-size: 8px;
-        padding: 5px;
-        
+        font-size: 9px;
+        padding: 6px;
+        width: 95%;
+        text-align: center;
+        white-space: normal;
     }
 
     .article-text {
         font-size: 14px;
         line-height: 1.5;
-        padding: 0 8px;
+        padding-bottom: 14px;
     }
 }
 
@@ -518,15 +587,18 @@
     }
 
     .article-title {
-        font-size: 7px; /* Ukuran font lebih kecil */
-        padding: 2px;   /* Padding dikurangi untuk menyesuaikan tampilan */
-        width: 95%;    /* Agar menyesuaikan lebar layar yang kecil */
+        font-size: 9px;
+        padding: 4px;
+        width: 95%;
         text-align: center;
+        white-space: normal;
     }
 
     .article-text {
         font-size: 11px;
         line-height: 1.3;
+        padding-bottom: 12px;
+
     }
 }
 
@@ -547,16 +619,18 @@
     }
 
     .article-title {
-        font-size: 6px;
-        padding: 3px;
-        width: 95%;
+        font-size: 8px;
+        padding: 1px;
+        white-space: normal; /* Membolehkan teks menjadi multi-baris */
+        width: 90%;  /* Memastikan tidak melebihi lebar kontainer */
         text-align: center;
-
     }
 
     .article-text {
         font-size: 12px;
         line-height: 1.3;
+        padding-bottom: 10px;
+
     }
 }
 
