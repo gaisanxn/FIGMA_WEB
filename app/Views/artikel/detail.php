@@ -638,7 +638,6 @@
 
 
         /* Footer responsif */
-
         .footer {
             display: flex;
             align-items: center;
