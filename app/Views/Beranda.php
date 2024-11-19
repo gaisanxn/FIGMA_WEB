@@ -16,30 +16,171 @@
         body {
             background-color: #E2E2B6; /* Background warna luar */
         }
+        /* Navbar Customization */
         .navbar-custom {
-            background-color: #021526; /* Warna navbar kustom */
-            height: 60px; /* Mengatur tinggi logo */
+            background-color: #021526;
+            padding: 0;
+            /* Menghilangkan padding untuk mengurangi tinggi background */
+            border-bottom: 1px solid transparent;
+            /* Tambahkan batas bawah jika diperlukan */
         }
+
+        /* Navbar Brand (Logo) */
+        .navbar-brand img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            width: 110px;
+            /* Ukuran default gambar lebih kecil */
+            margin-left: 30px;
+            /* Geser logo ke kanan dengan menambah margin kiri */
+
+        }
+
+        /* Navbar Links */
         .navbar-nav .nav-item {
-            margin: 0 10px; /* Jarak horizontal antar item menu */
+            margin: 10px;
+            /* Menghilangkan margin antar item navbar */
         }
+
         .navbar-nav .nav-link {
-            font-family: 'Lato', sans-serif; /* Font Lato */
-            font-size: 11px; /* Ukuran font */
-            font-weight: 700; /* Bold */
-            color: #E2E2B6 !important; /* Warna teks */
-            padding: 10px; /* Jarak di dalam link */
-            transition: color 0.3s ease, transform 0.3s ease; /* Efek transisi */
-            text-decoration: none; /* Menghilangkan garis bawah secara default */
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            /* Ukuran font dapat disesuaikan lebih kecil */
+            font-weight: 700;
+            color: #E2E2B6 !important;
+            padding: 5px 8px;
+            /* Mengurangi padding lebih lanjut untuk mengurangi tinggi */
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none; /* Menghapus garis bawah */
+
 
         }
+
         .navbar-nav .nav-link:hover {
-            color: #FFD700 !important; /* Warna kuning saat hover */
-            transform: scale(1.1) !important; /* Efek perbesaran */
-            text-decoration: none !important; /* Menghilangkan garis bawah saat hover */
-
+            color: #FFD700 !important;
+            /* Warna kuning saat hover */
+            transform: scale(1.1) !important;
+            /* Efek perbesaran */
         }
 
+        /* Responsivitas dengan Media Queries */
+        @media (max-width: 992px) {
+
+            /* Untuk layar medium (tablet) */
+            .navbar-brand img {
+                width: 100px;
+                /* Perkecil ukuran gambar pada layar tablet */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 9px;
+                /* Perkecil ukuran font */
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Untuk layar kecil (smartphone) */
+            .navbar-brand img {
+                width: 80px;
+                /* Ukuran gambar lebih kecil */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 8px;
+                /* Sesuaikan ukuran font */
+                padding: 4px;
+                /* Sesuaikan padding lebih kecil */
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* Untuk layar extra kecil (smartphone kecil) */
+            .navbar-brand img {
+                width: 70px;
+                /* Ukuran gambar lebih kecil untuk smartphone */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 7px;
+                /* Lebih kecil untuk layar kecil */
+                padding: 2px;
+                /* Sesuaikan padding lebih kecil */
+            }
+        }
+
+        /* Navbar Toggle Customization */
+        .navbar-toggler {
+            z-index: 1050;
+            /* Tetap di depan elemen lain */
+            position: relative;
+            transition: all 0.3s ease;
+            /* Transisi smooth */
+        }
+
+        .navbar-collapse {
+            background-color: transparent;
+            /* Tidak ada background pada collapse */
+            position: relative;
+            z-index: 1049;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Menu background saat toggle aktif */
+        .navbar-collapse.show {
+            background-color: #021526;
+            /* Background hanya pada menu */
+            width: 30%;
+            /* Kurangi lebar saat efek, lebih kecil dari sebelumnya */
+            border-radius: 0 0px 15px 0;
+            /* Tambahkan sedikit efek rounded di ujung */
+        }
+
+        /* Navbar item pada layar kecil */
+        .navbar-nav .nav-item {
+            width: 100%;
+            /* Menu menyesuaikan ukuran */
+            transition: background-color 0.3s ease;
+        }
+
+
+
+        /* Responsivitas */
+        @media (max-width: 992px) {
+
+            /* Tablet */
+            .navbar-collapse {
+                width: 45%;
+                /* Lebar lebih kecil pada layar medium */
+                position: absolute;
+                top: 56px;
+                /* Posisi navbar collapse di bawah navbar */
+                left: 0;
+                padding: 1rem;
+                border-radius: 0 10px 10px 0;
+                /* Efek rounded pada ujung kanan */
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Smartphone */
+            .navbar-collapse {
+                width: 40%;
+                /* Kurangi lagi lebar pada layar kecil */
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* Smartphone kecil */
+            .navbar-collapse {
+                width: 35%;
+                /* Lebar lebih kecil lagi pada layar ekstra kecil */
+            }
+        }
         .carousel-inner {
     position: relative;
     width: 100%;
@@ -219,13 +360,12 @@
     font-family: 'League Spartan', sans-serif;
     font-size: 11px; /* Mengubah ukuran font menjadi lebih kecil */
     font-weight: 500; /* Mengubah font-weight menjadi medium */
-    text-decoration: none;
     border-left: 3px solid #0F4872;
     background-color: rgba(110, 172, 218, 0.20);
     width: fit-content; /* Background mengikuti panjang teks */
     padding: 3px 10px; /* Mengatur padding agar lebih rapi */
     border-radius: 5px; /* Membuat sudut background lebih halus */
-    
+    text-decoration: none !important;
     display: inline-flex; /* Menggunakan inline-flex untuk menyejajarkan konten */
     align-items: center; /* Menyejajarkan konten secara vertikal */
     justify-content: center; /* Menyejajarkan konten secara horizontal */
@@ -502,28 +642,28 @@ a:hover {
 </head>
 <body>
 
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li>
-                <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li>
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
 
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
 <!-- Carousel -->
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
@@ -574,7 +714,7 @@ a:hover {
 
 <div class="product-container">
   <?php foreach ($produk as $item): ?>
-    <a href="<?= base_url('/produk/'); ?>" class="product-card">
+    <a href="<?= base_url('/produk/' . $item->slug); ?>" class="product-card">
       <img alt="produk" height="500" width="600" src="<?= base_url('upload/' . $item->img_produk); ?>" />
       <div class="product-info">
         <h2><?= esc($item->nama_produk); ?></h2>
