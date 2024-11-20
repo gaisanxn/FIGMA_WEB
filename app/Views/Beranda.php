@@ -181,6 +181,8 @@
                 /* Lebar lebih kecil lagi pada layar ekstra kecil */
             }
         }
+
+        
         .carousel-inner {
     position: relative;
     width: 100%;
@@ -242,7 +244,6 @@
     margin-bottom: 8px;
 }
 
-
 .carousel-caption h1 {
     font-size: 2.2rem;
     font-weight: bold;
@@ -257,7 +258,6 @@
     margin: 0; /* Menghapus margin agar tidak ada spasi tambahan */
 }
 
-
 .carousel-caption p {
     font-size: 0.8rem;
     font-family: 'Lexend Tera', sans-serif; /* Mengubah font menjadi Lexend Tera */
@@ -266,6 +266,76 @@
     display: inline-block;
 }
 
+/* Media Queries untuk Responsivitas */
+@media (max-width: 1200px) {
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.7rem;
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-caption {
+        margin-top: 40px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.6rem;
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        margin-top: 30px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.5rem;
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        margin-top: 20px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.4rem;
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 6px;
+        padding: 1px 3px;
+    }
+}
 
 
 
@@ -295,6 +365,43 @@
     z-index: 10; /* Menentukan lapisan lebih tinggi */
 }
 
+/* Media Queries untuk Responsivitas */
+@media (max-width: 1200px) {
+    .article-header {
+        width: 300px;
+        font-size: 10px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .article-header {
+        width: 280px;
+        font-size: 11px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-header {
+        width: 250px;
+        font-size: 8px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .article-header {
+        width: 200px;
+        font-size: 6px;
+        height: 18px;
+        margin-top: 20px; /* Mengurangi jarak atas */
+    }
+}
+
+
+
+/* Default styling untuk desktop */
 .containertentang {
     display: flex;
     justify-content: center;
@@ -305,10 +412,10 @@
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
-    max-width: 1600px; /* Mengatur lebar maksimal */
-    width: 100%; /* Mengatur agar lebar penuh */
-    margin-left: auto; /* Agar center secara horizontal */
-    margin-right: auto; /* Agar center secara horizontal */
+    max-width: 1600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contenttentang {
@@ -316,60 +423,226 @@
     color: #ffffff;
     border-radius: 20px;
     display: flex;
-    padding: 20px;
-    max-width: 100%; /* Ubah menjadi 100% agar mengikuti lebar containertentang */
-    width: 100%; /* Mengatur lebar penuh */
+    flex-wrap: wrap;
+    padding: 30px;
+    max-width: 100%;
+    width: 100%;
 }
 
-        .image-section {
-            flex: 1;
-            padding-right: 20px;
-        }
-        .image-section img {
-            width: 100%;
-            border-radius: 20px;
-        }
-        .text-section {
-            flex: 1;
-            padding-left: 20px;
-        }
-        .text-section h2 {
-            font-size: 12px;
-            color: #6EACDA;
-            margin-top: 15px;
-            margin-bottom: 7px;
-            font-family: 'Lato', sans-serif;
-        }
-        .text-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .text-section a {
+.image-section {
+    flex: 1;
+    padding-right: 30px;
+}
+.image-section img {
+    width: 100%;
+    border-radius: 20px;
+}
+.text-section {
+    flex: 1;
+    padding-left: 30px;
+}
+.text-section h2 {
+    font-size: 18px;
+    color: #6EACDA;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-family: 'Lato', sans-serif;
+}
+.text-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.text-section a {
     color: #E2E2B6;
     text-decoration: none;
     font-weight: bold;
-    display: block; /* Menjadikan link berada di bawah tulisan */
-    margin-top: 10px; /* Menambahkan jarak dari paragraf sebelumnya */
+    display: block;
+    margin-top: 10px;
 }
-
-
 
 .read-more-link {
     color: #0F4872;
     font-family: 'League Spartan', sans-serif;
-    font-size: 11px; /* Mengubah ukuran font menjadi lebih kecil */
-    font-weight: 500; /* Mengubah font-weight menjadi medium */
+    font-size: 13px;
+    font-weight: 500;
     border-left: 3px solid #0F4872;
     background-color: rgba(110, 172, 218, 0.20);
-    width: fit-content; /* Background mengikuti panjang teks */
-    padding: 3px 10px; /* Mengatur padding agar lebih rapi */
-    border-radius: 5px; /* Membuat sudut background lebih halus */
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 5px;
     text-decoration: none !important;
-    display: inline-flex; /* Menggunakan inline-flex untuk menyejajarkan konten */
-    align-items: center; /* Menyejajarkan konten secara vertikal */
-    justify-content: center; /* Menyejajarkan konten secara horizontal */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Responsiveness */
+
+/* Ukuran layar besar (2560px) */
+@media (max-width: 2560px) {
+    .contenttentang {
+        padding: 50px;
+    }
+    .text-section h2 {
+        font-size: 20px;
+    }
+    .text-section p {
+        font-size: 18px;
+    }
+    .read-more-link {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+/* Ukuran layar sedang (1440px) */
+@media (max-width: 1440px) {
+    .contenttentang {
+        padding: 40px;
+    }
+    .text-section h2 {
+        font-size: 18px;
+    }
+    .text-section p {
+        font-size: 16px;
+    }
+    .read-more-link {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+}
+
+/* Tablet (1024px) */
+@media (max-width: 1024px) {
+    .contenttentang {
+        flex-direction: column; /* Elemen berbaris vertikal */
+        padding: 20px; /* Mengurangi padding untuk mengecilkan background */
+        max-width: 800px; /* Membatasi lebar maksimal background */
+        width: 90%; /* Menyesuaikan lebar agar tetap responsif */
+        max-width: 850px; /* Menyesuaikan lebar container agar gambar tidak terlalu besar */
+        align-items: center; /* Konten tetap di tengah */
+    }
+
+    .image-section {
+        flex: none; /* Menonaktifkan flex agar ukuran lebih terkendali */
+        width: 100%; /* Gambar tetap mengisi lebar penuh */
+        max-width: 600px; /* Tetap membatasi lebar maksimum gambar */
+        padding-right: 0; /* Menghapus padding kanan */
+        margin-bottom: 20px; /* Memberikan jarak bawah */
+    }
+
+    .image-section img {
+        width: 100%; /* Gambar tetap responsif */
+        height: auto; /* Menjaga proporsi gambar */
+        border-radius: 15px; /* Sudut gambar tetap estetis */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+    }
+
+    .text-section {
+        flex: none; /* Menonaktifkan flex agar teks lebih terkendali */
+        width: 100%; /* Teks memenuhi lebar container */
+        padding-left: 0; /* Menghapus padding kiri */
+        text-align: center; /* Menengahkan semua teks dalam .text-section */
+    }
+
+    .text-section h2 {
+        font-size: 18px; /* Ukuran font */
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .text-section p {
+        font-size: 14px; /* Ukuran font lebih kecil */
+        line-height: 1.5; /* Spasi antar baris */
+        margin-bottom: 20px;
+        margin: 0 auto; /* Menengahkan blok teks */
+        text-align: center; /* Menengahkan teks di dalam paragraf */
+        display: inline-block; /* Membuat elemen mengikuti konten agar mudah ditengah-kan */
+    }
+
+    .read-more-link {
+        font-size: 12px; /* Ukuran font link */
+        padding: 8px 15px; /* Padding link */
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+}
+
+
+
+/* Tablet kecil (768px) */
+@media (max-width: 768px) {
+    .containertentang {
+        padding: 20px;
+    }
+    .contenttentang {
+        padding: 20px;
+    }
+    .text-section h2 {
+        font-size: 14px;
+    }
+    .text-section p {
+        font-size: 13px;
+    }
+    .read-more-link {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+}
+
+/* Ponsel besar (425px) */
+@media (max-width: 425px) {
+    .containertentang {
+        margin-top: 0;
+    }
+    .contenttentang {
+        padding: 15px;
+    }
+    .image-section img {
+        border-radius: 10px; /* Border lebih kecil */
+    }
+    .text-section h2 {
+        font-size: 12px;
+    }
+    .text-section p {
+        font-size: 12px;
+    }
+    .read-more-link {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+
+/* Ponsel sedang (375px) */
+@media (max-width: 375px) {
+    .text-section h2 {
+        font-size: 11px;
+    }
+    .text-section p {
+        font-size: 11px;
+    }
+    .read-more-link {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+}
+
+/* Ponsel kecil (320px) */
+@media (max-width: 320px) {
+    .text-section h2 {
+        font-size: 10px;
+    }
+    .text-section p {
+        font-size: 10px;
+    }
+    .read-more-link {
+        font-size: 8px;
+        padding: 2px 6px;
+    }
+}
+
+
 
 
 
@@ -491,34 +764,6 @@
 
 }
 
-        .footer {
-    display: flex;
-    align-items: center; /* Untuk memastikan elemen sejajar vertikal */
-    justify-content: center; /* Untuk membuat konten berada di tengah */
-    padding: 5px; /* Kurangi padding untuk membuat footer lebih tipis */
-    background-color: #021526;
-    color: white;
-    font-size: 8px; /* Ukuran font yang lebih kecil */
-    margin-top: 20px; /* Menambahkan margin atas untuk memberi jarak dari elemen sebelumnya */
-}
-
-        .footer-logo {
-            max-width: 60px; /* Kecilkan ukuran logo */
-            margin-right: 5px; /* Kurangi jarak antara logo dan teks */
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 8px; /* Ukuran font yang lebih kecil untuk teks copyright */
-            font-family: 'League Spartan', sans-serif; /* Gaya font League Spartan Regular */
-            color: #E2E2B6; /* Ubah warna tulisan Copyright */
-        }
-
-        .footer-separator {
-            margin: 0 5px; /* Jarak antara logo dan teks copyright */
-            color: #E2E2B6; /* Warna separator yang sama dengan warna teks */
-        }
-        
 
 
         .article-header3 {
@@ -638,6 +883,35 @@ a:hover {
     color: rgba(255, 165, 0, 0.7);
 }
 
+
+.footer {
+    display: flex;
+    align-items: center; /* Untuk memastikan elemen sejajar vertikal */
+    justify-content: center; /* Untuk membuat konten berada di tengah */
+    padding: 5px; /* Kurangi padding untuk membuat footer lebih tipis */
+    background-color: #021526;
+    color: white;
+    font-size: 8px; /* Ukuran font yang lebih kecil */
+    margin-top: 20px; /* Menambahkan margin atas untuk memberi jarak dari elemen sebelumnya */
+}
+
+        .footer-logo {
+            max-width: 60px; /* Kecilkan ukuran logo */
+            margin-right: 5px; /* Kurangi jarak antara logo dan teks */
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 8px; /* Ukuran font yang lebih kecil untuk teks copyright */
+            font-family: 'League Spartan', sans-serif; /* Gaya font League Spartan Regular */
+            color: #E2E2B6; /* Ubah warna tulisan Copyright */
+        }
+
+        .footer-separator {
+            margin: 0 5px; /* Jarak antara logo dan teks copyright */
+            color: #E2E2B6; /* Warna separator yang sama dengan warna teks */
+        }
+        
     </style>
 </head>
 <body>
