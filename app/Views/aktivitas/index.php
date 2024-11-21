@@ -62,6 +62,16 @@
             /* Efek perbesaran */
         }
 
+/* Ganti warna ikon navbar-toggler menjadi putih */
+.navbar-toggler-icon {
+    background-color: #E2E2B6; /* Warna putih untuk ikon toggler */
+}
+
+/* Menambahkan efek transisi pada toggler untuk perubahan smooth */
+.navbar-toggler {
+    border: none; /* Menghilangkan border untuk membuat tampilan lebih bersih */
+}
+
         /* Responsivitas dengan Media Queries */
         @media (max-width: 992px) {
 

@@ -64,6 +64,52 @@
             /* Efek perbesaran */
         }
 
+
+        /* Navbar Toggle Customization */
+        .navbar-toggler {
+            z-index: 1050;
+            /* Tetap di depan elemen lain */
+            position: relative;
+            transition: all 0.3s ease;
+            /* Transisi smooth */
+        }
+
+        .navbar-collapse {
+            background-color: transparent;
+            /* Tidak ada background pada collapse */
+            position: relative;
+            z-index: 1049;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Menu background saat toggle aktif */
+        .navbar-collapse.show {
+            background-color: #021526;
+            /* Background hanya pada menu */
+            width: 30%;
+            /* Kurangi lebar saat efek, lebih kecil dari sebelumnya */
+            border-radius: 0 0px 15px 0;
+            /* Tambahkan sedikit efek rounded di ujung */
+        }
+
+        /* Navbar item pada layar kecil */
+        .navbar-nav .nav-item {
+            width: 100%;
+            /* Menu menyesuaikan ukuran */
+            transition: background-color 0.3s ease;
+        }
+
+
+        /* Ganti warna ikon navbar-toggler menjadi putih */
+.navbar-toggler-icon {
+    background-color: #E2E2B6; /* Warna putih untuk ikon toggler */
+}
+
+/* Menambahkan efek transisi pada toggler untuk perubahan smooth */
+.navbar-toggler {
+    border: none; /* Menghilangkan border untuk membuat tampilan lebih bersih */
+}
+
         /* Responsivitas dengan Media Queries */
         @media (max-width: 992px) {
 
@@ -111,39 +157,7 @@
             }
         }
 
-        /* Navbar Toggle Customization */
-        .navbar-toggler {
-            z-index: 1050;
-            /* Tetap di depan elemen lain */
-            position: relative;
-            transition: all 0.3s ease;
-            /* Transisi smooth */
-        }
-
-        .navbar-collapse {
-            background-color: transparent;
-            /* Tidak ada background pada collapse */
-            position: relative;
-            z-index: 1049;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Menu background saat toggle aktif */
-        .navbar-collapse.show {
-            background-color: #021526;
-            /* Background hanya pada menu */
-            width: 30%;
-            /* Kurangi lebar saat efek, lebih kecil dari sebelumnya */
-            border-radius: 0 0px 15px 0;
-            /* Tambahkan sedikit efek rounded di ujung */
-        }
-
-        /* Navbar item pada layar kecil */
-        .navbar-nav .nav-item {
-            width: 100%;
-            /* Menu menyesuaikan ukuran */
-            transition: background-color 0.3s ease;
-        }
+        
 
 
 
@@ -232,6 +246,8 @@
     justify-content: center; /* Memusatkan elemen secara vertikal */
     text-align: center; /* Memusatkan teks */
     margin-top: 60px; /* Menambahkan margin atas untuk menggeser ke bawah */
+    padding: 10px; /* Menambahkan padding untuk memberi ruang */
+    box-sizing: border-box; /* Agar padding tidak mengubah ukuran elemen */
 }
 
 .carousel-caption .carousel-tagline {
@@ -248,14 +264,14 @@
     font-size: 2.2rem;
     font-weight: bold;
     color: #E2E2B6;
-    font-family: 'Lexend Tera', sans-serif; /* Mengubah font menjadi Lexend Tera */
+    font-family: 'Lexend Tera', sans-serif;
     padding: 10px 20px;
     display: inline-block;
-    background-color: transparent; /* Menghapus background */
-    white-space: nowrap; /* Mencegah teks membungkus ke baris baru */
-    overflow: hidden; /* Menyembunyikan teks yang melebihi lebar */
-    text-overflow: ellipsis; /* Menampilkan elipsis jika teks terlalu panjang */
-    margin: 0; /* Menghapus margin agar tidak ada spasi tambahan */
+    background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 10px 0; /* Menambahkan margin bawah untuk memberi jarak dengan elemen berikutnya */
 }
 
 .carousel-caption p {
@@ -264,6 +280,8 @@
     background-color: transparent; /* Menghapus background */
     padding: 5px 10px;
     display: inline-block;
+    margin: 0; /* Menghapus margin agar tidak ada spasi tambahan */
+
 }
 
 /* Media Queries untuk Responsivitas */
@@ -337,7 +355,51 @@
     }
 }
 
+/* Untuk resolusi 375px (misalnya ponsel kecil) */
+@media (max-width: 375px) {
+    .carousel-caption {
+        margin-top: 15px; /* Mengurangi margin atas */
+        padding: 5px; /* Mengurangi padding untuk layar lebih kecil */
+    }
 
+    .carousel-caption h1 {
+        font-size: 1.0rem; /* Ukuran teks lebih kecil */
+        margin-bottom: 10px; /* Menambahkan ruang bawah */
+    }
+
+    .carousel-caption p {
+        font-size: 0.45rem; /* Ukuran deskripsi lebih kecil */
+        margin-top: 5px; /* Memberikan ruang antara h1 dan p */
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 6px;
+        padding: 2px 3px;
+    }
+}
+
+/* Untuk resolusi 320px (ponsel lebih kecil) */
+@media (max-width: 320px) {
+    .carousel-caption {
+        margin-top: 10px; /* Menyesuaikan margin atas */
+        padding: 3px; /* Padding lebih kecil */
+    }
+
+    .carousel-caption h1 {
+        font-size: 0.8rem; /* Ukuran teks lebih kecil lagi */
+        margin-bottom: 8px; /* Menambahkan ruang bawah */
+    }
+
+    .carousel-caption p {
+        font-size: 0.4rem; /* Ukuran deskripsi lebih kecil */
+        margin-top: 5px; /* Memberikan ruang antara h1 dan p */
+    }
+
+    .carousel-caption .carousel-tagline {
+        font-size: 5px;
+        padding: 1px 2px;
+    }
+}
 
 
 .article-header {
@@ -646,7 +708,7 @@
 
 
 
-
+/* Global Styles */
 .article-header2 {
     width: 250px;
     height: 25px;
@@ -658,111 +720,226 @@
     color: #ffffff;
     font-size: 13px;
     margin: 0 auto;
-    margin-top: 30px; /* Jarak atas tetap ada */
-    margin-bottom: -28px; /* Menghapus jarak bawah */
+    margin-top: 30px;
+    margin-bottom: -28px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
-    /* Flexbox properties */
-    display: flex; /* Mengaktifkan flexbox */
-    align-items: center; /* Memusatkan secara vertikal */
-    justify-content: center; /* Memusatkan secara horizontal */
-    position: relative; /* Menambahkan konteks posisi */
-    z-index: 10; /* Menentukan lapisan lebih tinggi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
 }
-
 
 .product-container {
     display: flex;
-    justify-content: center; /* Mengatur produk agar berada di tengah */
-    flex-wrap: wrap; /* Membungkus produk ke baris berikutnya jika tidak muat */
-    margin: 20px 0; /* Memberikan jarak di atas dan bawah */
-    gap: 20px; /* Mengatur jarak antar produk */
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 20px;
     background-color: #021526;
-    padding: 10px 0; /* Menambahkan padding atas dan bawah */
-
+    padding: 10px;
 }
 
 .product-card {
-    display: flex; /* Menyusun gambar dan informasi produk secara horizontal */
-    align-items: center; /* Memusatkan elemen secara vertikal */
+    display: flex;
+    align-items: center;
     padding: 15px;
-    background-color: #041C32; /* Warna latar belakang serupa dengan gambar */
-    position: relative; /* Menyediakan konteks untuk pseudo-element */
-    border-radius: 10px; /* Membuat sudut melengkung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih tebal */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Animasi saat hover */
-    width: 30%; /* Lebar 30% dari kontainer untuk memberikan ruang antar produk */
-    max-width: 330px; /* Maksimum lebar card */
-    margin: 10px; /* Margin di sekitar card */
-    text-decoration: none; /* Menghilangkan garis bawah pada link */
-    color: inherit; /* Mengambil warna teks dari elemen parent */
-    text-decoration: none; /* Menghilangkan garis bawah pada link */
-
-}
-
-.product-card::before {
-    content: ''; /* Membuat konten kosong untuk pseudo-element */
-    position: absolute; /* Memposisikan secara absolut */
-    top: 5px; /* Jarak dari atas */
-    left: 5px; /* Jarak dari kiri */
-    right: 5px; /* Jarak dari kanan */
-    bottom: 5px; /* Jarak dari bawah */
-    border: 2px solid #FFFFFF; /* Border berwarna putih */
-    border-radius: 8px; /* Sudut border melengkung */
-    pointer-events: none; /* Agar tidak mengganggu interaksi dengan card */
+    background-color: #041C32;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid #E2E2B6; /* Border dengan warna #E2E2B6 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    width: 30%; /* Default width */
+    max-width: 330px;
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card:hover {
-    background-color: #02161D; /* Warna gelap saat hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bayangan lebih dalam */
-    transform: translateY(-5px); /* Mengangkat kartu sedikit saat hover */
+    background-color: #02161D;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
     text-decoration: none;
-
+    border-color: #000000; /* Ubah border menjadi hitam saat hover */
 }
 
 .product-card img {
-    border-radius: 5px; /* Sudut gambar sedikit melengkung */
-    max-width: 150px; /* Mengatur lebar maksimum gambar */
-    max-height: 120px; /* Mengatur tinggi maksimum gambar */
-    object-fit: contain; /* Menjaga proporsi gambar dan tidak memotong */
-    margin-right: 15px; /* Memberikan jarak antara gambar dan teks */
+    border-radius: 5px;
+    max-width: 150px;
+    max-height: 120px;
+    object-fit: contain;
+    margin-right: 15px;
 }
 
 .product-info {
-    flex: 1; /* Memastikan informasi produk mengambil ruang yang tersisa */
-    color: #E2E2B6; /* Warna teks produk */
-    display: flex; /* Menjadikan .product-info sebagai flex container */
-    flex-direction: column; /* Mengatur arah elemen di dalamnya menjadi kolom */
-    align-items: flex-end; /* Mengatur elemen agar rata kanan */
-    text-decoration: none; /* Menghilangkan garis bawah secara default */
-
+    flex: 1;
+    color: #E2E2B6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .product-info h2 {
-    font-family: 'League Spartan', sans-serif; /* Gaya font untuk nama produk */
-    font-size: 22px; /* Ukuran font serupa dengan gambar */
-    color: #E2E2B6; /* Warna teks sesuai */
+    font-family: 'League Spartan', sans-serif;
+    font-size: 22px;
+    color: #E2E2B6;
     margin: 0;
-    text-align: right; /* Mengatur teks agar rata kanan */
-    text-decoration: none; /* Menghilangkan garis bawah secara default */
-
-    
+    text-align: right;
 }
 
 .price {
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: bold;
-    color: #E50914; /* Warna merah untuk harga sesuai dengan gambar */
+    color: #E50914;
     margin-top: 10px;
-    display: inline-block; /* Agar harga hanya sebesar konten */
-    text-align: right; /* Mengatur teks agar rata kanan */
-    width: 100%; /* Agar lebar harga mengisi ruang yang ada */
-    text-decoration: none; /* Menghilangkan garis bawah secara default */
-
+    text-align: right;
 }
+
+/* Responsive Styles */
+
+/* 2560px */
+@media (min-width: 2560px) {
+    .product-card {
+        width: 20%; /* Menampilkan lebih banyak produk dalam satu baris */
+    }
+}
+
+/* 1440px */
+@media (max-width: 1440px) {
+    .product-card {
+        width: 25%; /* Menampilkan 4 produk dalam satu baris */
+    }
+
+    .product-card img {
+        max-width: 140px;
+        max-height: 110px;
+    }
+
+    .product-info h2 {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+    .product-card {
+        width: 33%; /* Menampilkan 3 produk dalam satu baris */
+    }
+
+    .product-card img {
+        max-width: 120px;
+        max-height: 100px;
+    }
+
+    .product-info h2 {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%; /* Menampilkan 2 produk dalam satu baris */
+    }
+
+    .product-card img {
+        max-width: 100px;
+        max-height: 90px;
+    }
+
+    .product-info h2 {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+}
+
+/* 425px */
+@media (max-width: 425px) {
+    .product-card {
+        width: 90%; /* Menampilkan 1 produk dalam satu baris */
+    }
+
+    .product-card img {
+        max-width: 80px;
+        max-height: 70px;
+    }
+
+    .product-info h2 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+    .product-card {
+        width: 80%;
+        padding: 8px;
+    }
+
+    .product-card img {
+        max-width: 70px;
+        max-height: 60px;
+    }
+
+    .product-info h2 {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+    .product-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .product-card img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-width: 60px;
+        max-height: 50px;
+    }
+
+    .product-info {
+        align-items: center;
+    }
+
+    .product-info h2 {
+        font-size: 11px;
+    }
+
+    .price {
+        font-size: 10px;
+    }
+}
+
 
 
 
