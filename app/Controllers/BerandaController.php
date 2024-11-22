@@ -7,6 +7,8 @@ use App\Models\AktivitasDataModel;
 use App\Models\ProdukDataModel;
 use App\Models\ProdukModel;
 use App\Models\TentangModel;
+use App\Models\AktivitasModel;
+
 use CodeIgniter\HTTP\ResponseInterface;
 
 class BerandaController extends BaseController
@@ -19,6 +21,12 @@ class BerandaController extends BaseController
         $produk = new ProdukDataModel();
 
         $data['produk'] = $produk->findAll();
+
+
+
+        $aktivitas = new AktivitasModel();
+
+        $data['aktivitas'] = $aktivitas->first();
 
         $aktivitas = new AktivitasDataModel();
 

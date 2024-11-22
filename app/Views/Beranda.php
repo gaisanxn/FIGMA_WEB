@@ -1061,34 +1061,44 @@ a:hover {
 }
 
 
-.footer {
-    display: flex;
-    align-items: center; /* Untuk memastikan elemen sejajar vertikal */
-    justify-content: center; /* Untuk membuat konten berada di tengah */
-    padding: 5px; /* Kurangi padding untuk membuat footer lebih tipis */
-    background-color: #021526;
-    color: white;
-    font-size: 8px; /* Ukuran font yang lebih kecil */
-    margin-top: 20px; /* Menambahkan margin atas untuk memberi jarak dari elemen sebelumnya */
-}
+ /* Footer responsif */
+ .footer {
+            display: flex;
+            align-items: center;
+            /* Untuk memastikan elemen sejajar vertikal */
+            justify-content: center;
+            /* Untuk membuat konten berada di tengah */
+            padding: 5px;
+            /* Kurangi padding untuk membuat footer lebih tipis */
+            background-color: #021526;
+            color: white;
+            font-size: 8px;
+            /* Ukuran font yang lebih kecil */
+        }
 
         .footer-logo {
-            max-width: 60px; /* Kecilkan ukuran logo */
-            margin-right: 5px; /* Kurangi jarak antara logo dan teks */
+            max-width: 60px;
+            /* Kecilkan ukuran logo */
+            margin-right: 5px;
+            /* Kurangi jarak antara logo dan teks */
         }
 
         .footer p {
             margin: 0;
-            font-size: 8px; /* Ukuran font yang lebih kecil untuk teks copyright */
-            font-family: 'League Spartan', sans-serif; /* Gaya font League Spartan Regular */
-            color: #E2E2B6; /* Ubah warna tulisan Copyright */
+            font-size: 8px;
+            /* Ukuran font yang lebih kecil untuk teks copyright */
+            font-family: 'League Spartan', sans-serif;
+            /* Gaya font League Spartan Regular */
+            color: #E2E2B6;
+            /* Ubah warna tulisan Copyright */
         }
 
         .footer-separator {
-            margin: 0 5px; /* Jarak antara logo dan teks copyright */
-            color: #E2E2B6; /* Warna separator yang sama dengan warna teks */
+            margin: 0 5px;
+            /* Jarak antara logo dan teks copyright */
+            color: #E2E2B6;
+            /* Warna separator yang sama dengan warna teks */
         }
-        
     </style>
 </head>
 <body>
@@ -1184,7 +1194,7 @@ a:hover {
 
 
   <!--Aktivitas-->
-  <div class="container">
+<div class="container">
     <?php foreach ($aktivitas as $item): ?>
     <div class="card">
         <img alt="People at a technology conference" height="300" src="<?= base_url('upload/' . $item->img); ?>" width="400"/>
@@ -1192,19 +1202,21 @@ a:hover {
             <div>
                 <h2><?= esc($item->judul_img); ?></h2>
                 <hr class="separator">
-                <p><a href="">Baca Selengkapnya</a></p>
+                <p><a href="<?= base_url('/aktivitas/' . $item->slug); ?>">Baca Selengkapnya</a></p>
             </div>
         </div>
     </div>
     <?php endforeach; ?>
 </div>
 
+
 <!-- Footer -->
 <div class="footer">
-    <img src="upload/logo.png" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
