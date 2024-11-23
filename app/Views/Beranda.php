@@ -968,43 +968,50 @@
     z-index: 10; /* Menentukan lapisan lebih tinggi */
 }
 
-
+/* Global Styles */
 .container {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Pastikan semua card sejajar pada posisi yang sama */
+    align-items: stretch;
+    flex-wrap: wrap; /* Menambahkan responsivitas */
     width: 100%;
     max-width: 10000px;
     margin: 100px auto 20px;
     background-color: #0a1a2a;
     padding: 20px;
-    gap: 20px; /* Menambahkan jarak antar kartu agar lebih rapi */
+    gap: 20px;
 }
 
 .card {
     position: relative;
-    width: 80%; /* Kartu akan mengambil 80% dari lebar kontainer */
-    height: 300px; /* Sesuaikan tinggi tetap untuk semua kartu */
+    flex: 1 1 30%; /* Default untuk desktop, 3 kartu per baris */
+    max-width: 330px;
+    min-width: 250px;
+    height: 300px;
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Transisi halus untuk rotasi dan filter */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    background-color: #041C32;
+    border: 2px solid #E2E2B6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
-    width: 100%; /* Mengatur lebar gambar menjadi 100% dari lebar kartu */
-    height: 100%; /* Mengatur tinggi gambar menjadi 100% dari tinggi kartu */
-    object-fit: cover; /* Memastikan gambar memenuhi area kartu tanpa distorsi */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 15px;
-    transition: transform 0.3s ease; /* Transisi halus untuk gambar */
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: rotate(2deg); /* Rotasi sedikit saat dihover */
-    filter: brightness(1.1); /* Mencerahkan kartu saat dihover */
+    transform: rotate(2deg);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card:hover img {
-    transform: scale(1.05); /* Membesar gambar saat dihover */
+    transform: scale(1.05);
 }
 
 .card .overlay {
@@ -1029,7 +1036,7 @@
 .card .overlay h2 {
     color: #E2E2B6;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 1.0em;
+    font-size: 1.2em;
     text-align: center;
     margin: 0;
 }
@@ -1037,7 +1044,7 @@
 .card .overlay p {
     font-family: 'Lexend Exa', sans-serif;
     color: #E2E2B6;
-    font-size: 0.5em;
+    font-size: 0.9em;
     text-align: center;
     margin: 0;
 }
@@ -1058,6 +1065,43 @@ a {
 a:hover {
     text-decoration: underline;
     color: rgba(255, 165, 0, 0.7);
+}
+
+/* Responsive Styles */
+
+/* 2560px */
+@media (min-width: 2560px) {
+    .card {
+        flex: 1 1 20%; /* Menampilkan lebih banyak kartu per baris */
+    }
+}
+
+/* 1440px */
+@media (max-width: 1440px) {
+    .card {
+        flex: 1 1 25%; /* 4 kartu per baris */
+    }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 33%; /* 3 kartu per baris */
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 45%; /* 2 kartu per baris */
+    }
+}
+
+/* 425px */
+@media (max-width: 425px) {
+    .card {
+        flex: 1 1 90%; /* 1 kartu per baris */
+    }
 }
 
 
