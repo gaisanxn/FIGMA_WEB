@@ -1151,7 +1151,7 @@ a:hover {
 <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+                <img src="/upload/<?=$tentang->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -1173,7 +1173,7 @@ a:hover {
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/upload/slider2.jpg" alt="Slide 1" class="carousel-image">
+            <img src="/upload/<?=$tentang->img_banner ?>" alt="Slide 1" class="carousel-image">
             <div class="carousel-overlay"></div> <!-- Overlay hitam dengan opasitas -->
             <div class="carousel-caption">
                 <span class="carousel-tagline">WELCOME TO</span>
@@ -1256,7 +1256,7 @@ a:hover {
 
 <!-- Footer -->
 <div class="footer">
-    <img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/' . $tentang->img_footer); ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>
