@@ -66,7 +66,7 @@
 
 /* Ganti warna ikon navbar-toggler menjadi putih */
 .navbar-toggler-icon {
-    background-color: #E2E2B6; /* Warna putih untuk ikon toggler */
+    background-color: #ffff0000; /* Warna putih untuk ikon toggler */
 }
 
 /* Menambahkan efek transisi pada toggler untuk perubahan smooth */
@@ -379,78 +379,286 @@
 
 /* Contact Section */
 .contact-section {
-    display: block; /* Mengubah flex menjadi block */
-    flex-direction: row; /* Tidak berlaku karena display block */
-    align-items: flex-start; /* Hilangkan perataan tengah */
-    padding: 0; /* Hapus padding */
-    gap: 0; /* Hilangkan jarak antar elemen */
-    max-width: 120%; /* Membuat elemen melewati batas layar */
-    margin: 0; /* Hilangkan margin tengah */
-    border-radius: 0; /* Hilangkan border radius */
-    background-color: transparent; /* Hilangkan warna latar belakang */
-    box-shadow: none; /* Hilangkan bayangan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #021526, #E2E2B6);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
+.contact-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Contact Iframe */
 .contact-section iframe {
-    width: 200%; /* Melebarkan iframe hingga keluar dari container */
-    height: 500px; /* Tinggi iframe menjadi tidak proporsional */
-    border: 5px solid red; /* Tambahkan border mencolok */
-    border-radius: 0; /* Hilangkan border radius */
+    width: 100%;
+    height: 280px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
 }
 
 /* Contact Info */
 .contact-info {
-    text-align: left; /* Ubah perataan ke kiri */
-    padding: 0; /* Hilangkan padding */
+    text-align: center;
+    padding: 10px;
 }
 
 .contact-info h2 {
-    color: red; /* Ubah warna menjadi mencolok */
-    margin-bottom: 0; /* Hilangkan jarak bawah */
-    font-size: 50px; /* Ukuran font yang terlalu besar */
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 .contact-info p {
-    color: green; /* Warna teks tidak serasi */
-    font-size: 25px; /* Font lebih besar */
-    margin-bottom: 0; /* Hilangkan margin bawah */
-    line-height: 1; /* Jarak antar baris terlalu kecil */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #dcdcdc;
+}
+
+/* Contact Details */
+.contact-info-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 100%;
 }
 
 .contact-info-details h3 {
-    color: blue; /* Warna teks kontras */
-    font-size: 12px; /* Ukuran font terlalu kecil */
-    margin-bottom: 0; /* Hilangkan margin bawah */
+    font-size: 18px;
+    color: #FFD700; /* Emas */
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .contact-info-details h6 {
-    display: inline; /* Tampilkan semua dalam satu baris */
-    font-size: 30px; /* Ukuran font terlalu besar */
-    color: pink; /* Warna teks mencolok */
-    margin: 0; /* Hilangkan margin */
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+    gap: 10px;
 }
 
 .contact-info-details h6 i {
-    margin-right: 0; /* Hilangkan jarak antar ikon */
-    color: red; /* Warna ikon mencolok */
+    color: #FFD700;
+    font-size: 18px;
 }
 
 .contact-info-details span {
-    color: black; /* Hilangkan konsistensi warna */
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* Responsivitas Tidak Aktif */
-@media (max-width: 992px) {
+/* Responsive Styles */
+
+/* 2560px */
+@media (min-width: 2560px) {
     .contact-section {
-        max-width: 100%;
+        max-width: 1200px;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+
+    .contact-info p {
+        font-size: 18px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 20px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 16px;
     }
 }
 
-@media (max-width: 768px) {
-    .contact-section iframe {
-        width: 300%; /* Ukuran iframe melewati layar */
+/* 1440px */
+@media (max-width: 1440px) {
+    .contact-section {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 26px;
+    }
+
+    .contact-info p {
+        font-size: 16px;
     }
 }
+
+/* 1024px */
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .contact-info h2 {
+        font-size: 24px;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .contact-section {
+        max-width: 600px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .contact-info h2 {
+        font-size: 18px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 14px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 12px;
+    }
+
+    .contact-section iframe {
+        height: 200px;
+    }
+}
+
+/* 425px */
+@media (max-width: 425px) {
+    .contact-section {
+        max-width: 350px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .contact-info h2 {
+        font-size: 14px;
+    }
+
+    .contact-info p {
+        font-size: 10px;
+    }
+
+    .contact-info-details {
+        padding: 8px 15px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 10px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 8px;
+    }
+
+    .contact-section iframe {
+        height: 120px;
+    }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+    .contact-section {
+        max-width: 320px;
+        padding: 4px;
+        gap: 4px;
+    }
+
+    .contact-info h2 {
+        font-size: 12px;
+    }
+
+    .contact-info p {
+        font-size: 9px;
+    }
+
+    .contact-info-details {
+        padding: 6px 12px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 9px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 7px;
+    }
+
+    .contact-section iframe {
+        height: 100px;
+    }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+    .contact-section {
+        max-width: 280px;
+        padding: 3px;
+        gap: 3px;
+    }
+
+    .contact-info h2 {
+        font-size: 10px;
+    }
+
+    .contact-info p {
+        font-size: 8px;
+    }
+
+    .contact-info-details {
+        padding: 4px 10px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 7px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 6px;
+    }
+
+    .contact-section iframe {
+        height: 80px;
+    }
+}
+
+
+
+
+
 
 
 
