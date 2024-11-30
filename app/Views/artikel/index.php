@@ -682,7 +682,7 @@
     <div id="carouselExample" class="carousel slide position-relative">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/upload/<?= $aktivitas->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
+                <img src="/upload/<?= $artikel->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
                 <div class="carousel-overlay"></div>
             </div>
         </div>
@@ -729,7 +729,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <img src="upload/logo.png" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/' . $artikel->img_footer); ?>" alt="Logo" class="footer-logo">
         <span class="footer-separator">|</span>
         <p>Copyright ©2024. Design by Bayu Valent</p>
     </div>

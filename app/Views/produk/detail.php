@@ -568,7 +568,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="/upload/logo.png" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+                <img src="/upload/<?= $produk->img_navbar?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -590,7 +590,7 @@
     <div id="carouselExample" class="carousel slide position-relative">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/upload/TENTANG1.jpg" alt="Slide 1" class="d-block w-100" style="height:auto;">
+                <img src="/upload/<?= $produk->img_slider?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
                 <div class="carousel-overlay"></div>
             </div>
         </div>
@@ -620,7 +620,7 @@
 
     <!-- Footer -->
 <div class="footer">
-<img src="<?= base_url('upload/logo.png') ?>" alt="Logo" class="footer-logo">
+<img src="<?= base_url('upload/' . $produk->img_footer); ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>
