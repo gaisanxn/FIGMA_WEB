@@ -377,62 +377,353 @@
 
 
 
-        .contact-section {
-    display: block; /* Menghapus flex layout */
-    padding: 50px;
-    gap: 50px;
+/* Contact Section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
     max-width: 800px;
-    width: 800px; /* Ukuran tetap */
-    margin: 0; /* Tidak ada margin otomatis */
-    background: linear-gradient(135deg, #021526, #E2E2B6);
-    box-shadow: none; /* Menghapus efek bayangan */
-    color: black; /* Warna tidak kontras */
+    margin: 20px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #021526, #021526); /* Gradien biru */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
+.contact-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Contact Iframe */
 .contact-section iframe {
-    width: 400px; /* Ukuran tetap, tidak responsif */
-    height: 200px;
-    border-radius: 0; /* Tidak ada efek radius */
-    box-shadow: none; /* Menghapus efek bayangan */
-    margin: 0;
+    width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    aspect-ratio: 4 / 3; /* Menjaga rasio 4:3 */
 }
 
+/* Contact Info */
 .contact-info {
-    text-align: left; /* Tidak rata tengah */
-    padding: 0; /* Menghapus padding */
+    text-align: center;
+    padding: 10px;
 }
 
 .contact-info h2 {
-    font-size: 50px; /* Ukuran font tidak sesuai */
-    font-family: Arial, sans-serif; /* Font biasa */
-    margin-bottom: 0;
-    color: red; /* Warna mencolok tanpa harmoni */
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 .contact-info p {
-    font-size: 20px;
-    line-height: 2; /* Spasi terlalu besar */
-    color: black; /* Tidak ada harmoni warna */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #dcdcdc;
 }
 
+/* Contact Details */
 .contact-info-details {
-    display: block; /* Menghapus flex */
-    padding: 0; /* Tidak ada padding */
-    width: 800px; /* Ukuran tetap */
-    background: none; /* Menghapus latar belakang */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 100%;
 }
 
-.contact-info-details h3,
+.contact-info-details h3 {
+    font-size: 18px;
+    color: #FFD700; /* Emas */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .contact-info-details h6 {
-    font-size: 40px; /* Ukuran terlalu besar */
-    margin: 0; /* Menghapus margin */
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+    gap: 10px;
+}
+
+.contact-info-details h6 i {
+    color: #FFD700;
+    font-size: 18px;
 }
 
 .contact-info-details span {
-    font-size: 30px;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* Responsiveness is removed by deleting media queries */
+/* Responsive Styles */
+
+/* 2560px */
+@media (min-width: 2560px) {
+    .contact-section {
+        max-width: 1200px;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+
+    .contact-info p {
+        font-size: 18px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 20px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 16px;
+    }
+}
+
+/* 1440px */
+@media (max-width: 1440px) {
+    .contact-section {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 26px;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+    }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .contact-info h2 {
+        font-size: 24px;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+    }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+    .contact-section {
+        max-width: 600px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .contact-info h2 {
+        font-size: 18px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 14px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 12px;
+    }
+
+    .contact-section iframe {
+        height: auto;
+    }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+    .contact-section {
+        max-width: 500px;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .contact-info h2 {
+        font-size: 16px;
+    }
+
+    .contact-info p {
+        font-size: 13px;
+    }
+
+    .contact-info-details {
+        padding: 10px 18px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 12px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 11px;
+    }
+
+    .contact-section iframe {
+        height: auto;
+    }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+    .contact-section {
+        max-width: 450px; /* Atur lebar container lebih kecil untuk 480px */
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .contact-info h2 {
+        font-size: 14px;
+    }
+
+    .contact-info p {
+        font-size: 11px;
+    }
+
+    .contact-info-details {
+        padding: 8px 16px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 11px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 9px;
+    }
+
+    .contact-section iframe {
+        height: auto; /* Tetap menjaga rasio 4:3 */
+    }
+}
+
+
+/* 425px */
+@media (max-width: 425px) {
+    .contact-section {
+        max-width: 350px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .contact-info h2 {
+        font-size: 14px;
+    }
+
+    .contact-info p {
+        font-size: 10px;
+    }
+
+    .contact-info-details {
+        padding: 8px 15px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 10px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 8px;
+    }
+
+    .contact-section iframe {
+        height: auto;
+    }
+}
+
+/* 375px */
+@media (max-width: 375px) {
+    .contact-section {
+        max-width: 320px;
+        padding: 4px;
+        gap: 4px;
+    }
+
+    .contact-info h2 {
+        font-size: 12px;
+    }
+
+    .contact-info p {
+        font-size: 9px;
+    }
+
+    .contact-info-details {
+        padding: 6px 12px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 9px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 7px;
+    }
+
+    .contact-section iframe {
+        height: auto;
+    }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+    .contact-section {
+        max-width: 280px;
+        padding: 3px;
+        gap: 3px;
+    }
+
+    .contact-info h2 {
+        font-size: 10px;
+    }
+
+    .contact-info p {
+        font-size: 8px;
+    }
+
+    .contact-info-details {
+        padding: 4px 10px;
+    }
+
+    .contact-info-details h3 {
+        font-size: 7px;
+    }
+
+    .contact-info-details h6 {
+        font-size: 6px;
+    }
+
+    .contact-section iframe {
+        height: auto;
+    }
+}
+
+
 
 
 
