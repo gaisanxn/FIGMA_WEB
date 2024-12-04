@@ -38,6 +38,9 @@ class ArtikelController extends BaseController
 
         $data['dataartikel'] = $artikeldatamodel->findAll();
 
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
 
 // Kirim data ke view
         return view('artikel/index', $data);
@@ -58,6 +61,9 @@ class ArtikelController extends BaseController
         
         $data['artikel'] = $artikel;
         return view('artikel/detail', $data); // Menampilkan detail produk
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
     }
 }
 

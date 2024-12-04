@@ -552,13 +552,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
 
                 </ul>
             </div>
@@ -577,9 +577,9 @@
         <!-- Page Title and Breadcrumb -->
         <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
             <div class="text-center">
-                <div class="page-title">Produk Kami</div>
+                <div class="page-title"><?=lang('Blog.produkkamislider');?></div>
                 <div class="breadcrumb">
-                    <a href="/">Beranda</a> <span> / Produk</span>
+                    <a href="/"><?=lang('Blog.linkberanda');?></a> <span><?=lang('Blog./produk');?></span>
                 </div>
             </div>
         </div>
@@ -600,11 +600,16 @@
                             width="200" />
                     </a>
                     <div class="product-title">
-                        <?= esc($item->nama_produk); ?>
+                    <?= esc($lang === 'id' ? $item->nama_produk : $item->nama_produk_en); ?>
                     </div>
                     <div class="product-description">
-                        <?= esc(strlen($item->deskripsi_produk) > 50 ? substr($item->deskripsi_produk, 0, 50) . '...' : $item->deskripsi_produk); ?>
-                    </div>
+    <?= esc(
+        $lang === 'id' 
+            ? (strlen($item->deskripsi_produk) > 50 ? substr($item->deskripsi_produk, 0, 50) . '...' : $item->deskripsi_produk)
+            : (strlen($item->deskripsi_produk_en) > 50 ? substr($item->deskripsi_produk_en, 0, 50) . '...' : $item->deskripsi_produk_en)
+    ); ?>
+</div>
+
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
@@ -618,8 +623,8 @@
 
 
     <div class="footer">
-        <img src="upload/<?= $produk->img_footer ?>" alt="Logo" class="footer-logo">
-        <span class="footer-separator">|</span>
+    <img src="<?= base_url('upload/' . $produk->img_footer); ?>" alt="Logo" class="footer-logo">
+    <span class="footer-separator">|</span>
         <p>Copyright ©2024. Design by Bayu Valent</p>
     </div>
 

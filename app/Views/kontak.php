@@ -775,15 +775,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
+        <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
 
-            </ul>
+                </ul>
         </div>
     </div>
 </nav>
@@ -799,9 +799,9 @@
     <!-- Page Title and Breadcrumb -->
     <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
         <div class="text-center">
-            <div class="page-title">Kontak Kami</div>
+            <div class="page-title"><?=lang('Blog.kontakkamislider');?></div>
             <div class="breadcrumb">
-                <a href="/">Beranda</a> <span> / Kontak</span>
+            <a href="/"><?=lang('Blog.linkberanda');?></a> <span><?=lang('Blog./kontak');?></span>
             </div>
         </div>
     </div>
@@ -814,17 +814,21 @@
 
     <div class="contact-info">
         <h2><?= $kontak->title_kontak ?></h2>
-        <p><?= $kontak->alamat_kontak ?></p>
+        <?php if ($lang === 'id'): ?>
+    <p><?= $kontak->alamat_kontak ?></p>
+<?php else: ?>
+    <p><?= $kontak->alamat_kontak_en ?></p>
+<?php endif; ?>
 
         <div class="contact-info-details">
-            <h3>Hubungi Kami</h3>
+            <h3><?=lang('Blog.hubungikami');?></h3>
             <h6>
                 <i class="fas fa-phone-alt"></i>
-                <span>+62 822-0011-2233</span>
+                <span><?= $kontak->nomor_telp ?></span>
             </h6>
             <h6>
                 <i class="fas fa-envelope"></i>
-                <span>ggsantai@gmail.com</span>
+                <span><?= $kontak->email ?></span>
             </h6>
         </div>
     </div>
@@ -832,7 +836,7 @@
 
     <!-- Footer -->
     <div class="footer">
-    <img src="upload/<?=$kontak->img_footer?>" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/' . $kontak->img_footer); ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>

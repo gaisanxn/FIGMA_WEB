@@ -21,7 +21,8 @@ class ProdukController extends BaseController
 
         $data['dataproduk'] = $produkdatamodel->findAll();
 
-      
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
         
         // Kirim data ke view
         return view('produk/index', $data);
@@ -40,6 +41,8 @@ class ProdukController extends BaseController
         
         $data['produk'] = $produk;
         return view('produk/detail', $data); // Menampilkan detail produk
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
     }
 
 }

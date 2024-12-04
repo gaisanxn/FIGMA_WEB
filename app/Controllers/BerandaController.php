@@ -22,8 +22,6 @@ class BerandaController extends BaseController
 
         $data['produk'] = $produk->findAll();
 
-
-
         $aktivitas = new AktivitasModel();
 
         $data['aktivitas'] = $aktivitas->first();
@@ -32,7 +30,10 @@ class BerandaController extends BaseController
 
         $data['aktivitas'] = $aktivitas->findAll();
 
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
 
+        
         return view('Beranda', $data);
     }
 }

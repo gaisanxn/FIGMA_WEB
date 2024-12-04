@@ -699,13 +699,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
 
                 </ul>
             </div>

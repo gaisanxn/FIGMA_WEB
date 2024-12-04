@@ -25,10 +25,13 @@ class AktivitasController extends BaseController
         $aktivitasdatamodel = new AktivitasDataModel();
         $data['dataaktivitas'] = $aktivitasdatamodel->findAll();
 
-
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
 
         // Kirim data ke view
         return view('aktivitas/index', $data);
+
+        
     }
 
     public function detail($slug)
@@ -41,6 +44,9 @@ class AktivitasController extends BaseController
         if (!$aktivitas) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Aktivitas dengan slug '{$slug}' tidak ditemukan.");
         }
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
 
         $data['aktivitas'] = $aktivitas;
         return view('aktivitas/detail', $data); // Menampilkan detail produk

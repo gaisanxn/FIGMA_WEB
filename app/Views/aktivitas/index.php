@@ -62,15 +62,17 @@
             /* Efek perbesaran */
         }
 
-/* Ganti warna ikon navbar-toggler menjadi putih */
-.navbar-toggler-icon {
-    background-color: #ffff0000; /* Warna putih untuk ikon toggler */
-}
+        /* Ganti warna ikon navbar-toggler menjadi putih */
+        .navbar-toggler-icon {
+            background-color: #ffff0000;
+            /* Warna putih untuk ikon toggler */
+        }
 
-/* Menambahkan efek transisi pada toggler untuk perubahan smooth */
-.navbar-toggler {
-    border: none; /* Menghilangkan border untuk membuat tampilan lebih bersih */
-}
+        /* Menambahkan efek transisi pada toggler untuk perubahan smooth */
+        .navbar-toggler {
+            border: none;
+            /* Menghilangkan border untuk membuat tampilan lebih bersih */
+        }
 
         /* Responsivitas dengan Media Queries */
         @media (max-width: 992px) {
@@ -818,11 +820,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
 
                 </ul>
             </div>
@@ -841,28 +843,36 @@
         <!-- Page Title and Breadcrumb -->
         <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
             <div class="text-center">
-                <div class="page-title">Aktivitas Kami</div>
+                <div class="page-title"><?= lang('Blog.aktivitaskamislider'); ?></div>
                 <div class="breadcrumb">
-                    <a href="/">Beranda</a> <span> / Aktivitas</span>
+                    <a href="/"><?= lang('Blog.linkberanda'); ?></a> <span><?= lang('Blog./aktivitas'); ?></span>
                 </div>
             </div>
         </div>
     </div>
 
     <?php foreach ($dataaktivitas as $aktivitasItem): ?>
-        <!-- konten 1 -->
+        <!-- konten  -->
         <div class="wrapper">
-            <div class="image-section">
-                <img src="upload/<?= esc($aktivitasItem->img) ?>" alt="Peluncuran Produk Baru" class="image">
-            </div>
+        <div class="image-section">
+    <img src="<?= base_url('upload/' . esc($aktivitasItem->img)) ?>" alt="Peluncuran Produk Baru" class="image">
+</div>
+
             <div class="text-section">
                 <div class="content-box">
-                    <h2 class="title"><?= esc($aktivitasItem->judul_img) ?></h2>
+                    
+                    <?php if ($lang === 'id'): ?>
+                        <h2 class="title"><?= esc($aktivitasItem->judul_img) ?></h2>
+                    <?php else: ?>
+                        <h2 class="title"><?= esc($aktivitasItem->judul_img_en) ?></h2>
+                    <?php endif; ?>
                     <p class="description">
-                        <?= esc(substr($aktivitasItem->deskripsi_img, 0, 300)) ?>...
-                    </p>
+    <?= esc(substr($aktivitasItem->{'deskripsi_img' . (session()->get('lang') == 'id' ? '' : '_en')}, 0, 300)) ?>...
+</p>
 
-                    <a href="<?= site_url('aktivitas/' . $aktivitasItem->slug) ?>" class="read-more">Baca Selengkapnya</a>                </div>
+
+                    <a href="<?= site_url('aktivitas/' . $aktivitasItem->slug) ?>" class="read-more">Baca Selengkapnya</a>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>
@@ -870,7 +880,7 @@
 
 
     <div class="footer">
-        <img src="upload/<?= $aktivitas->img_footer ?>" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/' . $aktivitas->img_footer); ?>" alt="Logo" class="footer-logo">
         <span class="footer-separator">|</span>
         <p>Copyright ©2024. Design by Bayu Valent</p>
     </div>

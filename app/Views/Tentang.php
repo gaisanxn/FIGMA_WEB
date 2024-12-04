@@ -490,15 +490,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tentang">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                <li class="nav-item"><a class="nav-link" href="/produk">PRODUK</a></li>
-                <li class="nav-item"><a class="nav-link" href="/artikel">ARTIKEL</a></li>
-                <li class="nav-item"><a class="nav-link" href="/aktivitas">AKTIVITAS</a></li>
-                <li class="nav-item"><a class="nav-link" href="/kontak">KONTAK</a></li> <!-- Link ke halaman Kontak -->
+        <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
+                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
 
-            </ul>
+                </ul>
         </div>
     </div>
 </nav>
@@ -516,9 +516,9 @@
     <!-- Page Title and Breadcrumb -->
     <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
         <div class="text-center">
-            <div class="page-title">Tentang Kami</div>
+            <div class="page-title"><?=lang('Blog.tentangkamislider');?></div>
             <div class="breadcrumb">
-                <a href="/">Beranda</a> <span> / Tentang</span>
+                <a href="/"><?=lang('Blog.linkberanda');?></a> <span><?=lang('Blog./tentang');?></span>
             </div>
         </div>
     </div>
@@ -529,9 +529,16 @@
         <div class="content-flex">
             <img src="/upload/<?=$tentang->img_tentang ?>" alt="TechSmart Image" class="article-image">
             <div>
-                <h2>TENTANG KAMI</h2>
+                <h2><?=lang('Blog.atastentang');?></h2>
                 <p>
-                <?=$tentang->deskripsi_tentang ?>
+                    <?php
+                    if ($lang === 'id') {
+                        echo $tentang->deskripsi_tentang;
+                    } else {
+                        echo $tentang->deskripsi_tentang_en;
+                    }
+                    ?>
+
                 </p>
 
             </div>
@@ -539,7 +546,7 @@
     </div>
 
     <div class="footer">
-    <img src="upload/<?=$tentang->img_footer ?>" alt="Logo" class="footer-logo">
+    <img src="<?= base_url('upload/' . $tentang->img_footer); ?>" alt="Logo" class="footer-logo">
     <span class="footer-separator">|</span>
     <p>Copyright ©2024. Design by Bayu Valent</p>
 </div>
