@@ -36,10 +36,28 @@ class AktivitasController extends BaseController
 
     public function detail($slug)
     {
+       
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
         $aktivitasdata = new AktivitasDataModel();
         // Mencari produk berdasarkan slug
-        $aktivitas = $aktivitasdata->where('slug', $slug)->first();
+  
+        $aktivitas = $aktivitasdata->where('slug', $slug)->orWhere('slug_en', $slug)->first();
 
+        // Cek apakah slug sesuai dengan bahasa yang sedang aktif
+        if (($lang === 'id' && $slug !== $aktivitas->slug) || ($lang === 'en' && $slug !== $aktivitas->slug_en)) {
+            // Redirect ke URL slug yang benar sesuai bahasa
+            $correctSlug = $lang === 'id' ? $aktivitas->slug : $aktivitas->slug_en;
+            $correctulr = $lang === 'id' ? 'aktivitas' : 'activities';
+
+            return redirect()->to("$lang/$correctulr/$correctSlug");
+        }
+       
+        
+
+        
 
         if (!$aktivitas) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Aktivitas dengan slug '{$slug}' tidak ditemukan.");

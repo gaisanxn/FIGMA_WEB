@@ -30,9 +30,22 @@ class ProdukController extends BaseController
 
     public function detail($slug)
     {
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+        
+
         $produkdata = new ProdukDataModel();
         // Mencari produk berdasarkan slug
-        $produk = $produkdata->where('slug', $slug)->first();
+        $produk = $produkdata->where('slug', $slug)->orWhere('slug_en', $slug)->first();
+
+        // Cek apakah slug sesuai dengan bahasa yang sedang aktif
+        if (($lang === 'id' && $slug !== $produk->slug) || ($lang === 'en' && $slug !== $produk->slug_en)) {
+            // Redirect ke URL slug yang benar sesuai bahasa
+            $correctSlug = $lang === 'id' ? $produk->slug : $produk->slug_en;
+            $correctulr = $lang === 'id' ? 'produk' : 'product';
+           
+            return redirect()->to("$lang/$correctulr/$correctSlug");
+        }
 
         
         if (!$produk) {
