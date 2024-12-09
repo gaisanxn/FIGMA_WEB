@@ -685,47 +685,140 @@
             color: #E2E2B6;
             /* Warna separator yang sama dengan warna teks */
         }
+        .flag-icon {
+            width: 20px;
+            /* Sesuaikan ukuran lebar sesuai kebutuhan */
+            height: auto;
+            /* Pastikan proporsi gambar tetap */
+            display: inline-block;
+            margin-right: 5px;
+            /* Memberikan sedikit jarak jika ada teks di sampingnya */
+            vertical-align: middle;
+            /* Menyelaraskan dengan teks */
+        }
 
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-custom">
+<?php
+    // Ambil bahasa yang disimpan di session
+    $lang = session()->get('lang') ?? 'id'; // Default ke 'en' jika tidak ada di session
+
+    $current_url = uri_string();
+
+    // Ambil query string (misalnya ?keyword=sukses)
+    $query_string = $_SERVER['QUERY_STRING']; // Mengambil query string dari URL
+
+    // Simpan segmen bahasa saat ini
+    $lang_segment = substr($current_url, 0, strpos($current_url, '/') + 1); // Menyimpan 'id/' atau 'en/'
+
+    // Definisikan tautan untuk setiap halaman berdasarkan bahasa
+    $homeLink = ($lang_segment === 'en/') ? '/' : '/';
+    $belajarEksporLink = ($lang_segment === 'en/') ? 'export-learning' : 'belajar-ekspor';
+    $pendaftaranLink = ($lang_segment === 'en/') ? 'registration' : 'pendaftaran';
+    $videoTutorialLink = ($lang_segment === 'en/') ? 'video-tutorial' : 'tutorial-video';
+    $memberLink = ($lang_segment === 'en/') ? 'data-member' : 'data-member';
+    $buyersLink = ($lang_segment === 'en/') ? 'data-buyers' : 'data-buyers';
+
+    // Buat array untuk menggantikan segmen berdasarkan bahasa
+    $replace_map = [
+        'tentang' => 'about',
+        'produk' => 'product',
+        'artikel' => 'article',
+        'aktivitas' => 'activities',
+        'kontak' => 'contact',
+
+    ];
+
+    // Ambil bagian dari URL tanpa segmen bahasa
+    $url_without_lang = substr($current_url, strlen($lang_segment));
+
+    // Tentukan bahasa yang ingin digunakan
+    $new_lang_segment = ($lang_segment === 'en/') ? 'id/' : 'en/';
+
+    // Gantikan setiap segmen dalam URL berdasarkan bahasa yang aktif
+    foreach ($replace_map as $indonesian_segment => $english_segment) {
+        if ($lang_segment === 'en/') {
+            // Jika bahasa yang dipilih adalah 'en', maka ganti segmen ID ke EN
+            $url_without_lang = str_replace($english_segment, $indonesian_segment, $url_without_lang);
+        } else {
+            // Jika bahasa yang dipilih adalah 'id', maka ganti segmen EN ke ID
+            $url_without_lang = str_replace($indonesian_segment, $english_segment, $url_without_lang);
+        }
+    }
+
+    // Tautan dengan bahasa yang baru
+    $clean_url = $new_lang_segment . ltrim($url_without_lang, '/');
+
+    // Gabungkan query string jika ada
+    if (!empty($query_string)) {
+        $clean_url .= '?' . $query_string;
+    }
+
+
+    // Tautan Bahasa Inggris
+    $english_url = base_url($clean_url);
+
+    // Tautan Bahasa Indonesia
+    $indonesia_url = base_url($clean_url);
+    ?>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand">
-            <img src="/upload/<?= $artikel->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
+                <img src="/upload/<?= $artikel->img_navbar ?>" alt="Logo" width="161" height="97" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">BERANDA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>">TENTANG</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>">PRODUK</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>">ARTIKEL</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>">AKTIVITAS</a></li> <!-- Link ke halaman Tentang -->
-                    <li class="nav-item"><a class="nav-link" href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>">KONTAK</a></li> <!-- Link ke halaman Tentang -->
-
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/"><?= lang('Messages.home') ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(($lang == 'en') ? '/en/about' : '/id/tentang') ?>"><?= lang('Messages.about') ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(($lang == 'en') ? '/en/product' : '/id/produk') ?>"><?= lang('Messages.product') ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(($lang == 'en') ? '/en/article' : '/id/artikel') ?>"><?= lang('Messages.article') ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(($lang == 'en') ? '/en/activities' : '/id/aktivitas') ?>"><?= lang('Messages.activities') ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(($lang == 'en') ? '/en/contact' : '/id/kontak') ?>"><?= lang('Messages.contact') ?></a></li>
                 </ul>
+                <div class="dropdown">
+                    <button class="btn text-light language-btn" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/<?= $lang === 'id' ? '9/9f/Flag_of_Indonesia' : 'a/a4/Flag_of_the_United_States'; ?>.svg" alt="<?= $lang === 'id' ? 'Indonesian' : 'English'; ?>" class="flag-icon mb-1">
+                        <i class="bi bi-chevron-down ms-1"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        <li>
+                            <a class="dropdown-item <?= $lang == 'id' ? 'disabled' : '' ?>" href="<?= $english_url ?>" <?= $lang == 'id' ? 'style="pointer-events: none; opacity: 0.5;"' : '' ?>>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" alt="Indonesian" class="flag-icon" <?= $lang == 'id' ? 'style="filter: grayscale(100%);"' : '' ?>> Indonesian
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item <?= $lang == 'en' ? 'disabled' : '' ?>" href="<?= $indonesia_url ?>" <?= $lang == 'en' ? 'style="pointer-events: none; opacity: 0.5;"' : '' ?>>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" class="flag-icon" <?= $lang == 'en' ? 'style="filter: grayscale(100%);"' : '' ?>> English
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
             </div>
         </div>
     </nav>
-    <!-- Carousel, Page Title, and Breadcrumb Wrapper -->
-    <div id="carouselExample" class="carousel slide position-relative">
+   <!-- Carousel, Page Title, and Breadcrumb Wrapper -->
+   <div id="carouselExample" class="carousel slide position-relative">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="/upload/<?= $artikel->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
-            <div class="carousel-overlay"></div>
+                <img src="/upload/<?= $artikel->img_slider ?>" alt="Slide 1" class="d-block w-100" style="height:auto;">
+                <div class="carousel-overlay"></div>
             </div>
         </div>
 
         <!-- Page Title and Breadcrumb -->
         <div class="carousel-caption-wrapper d-flex align-items-center justify-content-center">
             <div class="text-center">
-                <div class="page-title">Artikel Kami</div>
+                <div class="page-title"><?=lang('Blog.artikelkamislider');?></div>
                 <div class="breadcrumb">
-                    <a href="/">Beranda</a> <span> / Artikel</span>
+                    <a href="/"><?=lang('Blog.linkberanda');?></a> <span><?=lang('Blog./artikel');?></span>
                 </div>
             </div>
         </div>
@@ -737,8 +830,12 @@
 <div class="article-content">
     <img src="/upload/<?= $artikel->img_1?>" alt="TechSmart Image" class="article-image">
     
-    <h2 class="article-title"><?= $artikel->title_1?></h2>
-    <p class="article-text"><?= $artikel->desk_1?></p>
+    <h2 class="article-title">
+    <?= ($lang == 'id') ? $artikel->title_1 : $artikel->title_1_en ?>
+</h2>
+<p class="article-text">
+    <?= $lang == 'id' ? $artikel->desk_1 : $artikel->desk_1_en ?>
+</p>
 </div>
 
 <!-- Footer -->
