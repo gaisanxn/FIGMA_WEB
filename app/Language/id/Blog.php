@@ -20,7 +20,9 @@ return [
     '/aktivitas' => '/ Aktivitas',
     'kontakkamislider' => 'Kontak Kami',
     '/kontak' => '/ Kontak',
-    'hubungikami' => 'Hubungi Kami'
+    'hubungikami' => 'Hubungi Kami',
+    'teksfooter' => 'Hak Cipta ©2024. Desain oleh Bayu Valent',
+
 
 
 

@@ -484,7 +484,7 @@
     }
 
     .article-title {
-        font-size: 12px;
+        font-size: 11px;
         padding: 8px;
         width: 95%;
         text-align: center;
@@ -510,7 +510,7 @@
     }
 
     .article-title {
-        font-size: 11px;
+        font-size: 10px;
         padding: 8px;
         width: 90%;
         text-align: center;
@@ -647,44 +647,123 @@
 
 
 
-        /* Footer responsif */
-        .footer {
-            display: flex;
-            align-items: center;
-            /* Untuk memastikan elemen sejajar vertikal */
-            justify-content: center;
-            /* Untuk membuat konten berada di tengah */
-            padding: 5px;
-            /* Kurangi padding untuk membuat footer lebih tipis */
-            background-color: #021526;
-            color: white;
-            font-size: 8px;
-            /* Ukuran font yang lebih kecil */
-        }
+        /* Footer default styling */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #021526;
+    color: white;
+    font-size: 12px;
+    font-family: 'League Spartan', sans-serif;
+    color: #E2E2B6;
+}
 
-        .footer-logo {
-            max-width: 60px;
-            /* Kecilkan ukuran logo */
-            margin-right: 5px;
-            /* Kurangi jarak antara logo dan teks */
-        }
+.footer-logo {
+    max-width: 80px;
+    margin-right: 10px;
+}
 
-        .footer p {
-            margin: 0;
-            font-size: 8px;
-            /* Ukuran font yang lebih kecil untuk teks copyright */
-            font-family: 'League Spartan', sans-serif;
-            /* Gaya font League Spartan Regular */
-            color: #E2E2B6;
-            /* Ubah warna tulisan Copyright */
-        }
+.footer p {
+    margin: 0;
+}
 
-        .footer-separator {
-            margin: 0 5px;
-            /* Jarak antara logo dan teks copyright */
-            color: #E2E2B6;
-            /* Warna separator yang sama dengan warna teks */
-        }
+.footer-separator {
+    margin: 0 10px;
+    color: #E2E2B6;
+}
+
+/* Media Queries for Responsive Design */
+
+/* 2560px and above */
+@media (min-width: 2560px) {
+    .footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+    .footer-logo {
+        max-width: 100px;
+    }
+}
+
+/* 1440px to 2560px */
+@media (max-width: 2560px) and (min-width: 1440px) {
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .footer-logo {
+        max-width: 80px;
+    }
+}
+
+/* 1024px to 1440px */
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .footer {
+        font-size: 10px;
+        padding: 8px;
+    }
+    .footer-logo {
+        max-width: 70px;
+    }
+}
+
+/* 768px to 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .footer {
+        font-size: 9px;
+        padding: 6px;
+    }
+    .footer-logo {
+        max-width: 60px;
+    }
+}
+
+/* 576px to 768px */
+@media (max-width: 768px) and (min-width: 576px) {
+    .footer {
+        font-size: 8px;
+        padding: 5px;
+    }
+    .footer-logo {
+        max-width: 50px;
+    }
+}
+
+/* 425px to 576px */
+@media (max-width: 576px) and (min-width: 425px) {
+    .footer {
+        font-size: 7px;
+        padding: 4px;
+    }
+    .footer-logo {
+        max-width: 40px;
+    }
+}
+
+/* 375px to 425px */
+@media (max-width: 425px) and (min-width: 375px) {
+    .footer {
+        font-size: 6px;
+        padding: 3px;
+    }
+    .footer-logo {
+        max-width: 35px;
+    }
+}
+
+/* 320px to 375px */
+@media (max-width: 375px) and (min-width: 320px) {
+    .footer {
+        font-size: 5px;
+        padding: 2px;
+    }
+    .footer-logo {
+        max-width: 30px;
+    }
+}
+
         .flag-icon {
             width: 20px;
             /* Sesuaikan ukuran lebar sesuai kebutuhan */
